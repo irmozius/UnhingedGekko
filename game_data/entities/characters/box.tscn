@@ -14,6 +14,7 @@ speed = 160.0
 [node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("1_e812k")]
 position = Vector2(12.8, -13.2)
 collision_layer = 16
+damage = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=337671504]
 scale = Vector2(0.99999994, 0.99999994)

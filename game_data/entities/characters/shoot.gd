@@ -1,4 +1,8 @@
+class_name GekkoAttacks
 extends Node
+
+signal attack_finished
+
 #hitbox hurtbox setup
 @onready var hitbox: Hitbox = $"../Hitbox"
 @onready var hurtbox: Hurtbox = $"../Hurtbox"
@@ -20,10 +24,7 @@ func slash():
 		print("Player is Slasing")
 		hurtbox_shape.disabled = false
 		hit_marker.show()
-		get_tree().create_timer(slash_duration).timeout.connect(func():
-			hurtbox_shape.disabled = true
-			hit_marker.hide(),
-			CONNECT_ONE_SHOT)
+		get_tree().create_timer(slash_duration).timeout.connect(attack_end, CONNECT_ONE_SHOT)
 			
 		#cd stuff
 		slash_on_cooldown = true
@@ -32,3 +33,9 @@ func slash():
 			)
 	else:
 		print("Slash on cooldown")
+
+func attack_end():
+	if Global.player_dead: return
+	hurtbox_shape.disabled = true
+	hit_marker.hide()
+	attack_finished.emit()

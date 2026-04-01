@@ -94,4 +94,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 7
 text = "RETRY"
 
+[node name="Stats" type="VBoxContainer" parent="UI" unique_id=180940265]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HPLab" type="Label" parent="UI/Stats" unique_id=778919696]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HP: 3"
+
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]

@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://e7oob1beiy0h" path="res://assets/graphics/sprites/gekko/Full_run3.png" id="5_vp8qi"]
 [ext_resource type="Script" uid="uid://dfvjnhi4hxd6w" path="res://game_data/entities/characters/shoot.gd" id="8_4yyxq"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_thimi"]
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ranni"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4yyxq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -23,7 +25,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6orh"]
@@ -42,11 +44,13 @@ collision_mask = 3
 script = ExtResource("1_p6orh")
 jump_force = 12.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=994462684]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1275728619]
+material = SubResource("CanvasItemMaterial_ranni")
 scale = Vector2(0.25, 0.25)
-sprite_frames = SubResource("SpriteFrames_thimi")
+sprite_frames = SubResource("SpriteFrames_4yyxq")
 autoplay = "default"
-frame_progress = 0.28294694
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1672742871]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760843867]
 shape = SubResource("RectangleShape2D_p6orh")
@@ -60,7 +64,7 @@ position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_ranni")
 
 [node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("4_ely7x")]
-position = Vector2(40, 0)
+position = Vector2(32, 0)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1148758240]
@@ -70,7 +74,7 @@ disabled = true
 [node name="HitMarker" type="Sprite2D" parent="." unique_id=1984310832]
 visible = false
 modulate = Color(3.8147569, 3.8147569, 3.8147569, 1)
-position = Vector2(39.999996, 0)
+position = Vector2(32, 0)
 rotation = -0.7853982
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("5_f3bsu")

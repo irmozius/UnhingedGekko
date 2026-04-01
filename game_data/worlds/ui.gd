@@ -3,9 +3,11 @@ class_name UI
 extends CanvasLayer
 
 @onready var died_screen: PanelContainer = $DiedScreen
+@onready var hp_lab: Label = %HPLab
 
 ## Setup player death connection for death screen
 func _ready() -> void:
+	Global.ui = self
 	Global.player_died.connect(show_died_screen)
 
 func show_died_screen():
@@ -13,3 +15,6 @@ func show_died_screen():
 	
 func _on_retry_but_pressed() -> void:
 	get_tree().reload_current_scene()
+
+func set_hp_lab():
+	hp_lab.text = "HP: " + str(Global.current_hp)

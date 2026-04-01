@@ -16,7 +16,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 ## Hitbox detects incoming hits, Hurtbox sends hits.
 @onready var hitbox: Hitbox = $Hitbox
 @onready var hurtbox: Hurtbox = $Hurtbox
-@onready var attack: Node = $attack
+@onready var attack: GekkoAttacks = $attack
 
 
 ## Bools for polling input.
@@ -25,9 +25,6 @@ var slash_requested : bool = false
 
 ## Used to enable/disable floor checking during jump.
 var checking_floor : bool = false
-
-
-
 
 #region Basic overrides
 
@@ -40,10 +37,11 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	#Add the states to the state machine
-	fsm.state_changed.connect(on_state_change)
+	fsm.state_changed.connect(_on_state_change)
 	fsm.add_state("Running", running_enter, running_exit, running_update, running_pupdate)
 	fsm.add_state("InAir", inair_enter, inair_exit, inair_update, inair_pupdate)
 	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, Callable())
+	fsm.add_state("Attacking", attack_enter, attack_exit, attack_update, attack_pupdate)
 	## Set initial state
 	fsm.set_state("InAir")
 	
@@ -58,7 +56,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 ## Callback for state change.
-func on_state_change(s_name : String):
+func _on_state_change(s_name : String):
 	print("Player state changed to " + s_name)
 
 ## Move the ground to simulate movement.
@@ -82,11 +80,19 @@ func jump():
 ## Initiate slash attack, enabling slash collision briefly
 ## then switching it back off. Also show hit marker.
 func slash():
-	attack.slash()
+	fsm.set_state("Attacking")
 
 ## When hitbox receives a hit, die. Pass through the hurtbox in case we need its data later.
-func _on_hitbox_received_hit(_hurtbox : Hurtbox) -> void:
-	die()
+func _on_hitbox_received_hit(hurtbox : Hurtbox) -> void:
+	take_damage(hurtbox.damage)
+
+func take_damage(amnt : int):
+	Global.change_hp(-amnt)
+	if Global.current_hp == 0:
+		die()
+	
+func heal(amnt : int):
+	Global.change_hp(amnt)
 
 ## Inform Global of death, and emit the global death signal. Finally, change to death state
 ## which has disabled input.
@@ -94,6 +100,12 @@ func die():
 	Global.player_dead = true
 	Global.player_died.emit()
 	fsm.set_state("Dead")
+
+func _on_attack_finished():
+	if is_on_floor():
+		fsm.set_state("Running")
+	else:
+		fsm.set_state("InAir")
 	
 #endregion
 
@@ -124,13 +136,35 @@ func running_pupdate(delta : float):
 
 #endregion
 
+## Attacking state functions:
+#region Attacking
+
+## Entering attacking state
+func attack_enter():
+	attack.slash()
+	attack.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
+
+## Exiting attacking state
+func attack_exit():
+	pass
+
+## Process attacking state:
+func attack_update(_delta : float):
+	pass
+
+## attacking physics process: move the ground
+func attack_pupdate(delta : float):
+	scroll_ground(delta)
+
+#endregion
+
 ## State for airborne movement. Pretty much just applies gravity and
 ## changes back to running once back on the ground.
 #region InAir
 
 func inair_enter():
 	## 30 milisecond timer before enabling ground check.
-	get_tree().create_timer(0.3).timeout.connect(func(): checking_floor = true, CONNECT_ONE_SHOT)
+	get_tree().create_timer(0.15).timeout.connect(func(): checking_floor = true, CONNECT_ONE_SHOT)
 
 ## Reset vertical velocity on exit.
 func inair_exit():
