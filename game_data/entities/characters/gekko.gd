@@ -82,15 +82,18 @@ func jump():
 func slash():
 	fsm.set_state("Attacking")
 
-## When hitbox receives a hit, die. Pass through the hurtbox in case we need its data later.
-func _on_hitbox_received_hit(hurtbox : Hurtbox) -> void:
-	take_damage(hurtbox.damage)
+## When hitbox receives a hit, get the offender and call
+## take_damage using its damage value.
+func _on_hitbox_received_hit(att_hurtbox : Hurtbox) -> void:
+	take_damage(att_hurtbox.damage)
 
+## Remove the damage value from hp. Die if hp is 0.
 func take_damage(amnt : int):
 	Global.change_hp(-amnt)
 	if Global.current_hp == 0:
 		die()
-	
+
+## Add to current_hp.
 func heal(amnt : int):
 	Global.change_hp(amnt)
 
@@ -101,6 +104,7 @@ func die():
 	Global.player_died.emit()
 	fsm.set_state("Dead")
 
+## Callback used to handle the end of attacks. Signal comes from `attack`.
 func _on_attack_finished():
 	if is_on_floor():
 		fsm.set_state("Running")

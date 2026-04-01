@@ -15,9 +15,14 @@ func _ready() -> void:
 	if hitbox:
 		hitbox.received_hit.connect(_on_hitbox_received_hit)
 
-func _on_hitbox_received_hit(hurtbox : Hurtbox):
-	queue_free()
+## One hit and dead!
+func _on_hitbox_received_hit(_hurtbox : Hurtbox):
+	die()
 
+## We should do something more interesting when they die, at some point
+func die():
+	queue_free()
+	
 ## Move left based on exported speed if movement is true.
 func _physics_process(delta: float) -> void:
 	if !moving: return
