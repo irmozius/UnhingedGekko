@@ -27,6 +27,20 @@ window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://assets/audio/": "green",
+"res://assets/graphics/": "orange",
+"res://game_data/": "purple",
+"res://game_data/entities/": "blue",
+"res://game_data/globals/": "gray",
+"res://game_data/helpers/": "pink",
+"res://game_data/managers/": "teal",
+"res://game_data/worlds/": "red"
+}
+
 [input]
 
 jump={
