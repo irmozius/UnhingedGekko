@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://sq2vgy4ayis3" path="res://assets/graphics/sprites/gekko/Full_run2.png" id="4_uv4va"]
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="5_f3bsu"]
 [ext_resource type="Texture2D" uid="uid://e7oob1beiy0h" path="res://assets/graphics/sprites/gekko/Full_run3.png" id="5_vp8qi"]
+[ext_resource type="Script" uid="uid://dfvjnhi4hxd6w" path="res://game_data/entities/characters/shoot.gd" id="8_4yyxq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_thimi"]
 animations = [{
@@ -73,5 +74,8 @@ position = Vector2(39.999996, 0)
 rotation = -0.7853982
 scale = Vector2(0.15625, 0.15625)
 texture = ExtResource("5_f3bsu")
+
+[node name="attack" type="Node" parent="." unique_id=394590036]
+script = ExtResource("8_4yyxq")
 
 [connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]

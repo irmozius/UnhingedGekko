@@ -16,12 +16,8 @@ var fsm = FunctionalStateMachineGDScript.new()
 ## Hitbox detects incoming hits, Hurtbox sends hits.
 @onready var hitbox: Hitbox = $Hitbox
 @onready var hurtbox: Hurtbox = $Hurtbox
+@onready var attack: Node = $attack
 
-## Need reference for the shape of the hurtbox to enable/disable it.
-@onready var hurtbox_shape: CollisionShape2D = $Hurtbox/CollisionShape2D
-
-## Hitmarker is just a debug visual currently used to show hits activating.
-@onready var hit_marker: Sprite2D = $HitMarker
 
 ## Bools for polling input.
 var jump_requested : bool = false
@@ -30,11 +26,6 @@ var slash_requested : bool = false
 ## Used to enable/disable floor checking during jump.
 var checking_floor : bool = false
 
-## Slash controls
-@export_group("Slash Settings")
-@export var slash_cooldown_timer : float = 0.7
-@export var slash_duration:float = 0.5
-var slash_on_cooldown: bool = false #This disallows slash on cd
 
 
 
@@ -91,23 +82,7 @@ func jump():
 ## Initiate slash attack, enabling slash collision briefly
 ## then switching it back off. Also show hit marker.
 func slash():
-	
-	if not slash_on_cooldown:
-		print("Player is Slasing")
-		hurtbox_shape.disabled = false
-		hit_marker.show()
-		get_tree().create_timer(slash_duration).timeout.connect(func():
-			hurtbox_shape.disabled = true
-			hit_marker.hide(),
-			CONNECT_ONE_SHOT)
-			
-		#cd stuff
-		slash_on_cooldown = true
-		get_tree().create_timer(slash_cooldown_timer).timeout.connect(func():
-			slash_on_cooldown =false
-			)
-	else:
-		print("Slash on cooldown")
+	attack.slash()
 
 ## When hitbox receives a hit, die. Pass through the hurtbox in case we need its data later.
 func _on_hitbox_received_hit(_hurtbox : Hurtbox) -> void:
