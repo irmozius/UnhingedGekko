@@ -26,7 +26,6 @@
 			"uuid": "7eedf728-b00a-4478-9edd-413aca9d7a20",
 			"title": "Todo",
 			"tasks": [
-				"9ad63d04-ae19-4d76-aaa3-384e4ad089dd",
 				"f08740d1-4aaa-40a7-bd81-6ca2616ad5e5",
 				"7170d5da-48de-4b15-8b6b-29ca1df92a03",
 				"25a52747-343a-4ad0-a553-850d5baa4d5c",
@@ -40,22 +39,25 @@
 			"uuid": "cd37bd00-d466-4db3-ac14-bb411fd9f384",
 			"title": "Doing",
 			"tasks": [
-				"d364208f-5468-41c7-9f06-a20e4e89fd1f",
-				"a7ed3f74-a93b-4fd3-98d8-4cbec7b0466f"
+				"9ad63d04-ae19-4d76-aaa3-384e4ad089dd"
 			]
 		},
 		{
 			"uuid": "30b10375-3e42-4839-a1b8-351770776a01",
 			"title": "Done",
 			"tasks": [
+				"d364208f-5468-41c7-9f06-a20e4e89fd1f",
+				"a7ed3f74-a93b-4fd3-98d8-4cbec7b0466f",
 				"159dc9b0-0a48-4829-99d4-e710acd0b45c",
-				"0d42f021-b3a6-45ec-bf3d-c9f96ea54ce8",
 				"a1812645-0f3e-4398-820f-4470be136715",
-				"1b4f2e1f-c6eb-4850-86dc-7812189193e0",
 				"7baad286-27d3-4909-aecf-4cd9fa44e90b",
-				"569c7005-b67e-4b1e-a76e-22b07e900985",
+				"1b4f2e1f-c6eb-4850-86dc-7812189193e0",
+				"f77e8ee0-04d2-474f-a862-3522860c67d5",
 				"c6827a30-9d5a-4b74-a423-f9e690499490",
-				"bfefae35-a14a-4a8b-be4d-e07295b9eab8"
+				"569c7005-b67e-4b1e-a76e-22b07e900985",
+				"0d42f021-b3a6-45ec-bf3d-c9f96ea54ce8",
+				"bfefae35-a14a-4a8b-be4d-e07295b9eab8",
+				"ccf00099-22f1-416a-a5b5-8afceca2beb3"
 			]
 		}
 	],
@@ -241,6 +243,20 @@
 		{
 			"uuid": "bfefae35-a14a-4a8b-be4d-e07295b9eab8",
 			"title": "Player states",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "ccf00099-22f1-416a-a5b5-8afceca2beb3",
+			"title": "Player class",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "f77e8ee0-04d2-474f-a862-3522860c67d5",
+			"title": "Hit/hurtbox system",
 			"description": "",
 			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
 			"steps": []

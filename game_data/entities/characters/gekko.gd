@@ -18,6 +18,8 @@ var fsm = FunctionalStateMachineGDScript.new()
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var attack: GekkoAttacks = $attack
 
+## Animation players for gekko and attack sprites
+@onready var gekko_anim: AnimationPlayer = $GekkoAnim
 
 ## Bools for polling input.
 var jump_requested : bool = false
@@ -55,22 +57,22 @@ func _physics_process(delta: float) -> void:
 	fsm.physics_update(delta)
 	move_and_slide()
 
-## Callback for state change.
-func _on_state_change(s_name : String):
-	print("Player state changed to " + s_name)
-
-## Move the ground to simulate movement.
-func scroll_ground(delta : float):
-	ground_manager.move(speed * delta)
-
 #endregion
 
 #region SharedMethods
 
+## Callback for state change.
+func _on_state_change(s_name : String):
+	print("Player state changed to " + s_name)
+	
 ## Poll the state of input buttons.
 func check_action_input():
 	jump_requested = Input.is_action_just_pressed("jump")
 	slash_requested = Input.is_action_just_pressed("slash")
+
+## Move the ground to simulate movement.
+func scroll_ground(delta : float):
+	ground_manager.move(speed * delta)
 
 ## Initiate jump, adding vertical movement and changing state to InAir
 func jump():
@@ -120,7 +122,7 @@ func _on_attack_finished():
 
 ## Entering running state
 func running_enter():
-	pass
+	gekko_anim.play("running")
 
 ## Exiting running state
 func running_exit():
@@ -145,7 +147,7 @@ func running_pupdate(delta : float):
 
 ## Entering attacking state
 func attack_enter():
-	attack.slash()
+	gekko_anim.play("attack1")
 	attack.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
 
 ## Exiting attacking state

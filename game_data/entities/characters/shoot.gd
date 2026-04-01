@@ -14,7 +14,7 @@ signal attack_finished
  
 
 @export var slash_cooldown_timer : float = 0.7
-@export var slash_duration:float = 0.5
+@export var slash_duration:float = 0.25
 @export var slash_damage:float = 1.0
 var slash_on_cooldown: bool = false #This disallows slash on cd
 
@@ -23,7 +23,7 @@ func slash():
 	if not slash_on_cooldown:
 		print("Player is Slasing")
 		hurtbox_shape.disabled = false
-		hit_marker.show()
+		#hit_marker.show()
 		get_tree().create_timer(slash_duration).timeout.connect(attack_end, CONNECT_ONE_SHOT)
 			
 		#cd stuff
@@ -37,5 +37,5 @@ func slash():
 func attack_end():
 	if Global.player_dead: return
 	hurtbox_shape.disabled = true
-	hit_marker.hide()
+	#hit_marker.hide()
 	attack_finished.emit()
