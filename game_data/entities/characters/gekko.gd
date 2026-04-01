@@ -18,7 +18,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var attack: GekkoAttacks = $attack
 
-## Animation players for gekko and attack sprites
+## Animation player
 @onready var gekko_anim: AnimationPlayer = $GekkoAnim
 
 ## Bools for polling input.
@@ -198,6 +198,7 @@ func inair_pupdate(delta : float):
 #region Dead
 
 func dead_enter():
+	gekko_anim.play("death")
 	velocity.y = 0
 
 func dead_exit():

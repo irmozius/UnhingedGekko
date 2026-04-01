@@ -70,7 +70,7 @@
 			"steps": [
 				{
 					"details": "Running",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "In air",
@@ -81,11 +81,19 @@
 					"done": false
 				},
 				{
-					"details": "Attack",
+					"details": "Death",
 					"done": false
 				},
 				{
-					"details": "Death",
+					"details": "Attack1",
+					"done": false
+				},
+				{
+					"details": "Attack2",
+					"done": false
+				},
+				{
+					"details": "Attack3",
 					"done": false
 				}
 			]
