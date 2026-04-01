@@ -3,22 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_2cwph"]
 [ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
 [ext_resource type="Script" uid="uid://etbf22i4k604" path="res://game_data/managers/ground_manager.gd" id="2_3qxxw"]
-[ext_resource type="Script" uid="uid://b1i8f3jtp1k0p" path="res://game_data/worlds/spawner.gd" id="4_v856d"]
+[ext_resource type="PackedScene" uid="uid://c3cj0nltb3mkt" path="res://game_data/worlds/fake_parallax.tscn" id="2_ob8w1"]
+[ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
 size = Vector2(717, 63)
 
 [node name="World" type="Node2D" unique_id=1525869542]
 
-[node name="Gekko" parent="." unique_id=1490024415 node_paths=PackedStringArray("ground_manager") instance=ExtResource("1_7i7qt")]
-position = Vector2(33, 105)
-platform_on_leave = 2
-ground_manager = NodePath("../GroundManager")
-speed = 400.0
-jump_force = 350.0
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=398270901]
-position = Vector2(120, 80)
+[node name="FakeParallax" parent="." unique_id=414930753 instance=ExtResource("2_ob8w1")]
+position = Vector2(282, 127)
 
 [node name="GroundManager" type="Node2D" parent="." unique_id=1641325381]
 script = ExtResource("2_3qxxw")
@@ -39,9 +33,18 @@ texture = ExtResource("1_2cwph")
 position = Vector2(448, 191)
 texture = ExtResource("1_2cwph")
 
-[node name="Spawner" type="Node2D" parent="." unique_id=731724178]
-position = Vector2(400, 127)
-script = ExtResource("4_v856d")
+[node name="Gekko" parent="." unique_id=1490024415 node_paths=PackedStringArray("ground_manager") instance=ExtResource("1_7i7qt")]
+position = Vector2(33, 105)
+platform_on_leave = 2
+ground_manager = NodePath("../GroundManager")
+speed = 200.0
+jump_force = 350.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=398270901]
+position = Vector2(120, 80)
+
+[node name="Spawner" parent="." unique_id=927126007 instance=ExtResource("4_v856d")]
+position = Vector2(384, 127)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1028207548]
 position = Vector2(0, 127)

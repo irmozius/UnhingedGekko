@@ -12,8 +12,8 @@ func _ready() -> void:
 	last_ground = grounds[3]
 	first_ground = grounds[0]
 		
-
 func move(speed : float):
+	Global.current_movement_speed = speed
 	for i : Sprite2D in grounds:
 		i.position.x -= speed
 		if last_ground.position.x < x_threshold:

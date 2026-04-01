@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://b8d56wreq86qy"]
+
+[ext_resource type="Script" uid="uid://c0uvgubi2cqse" path="res://game_data/entities/props/bg_tree.gd" id="1_ojkf0"]
+[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_sf3hu"]
+
+[node name="Node2D" type="Node2D" unique_id=2114931020]
+modulate = Color(0.5529412, 1, 0.23921569, 1)
+script = ExtResource("1_ojkf0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1189930078]
+modulate = Color(0.5529412, 1, 0.23921569, 1)
+position = Vector2(13, -33.000004)
+scale = Vector2(0.1953125, 0.62109375)
+texture = ExtResource("1_sf3hu")

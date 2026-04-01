@@ -2,18 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_7xr4x"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="1_e812k"]
+[ext_resource type="Script" uid="uid://dbqf6oy56osa8" path="res://game_data/entities/characters/enemy.gd" id="2_0jt3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xr4x"]
-size = Vector2(129.99998, 129.99998)
+size = Vector2(26, 26)
 
-[node name="box" type="Sprite2D" unique_id=1720719097]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_7xr4x")
+[node name="box" type="Node2D" unique_id=378146509]
+script = ExtResource("2_0jt3g")
+speed = 160.0
 
 [node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("1_e812k")]
+position = Vector2(12.8, -13.2)
 collision_layer = 16
-collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=337671504]
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_7xr4x")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=334136939]
+modulate = Color(1, 0.14117648, 0.1882353, 1)
+position = Vector2(12.799999, -13.199999)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_7xr4x")

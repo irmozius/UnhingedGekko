@@ -6,12 +6,18 @@ var fsm = FunctionalStateMachineGDScript.new()
 @export var ground_manager : GroundManager
 @export var speed : float = 3.5
 @export var jump_force : float = 6
+@onready var hitbox: Hitbox = $Hitbox
+@onready var hurtbox: Hurtbox = $Hurtbox
+@onready var hurtbox_shape: CollisionShape2D = $Hurtbox/CollisionShape2D
 
 var jump_requested : bool = false
 var slash_requested : bool = false
 var checking_floor : bool = false
 
 #region Basic overrides
+
+func _enter_tree() -> void:
+	Global.gekko = self
 
 func _ready() -> void:
 	#Add the states to the state machine
@@ -47,9 +53,10 @@ func jump():
 	fsm.set_state("InAir")
 
 func slash():
-	pass
+	hurtbox_shape.disabled = false
+	get_tree().create_timer(0.5).timeout.connect(func(): hurtbox_shape.disabled = true, CONNECT_ONE_SHOT)
 
-func _on_hitbox_received_hit() -> void:
+func _on_hitbox_received_hit(hurtbox : Hurtbox) -> void:
 	print('ouch!')
 
 #region Running

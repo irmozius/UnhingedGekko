@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c3cj0nltb3mkt"]
+
+[ext_resource type="Script" uid="uid://bn21thcehq480" path="res://game_data/worlds/fake_parallax.gd" id="1_ugplr"]
+
+[node name="FakeParallax" type="Node2D" unique_id=414930753]
+script = ExtResource("1_ugplr")
+
+[node name="FarTimer" type="Timer" parent="." unique_id=1662094425]
+one_shot = true
+
+[node name="MidTimer" type="Timer" parent="." unique_id=548788673]
+one_shot = true
+
+[node name="CloseTimer" type="Timer" parent="." unique_id=1198860561]
+one_shot = true
+
+[node name="Far" type="Node2D" parent="." unique_id=607828239]
+
+[node name="Mid" type="Node2D" parent="." unique_id=206331820]
+
+[node name="Close" type="Node2D" parent="." unique_id=1556219665]
+
+[connection signal="timeout" from="FarTimer" to="." method="_on_far_timer_timeout"]
+[connection signal="timeout" from="MidTimer" to="." method="_on_mid_timer_timeout"]
+[connection signal="timeout" from="CloseTimer" to="." method="_on_close_timer_timeout"]

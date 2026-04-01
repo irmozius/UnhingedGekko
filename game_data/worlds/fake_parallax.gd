@@ -1,0 +1,49 @@
+extends Node2D
+
+const BG_TREE = preload("uid://b8d56wreq86qy")
+
+@onready var close_timer: Timer = $CloseTimer
+@onready var mid_timer: Timer = $MidTimer
+@onready var far_timer: Timer = $FarTimer
+
+@onready var close_root: Node2D = $Close
+@onready var mid_root: Node2D = $Mid
+@onready var far_root: Node2D = $Far
+
+func _ready() -> void:
+	spawn_tree("close")
+	spawn_tree("mid")
+	spawn_tree("far ")
+	close_timer.start(randf_range(0.5,1.2))
+	mid_timer.start(randf_range(1.2,3))
+	far_timer.start(randf_range(2,4))
+
+func spawn_tree(dis : String):
+	var tree : Node2D = BG_TREE.instantiate()
+	var sprite : Sprite2D = tree.get_child(0)
+	match dis:
+		"close":
+			close_root.add_child(tree)
+			tree.speed = 140
+		"mid":
+			mid_root.add_child(tree)
+			sprite.scale.y = 0.8
+			tree.speed = 90
+		"far":
+			far_root.add_child(tree)
+			sprite.scale.y = 1.0
+			tree.speed = 60
+	tree.global_position = global_position
+
+
+func _on_close_timer_timeout() -> void:
+	spawn_tree("close")
+	close_timer.start(randf_range(0.5,1.2))
+
+func _on_mid_timer_timeout() -> void:
+	spawn_tree("mid")
+	mid_timer.start(randf_range(1.2,3))
+
+func _on_far_timer_timeout() -> void:
+	spawn_tree("far")
+	far_timer.start(randf_range(2,4))

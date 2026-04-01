@@ -3,12 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://cyrewj5afti4o" path="res://assets/proto_gekko.png" id="1_aabq3"]
 [ext_resource type="Script" uid="uid://dh1811l83oi2i" path="res://game_data/entities/characters/gekko.gd" id="1_p6orh"]
 [ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_wtvjg"]
+[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_ely7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6orh"]
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtvjg"]
 size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3bsu"]
+radius = 14.035668
 
 [node name="Gekko" type="CharacterBody2D" unique_id=1490024415]
 collision_layer = 2
@@ -27,5 +31,13 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=430464124]
 shape = SubResource("RectangleShape2D_wtvjg")
+
+[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("4_ely7x")]
+position = Vector2(40, 0)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1148758240]
+shape = SubResource("CircleShape2D_f3bsu")
+disabled = true
 
 [connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]
