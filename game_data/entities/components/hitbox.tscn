@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dv7qoieljaare"]
+
+[ext_resource type="Script" uid="uid://2rl1xe2y7g8r" path="res://game_data/entities/components/hitbox.gd" id="1_opksc"]
+
+[node name="Hitbox" type="Area2D" unique_id=2037733599]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_opksc")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

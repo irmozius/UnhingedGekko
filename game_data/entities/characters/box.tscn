@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bxbeif1i1lrj1"]
+
+[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_7xr4x"]
+[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="1_e812k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xr4x"]
+size = Vector2(129.99998, 129.99998)
+
+[node name="box" type="Sprite2D" unique_id=1720719097]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_7xr4x")
+
+[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("1_e812k")]
+collision_layer = 16
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=337671504]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_7xr4x")

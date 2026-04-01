@@ -1,10 +1,51 @@
 [gd_scene format=3 uid="uid://d3il87cf7s1l0"]
 
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_2cwph"]
+[ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
+[ext_resource type="Script" uid="uid://etbf22i4k604" path="res://game_data/managers/ground_manager.gd" id="2_3qxxw"]
+[ext_resource type="Script" uid="uid://b1i8f3jtp1k0p" path="res://game_data/worlds/spawner.gd" id="4_v856d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
+size = Vector2(717, 63)
 
 [node name="World" type="Node2D" unique_id=1525869542]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275681760]
-position = Vector2(-47, -47)
-scale = Vector2(0.265625, 0.265625)
+[node name="Gekko" parent="." unique_id=1490024415 node_paths=PackedStringArray("ground_manager") instance=ExtResource("1_7i7qt")]
+position = Vector2(33, 105)
+platform_on_leave = 2
+ground_manager = NodePath("../GroundManager")
+speed = 400.0
+jump_force = 350.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=398270901]
+position = Vector2(120, 80)
+
+[node name="GroundManager" type="Node2D" parent="." unique_id=1641325381]
+script = ExtResource("2_3qxxw")
+
+[node name="GrndSprite" type="Sprite2D" parent="GroundManager" unique_id=2025121232]
+position = Vector2(64, 191)
 texture = ExtResource("1_2cwph")
+
+[node name="GrndSprite2" type="Sprite2D" parent="GroundManager" unique_id=1331344665]
+position = Vector2(192, 191)
+texture = ExtResource("1_2cwph")
+
+[node name="GrndSprite3" type="Sprite2D" parent="GroundManager" unique_id=1489080867]
+position = Vector2(320, 191)
+texture = ExtResource("1_2cwph")
+
+[node name="GrndSprite4" type="Sprite2D" parent="GroundManager" unique_id=1387543975]
+position = Vector2(448, 191)
+texture = ExtResource("1_2cwph")
+
+[node name="Spawner" type="Node2D" parent="." unique_id=731724178]
+position = Vector2(400, 127)
+script = ExtResource("4_v856d")
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1028207548]
+position = Vector2(0, 127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=657892747]
+position = Vector2(358.5, 32.5)
+shape = SubResource("RectangleShape2D_7i7qt")

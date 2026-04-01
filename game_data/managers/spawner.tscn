@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d26o1ymlvc8h4"]
+
+[ext_resource type="Script" uid="uid://b1i8f3jtp1k0p" path="res://game_data/worlds/spawner.gd" id="1_0sg3f"]
+[ext_resource type="PackedScene" uid="uid://bxbeif1i1lrj1" path="res://game_data/entities/characters/box.tscn" id="2_dccjt"]
+
+[node name="Spawner" type="Node2D" unique_id=927126007]
+script = ExtResource("1_0sg3f")
+obstacles = Array[PackedScene]([ExtResource("2_dccjt")])
