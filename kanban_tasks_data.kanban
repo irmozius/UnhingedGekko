@@ -1,0 +1,262 @@
+{
+	"categories": [
+		{
+			"uuid": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"title": "Mechanics",
+			"color": "a68051"
+		},
+		{
+			"uuid": "8e75cd52-6e40-45cc-a5d2-6e9d3d6aff81",
+			"title": "Visuals",
+			"color": "1761b3"
+		},
+		{
+			"uuid": "b3cf60b0-9745-4433-9e45-32524a5cd05b",
+			"title": "Audio",
+			"color": "18cf28"
+		},
+		{
+			"uuid": "1dd9252a-918a-4d67-b8c1-ef5439fa00fa",
+			"title": "System",
+			"color": "606060"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "7eedf728-b00a-4478-9edd-413aca9d7a20",
+			"title": "Todo",
+			"tasks": [
+				"9ad63d04-ae19-4d76-aaa3-384e4ad089dd",
+				"f08740d1-4aaa-40a7-bd81-6ca2616ad5e5",
+				"7170d5da-48de-4b15-8b6b-29ca1df92a03",
+				"25a52747-343a-4ad0-a553-850d5baa4d5c",
+				"d364208f-5468-41c7-9f06-a20e4e89fd1f",
+				"a7ed3f74-a93b-4fd3-98d8-4cbec7b0466f",
+				"c4273c2d-793e-42dc-a0b8-63fcd2b81023",
+				"944e2f58-ef19-43e0-95e3-9f4f0e2a6ab6",
+				"3415d49d-2e4f-4814-ac68-6e85a01066c2",
+				"1d839aa8-3551-47a2-b51f-8984f39847a8"
+			]
+		},
+		{
+			"uuid": "cd37bd00-d466-4db3-ac14-bb411fd9f384",
+			"title": "Doing",
+			"tasks": [
+				"159dc9b0-0a48-4829-99d4-e710acd0b45c"
+			]
+		},
+		{
+			"uuid": "30b10375-3e42-4839-a1b8-351770776a01",
+			"title": "Done",
+			"tasks": [
+				"0d42f021-b3a6-45ec-bf3d-c9f96ea54ce8",
+				"a1812645-0f3e-4398-820f-4470be136715",
+				"1b4f2e1f-c6eb-4850-86dc-7812189193e0",
+				"7baad286-27d3-4909-aecf-4cd9fa44e90b",
+				"569c7005-b67e-4b1e-a76e-22b07e900985",
+				"c6827a30-9d5a-4b74-a423-f9e690499490",
+				"bfefae35-a14a-4a8b-be4d-e07295b9eab8"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "9ad63d04-ae19-4d76-aaa3-384e4ad089dd",
+			"title": "Sprite states",
+			"description": "",
+			"category": "8e75cd52-6e40-45cc-a5d2-6e9d3d6aff81",
+			"steps": [
+				{
+					"details": "Running",
+					"done": false
+				},
+				{
+					"details": "In air",
+					"done": false
+				},
+				{
+					"details": "Jump",
+					"done": false
+				},
+				{
+					"details": "Attack",
+					"done": false
+				},
+				{
+					"details": "Death",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "159dc9b0-0a48-4829-99d4-e710acd0b45c",
+			"title": "Attack state",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "0d42f021-b3a6-45ec-bf3d-c9f96ea54ce8",
+			"title": "Jump",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "a1812645-0f3e-4398-820f-4470be136715",
+			"title": "Slash",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "1b4f2e1f-c6eb-4850-86dc-7812189193e0",
+			"title": "Enemy class",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "7baad286-27d3-4909-aecf-4cd9fa44e90b",
+			"title": "Enemy spawning system",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "569c7005-b67e-4b1e-a76e-22b07e900985",
+			"title": "BG scrolling",
+			"description": "",
+			"category": "8e75cd52-6e40-45cc-a5d2-6e9d3d6aff81",
+			"steps": []
+		},
+		{
+			"uuid": "c6827a30-9d5a-4b74-a423-f9e690499490",
+			"title": "Parallax",
+			"description": "",
+			"category": "8e75cd52-6e40-45cc-a5d2-6e9d3d6aff81",
+			"steps": []
+		},
+		{
+			"uuid": "f08740d1-4aaa-40a7-bd81-6ca2616ad5e5",
+			"title": "Attack SFX",
+			"description": "",
+			"category": "b3cf60b0-9745-4433-9e45-32524a5cd05b",
+			"steps": [
+				{
+					"details": "Running enemy",
+					"done": false
+				},
+				{
+					"details": "Flying enemy",
+					"done": false
+				},
+				{
+					"details": "Boss",
+					"done": false
+				},
+				{
+					"details": "Gekko",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "7170d5da-48de-4b15-8b6b-29ca1df92a03",
+			"title": "Music",
+			"description": "",
+			"category": "b3cf60b0-9745-4433-9e45-32524a5cd05b",
+			"steps": [
+				{
+					"details": "Menu",
+					"done": false
+				},
+				{
+					"details": "Game normal",
+					"done": false
+				},
+				{
+					"details": "Death",
+					"done": false
+				},
+				{
+					"details": "Win",
+					"done": false
+				},
+				{
+					"details": "Boss fight",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "25a52747-343a-4ad0-a553-850d5baa4d5c",
+			"title": "Weapon levels",
+			"description": "Weapons come in 3 ranks\n\nNormal\nRare \nUnhinged\n\nDrops are based off a random drop chance \n\nIf 1.00 is over all\n\n< .75 normal  75%\n> .80 rare 20%\nElse unhinged 5%\n\nWeapons will need damage outputs, a scalable collider for hitboxes, cooldown and weapon rank. Weapon rank equipped should affect player stats autoload as an int from 0 , 1 and 2. And depending on the int is the attack animation the gekko does. Basically :\n\nIf Knife has a Rank of 0 and equipped\nAuto load player stats is 0\nAttack 1 type active\nAttack one animation play\n\nOr\n\nIf Fire Sword has a rank of 1 and equipped\nAuto load player stats is 1\nAttack type 2\nAttack two animation play",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "d364208f-5468-41c7-9f06-a20e4e89fd1f",
+			"title": "Player HP system",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "a7ed3f74-a93b-4fd3-98d8-4cbec7b0466f",
+			"title": "Hurtbox damage levels",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "c4273c2d-793e-42dc-a0b8-63fcd2b81023",
+			"title": "Enemies drop XP",
+			"description": "As the player defeats enemies they drop exp. When exp reaches an amount level up ensues raising HP and damage. ",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "944e2f58-ef19-43e0-95e3-9f4f0e2a6ab6",
+			"title": "Chest system",
+			"description": "On a timer ranging from 30 seconds to a min, a chest will spawn and the player can break the box. The box will hold a random weapon which the player can choose to equip or not. ",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "3415d49d-2e4f-4814-ac68-6e85a01066c2",
+			"title": "Title screen",
+			"description": "",
+			"category": "1dd9252a-918a-4d67-b8c1-ef5439fa00fa",
+			"steps": []
+		},
+		{
+			"uuid": "1d839aa8-3551-47a2-b51f-8984f39847a8",
+			"title": "Boss fights",
+			"description": "Bosses are where damage output means something. I want to keep it simple. On a timer the boss will move towards the player and the player must slash the boss to keep them back and deal damage. Hard bosses will move faster or have enemies spawn.\n\nBosses will have hp and appear after a set time… say 2 mins.\nMaybe on boss defeat it drops a chest with a higher chance of an unhinged rank weapon:\n\nIf 1.00 is over all\n\n< .45 normal  45%\n> .70 rare 30%\nElse unhinged 15%\n\n- Master Dragons:\n\n\nAre the same as bosses by they will fly and move toward the player.  My idea since rare and unhinged rank attacks in arcs will make these bosses a bit easier. Maybe these are 5 or 6 mins  After 2 boss fights. Perhaps a higher rank chest again.",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "bfefae35-a14a-4a8b-be4d-e07295b9eab8",
+			"title": "Player states",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"7eedf728-b00a-4478-9edd-413aca9d7a20"
+			],
+			[
+				"cd37bd00-d466-4db3-ac14-bb411fd9f384"
+			],
+			[
+				"30b10375-3e42-4839-a1b8-351770776a01"
+			]
+		]
+	}
+}

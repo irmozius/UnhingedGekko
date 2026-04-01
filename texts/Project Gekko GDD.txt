@@ -1,4 +1,4 @@
-﻿Project Gekko is a 2D pixel art endless runner mixed with a hack n slash game.
+Project Gekko is a 2D pixel art endless runner mixed with a hack n slash game.
 
 
 Gamplay Loop:
