@@ -30,6 +30,14 @@ var slash_requested : bool = false
 ## Used to enable/disable floor checking during jump.
 var checking_floor : bool = false
 
+## Slash controls
+@export_group("Slash Settings")
+@export var slash_cooldown_timer : float = 0.7
+@export var slash_duration:float = 0.5
+var slash_on_cooldown: bool = false #This disallows slash on cd
+
+
+
 #region Basic overrides
 
 
@@ -83,12 +91,23 @@ func jump():
 ## Initiate slash attack, enabling slash collision briefly
 ## then switching it back off. Also show hit marker.
 func slash():
-	hurtbox_shape.disabled = false
-	hit_marker.show()
-	get_tree().create_timer(0.5).timeout.connect(func():
-		hurtbox_shape.disabled = true
-		hit_marker.hide(),
-		CONNECT_ONE_SHOT)
+	
+	if not slash_on_cooldown:
+		print("Player is Slasing")
+		hurtbox_shape.disabled = false
+		hit_marker.show()
+		get_tree().create_timer(slash_duration).timeout.connect(func():
+			hurtbox_shape.disabled = true
+			hit_marker.hide(),
+			CONNECT_ONE_SHOT)
+			
+		#cd stuff
+		slash_on_cooldown = true
+		get_tree().create_timer(slash_cooldown_timer).timeout.connect(func():
+			slash_on_cooldown =false
+			)
+	else:
+		print("Slash on cooldown")
 
 ## When hitbox receives a hit, die. Pass through the hurtbox in case we need its data later.
 func _on_hitbox_received_hit(_hurtbox : Hurtbox) -> void:
@@ -149,6 +168,9 @@ func inair_pupdate(delta : float):
 	## Apply gravity and continue moving the ground
 	velocity.y += 900 * delta
 	scroll_ground(delta)
+	##allow slashing mid air
+	if slash_requested:
+		slash()
 	if checking_floor:
 		if is_on_floor():
 			## Leave InAir once on floor
