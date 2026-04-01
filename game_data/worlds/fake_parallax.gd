@@ -1,3 +1,4 @@
+class_name FakeParallax
 extends Node2D
 
 const BG_TREE = preload("uid://b8d56wreq86qy")
@@ -14,9 +15,9 @@ func _ready() -> void:
 	spawn_tree("close")
 	spawn_tree("mid")
 	spawn_tree("far ")
-	close_timer.start(randf_range(0.5,1.2))
-	mid_timer.start(randf_range(1.2,3))
-	far_timer.start(randf_range(2,4))
+	close_timer.start(randf_range(0.1,0.4))
+	mid_timer.start(randf_range(0.2,0.5))
+	far_timer.start(randf_range(0.3,0.8))
 
 func spawn_tree(dis : String):
 	var tree : Node2D = BG_TREE.instantiate()

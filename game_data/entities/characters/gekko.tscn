@@ -44,7 +44,7 @@ jump_force = 12.0
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_thimi")
 autoplay = "default"
-frame_progress = 0.7609038
+frame_progress = 0.493041
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760843867]
 shape = SubResource("RectangleShape2D_p6orh")

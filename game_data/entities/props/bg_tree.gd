@@ -1,3 +1,4 @@
+class_name BGTree
 extends Node2D
 
 var speed : float = 200
