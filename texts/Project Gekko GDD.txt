@@ -1,0 +1,111 @@
+﻿Project Gekko is a 2D pixel art endless runner mixed with a hack n slash game.
+
+
+Gamplay Loop:
+
+
+When player enters the game, after the title screen 
+
+
+The player will start auto running with 2 buttons, Jump and Attack. Players can jump over ground enemies or jump to attack flying enemies.
+
+
+As the player defeats enemies they drop exp. When exp reaches an amount level up ensues raising HP and damage. 
+
+
+Chest loop:
+
+
+On a timer ranging from 30 seconds to a min, a chest will spawn and the player can break the box. The box will hold a random weapon which the player can choose to equip or not. 
+
+
+Weapons. 
+
+
+Weapons come in 3 ranks
+
+
+Normal
+Rare 
+Unhinged
+
+
+Drops are based off a random drop chance 
+
+
+If 1.00 is over all
+
+
+< .75 normal  75%
+> .80 rare 20%
+Else unhinged 5%
+
+
+We can adjust these values for gameplay feel and such
+
+
+Weapons will need damage outputs, a scalable collider for hitboxes, cooldown and weapon rank.
+
+
+Weapon rank equipped should affect player stats autoload as an int from 0 , 1 and 2. And depending on the int is the attack animation the gekko does.
+
+
+Basically 
+
+
+If Knife has a Rank of 0 and equipped
+Auto load player stats is 0
+Attack 1 type active
+Attack one animation play
+
+
+Or
+
+
+If Fire Sword has a rank of 1 and equipped
+Auto load player stats is 1
+Attack type 2
+Attack two animation play
+
+
+
+
+Weapon sprite sheets are drawn to overlap the player sprite so the animation players can play overtop of each other.
+
+
+Bosses are where damage output means something. I want to keep it simple. On a timer the boss will move towards the player and the player must slash the boss to keep them back and deal damage. Hard bosses will move faster or have enemies spawn.
+
+
+Bosses will have hp and appear after a set time… say 2 mins.
+
+
+Maybe on boss defeat it drops a chest with a higher chance of an unhinged rank weapon.
+
+
+If 1.00 is over all
+
+
+< .45 normal  45%
+> .70 rare 30%
+Else unhinged 15%
+
+
+An idea. Ill draw a different boss chest sprite
+
+
+Master Dragons:
+
+
+Are the same as bosses by they will fly and move toward the player. 
+
+
+My idea since rare and unhinged rank attacks in arcs will make these bosses a bit easier.
+
+
+Maybe these are 5 or 6 mins 
+
+
+After 2 boss fights.
+
+
+Perhaps a higher rank chest again
