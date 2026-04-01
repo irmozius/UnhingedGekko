@@ -1,8 +1,10 @@
+## UI subsystem
 class_name UI
 extends CanvasLayer
 
 @onready var died_screen: PanelContainer = $DiedScreen
 
+## Setup player death connection for death screen
 func _ready() -> void:
 	Global.player_died.connect(show_died_screen)
 
