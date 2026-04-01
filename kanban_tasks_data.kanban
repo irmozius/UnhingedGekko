@@ -46,6 +46,9 @@
 			"uuid": "30b10375-3e42-4839-a1b8-351770776a01",
 			"title": "Done",
 			"tasks": [
+				"5a8e30bb-93a4-4434-abdd-21aee480080e",
+				"c31a4808-dfe6-4b38-8a75-2d8e995a6298",
+				"d1ec3dba-3501-4c83-88b3-2c33f3a3e2e7",
 				"d364208f-5468-41c7-9f06-a20e4e89fd1f",
 				"a7ed3f74-a93b-4fd3-98d8-4cbec7b0466f",
 				"159dc9b0-0a48-4829-99d4-e710acd0b45c",
@@ -267,6 +270,27 @@
 			"title": "Hit/hurtbox system",
 			"description": "",
 			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "d1ec3dba-3501-4c83-88b3-2c33f3a3e2e7",
+			"title": "Stats system",
+			"description": "Adding statistics after each entity dodged or killed",
+			"category": "1dd9252a-918a-4d67-b8c1-ef5439fa00fa",
+			"steps": []
+		},
+		{
+			"uuid": "5a8e30bb-93a4-4434-abdd-21aee480080e",
+			"title": "Enemy HP system",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
+			"steps": []
+		},
+		{
+			"uuid": "c31a4808-dfe6-4b38-8a75-2d8e995a6298",
+			"title": "Stats in end screen",
+			"description": "",
+			"category": "8e75cd52-6e40-45cc-a5d2-6e9d3d6aff81",
 			"steps": []
 		}
 	],

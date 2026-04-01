@@ -89,6 +89,25 @@ text = "YOU DIED"
 label_settings = SubResource("LabelSettings_0yaf8")
 horizontal_alignment = 1
 
+[node name="MarginContainer" type="MarginContainer" parent="UI/DiedScreen/VBoxContainer" unique_id=1242721895]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Statsgrid" type="GridContainer" parent="UI/DiedScreen/VBoxContainer/MarginContainer" unique_id=1839751284]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="statname" type="Label" parent="UI/DiedScreen/VBoxContainer/MarginContainer/Statsgrid" unique_id=1405038480]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+
+[node name="statnumber" type="Label" parent="UI/DiedScreen/VBoxContainer/MarginContainer/Statsgrid" unique_id=732896355]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+horizontal_alignment = 1
+
 [node name="RetryBut" type="Button" parent="UI/DiedScreen/VBoxContainer" unique_id=441576917]
 layout_mode = 2
 theme_override_font_sizes/font_size = 7

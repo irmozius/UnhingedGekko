@@ -12,6 +12,8 @@ size = Vector2(16, 55)
 script = ExtResource("1_k4rcp")
 speed = 200.0
 hitbox = NodePath("Hitbox")
+hp = 1
+entity_name = "Iguana"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
 modulate = Color(1, 0.29411766, 0.105882354, 1)

@@ -238,6 +238,7 @@ shape = SubResource("CapsuleShape2D_ranni")
 visible = false
 position = Vector2(32, 0)
 collision_layer = 8
+damage = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1148758240]
 shape = SubResource("CircleShape2D_f3bsu")

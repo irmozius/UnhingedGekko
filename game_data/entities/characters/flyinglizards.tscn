@@ -12,6 +12,7 @@ size = Vector2(16, 11)
 script = ExtResource("1_pg13b")
 speed = 100.0
 hitbox = NodePath("Hitbox")
+entity_name = "Flying Lizard"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
 modulate = Color(1, 0.29411766, 0.105882354, 1)
