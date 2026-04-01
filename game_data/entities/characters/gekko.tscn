@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dh1811l83oi2i" path="res://game_data/entities/characters/gekko.gd" id="1_p6orh"]
 [ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_wtvjg"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_ely7x"]
+[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="5_f3bsu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p6orh"]
 size = Vector2(40, 40)
@@ -18,6 +19,7 @@ radius = 14.035668
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_p6orh")
+jump_force = 12.0
 
 [node name="GekkoSprite" type="Sprite2D" parent="." unique_id=1284019993]
 texture = ExtResource("1_aabq3")
@@ -39,5 +41,13 @@ collision_layer = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1148758240]
 shape = SubResource("CircleShape2D_f3bsu")
 disabled = true
+
+[node name="HitMarker" type="Sprite2D" parent="." unique_id=1984310832]
+visible = false
+modulate = Color(3.8147569, 3.8147569, 3.8147569, 1)
+position = Vector2(39.999996, 0)
+rotation = -0.7853982
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("5_f3bsu")
 
 [connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]

@@ -9,6 +9,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 @onready var hitbox: Hitbox = $Hitbox
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var hurtbox_shape: CollisionShape2D = $Hurtbox/CollisionShape2D
+@onready var hit_marker: Sprite2D = $HitMarker
 
 var jump_requested : bool = false
 var slash_requested : bool = false
@@ -18,12 +19,14 @@ var checking_floor : bool = false
 
 func _enter_tree() -> void:
 	Global.gekko = self
+	Global.player_dead = false
 
 func _ready() -> void:
 	#Add the states to the state machine
 	fsm.state_changed.connect(on_state_change)
 	fsm.add_state("Running", running_enter, running_exit, running_update, running_pupdate)
 	fsm.add_state("InAir", inair_enter, inair_exit, inair_update, inair_pupdate)
+	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, Callable())
 	fsm.set_state("InAir")
 	
 func _process(delta: float) -> void:
@@ -54,10 +57,19 @@ func jump():
 
 func slash():
 	hurtbox_shape.disabled = false
-	get_tree().create_timer(0.5).timeout.connect(func(): hurtbox_shape.disabled = true, CONNECT_ONE_SHOT)
+	hit_marker.show()
+	get_tree().create_timer(0.5).timeout.connect(func():
+		hurtbox_shape.disabled = true
+		hit_marker.hide(),
+		CONNECT_ONE_SHOT)
 
-func _on_hitbox_received_hit(hurtbox : Hurtbox) -> void:
-	print('ouch!')
+func _on_hitbox_received_hit(_hurtbox : Hurtbox) -> void:
+	die()
+	
+func die():
+	Global.player_dead = true
+	Global.player_died.emit()
+	fsm.set_state("Dead")
 
 #region Running
 
@@ -91,11 +103,24 @@ func inair_update(_delta : float):
 	pass
 	
 func inair_pupdate(delta : float):
-	velocity.y += 700 * delta
+	velocity.y += 900 * delta
 	scroll_ground(delta)
 	if checking_floor:
 		if is_on_floor():
 			checking_floor = false
 			fsm.set_state("Running")
 
+#endregion
+
+#region Dead
+
+func dead_enter():
+	velocity.y = 0
+
+func dead_exit():
+	pass
+
+func dead_update(_delta : float):
+	pass
+	
 #endregion

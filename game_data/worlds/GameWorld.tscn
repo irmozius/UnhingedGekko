@@ -5,9 +5,13 @@
 [ext_resource type="Script" uid="uid://etbf22i4k604" path="res://game_data/managers/ground_manager.gd" id="2_3qxxw"]
 [ext_resource type="PackedScene" uid="uid://c3cj0nltb3mkt" path="res://game_data/worlds/fake_parallax.tscn" id="2_ob8w1"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
+[ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
 size = Vector2(717, 63)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yaf8"]
+font_size = 10
 
 [node name="World" type="Node2D" unique_id=1525869542]
 
@@ -45,6 +49,8 @@ position = Vector2(120, 80)
 
 [node name="Spawner" parent="." unique_id=927126007 instance=ExtResource("4_v856d")]
 position = Vector2(384, 127)
+min_time = 2.75
+max_time = 4.36
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1028207548]
 position = Vector2(0, 127)
@@ -52,3 +58,36 @@ position = Vector2(0, 127)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=657892747]
 position = Vector2(358.5, 32.5)
 shape = SubResource("RectangleShape2D_7i7qt")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=245426517]
+script = ExtResource("6_0yaf8")
+
+[node name="DiedScreen" type="PanelContainer" parent="UI" unique_id=619375983]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -20.0
+offset_right = 46.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/DiedScreen" unique_id=532014871]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/DiedScreen/VBoxContainer" unique_id=732864793]
+layout_mode = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_0yaf8")
+horizontal_alignment = 1
+
+[node name="RetryBut" type="Button" parent="UI/DiedScreen/VBoxContainer" unique_id=441576917]
+layout_mode = 2
+theme_override_font_sizes/font_size = 7
+text = "RETRY"
+
+[connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]

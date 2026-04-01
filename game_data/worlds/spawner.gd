@@ -10,6 +10,7 @@ func _ready() -> void:
 	timer.start(randf_range(min_time, max_time))
 
 func spawn():
+	if Global.player_dead: return
 	var obj : Enemy = obstacles.pick_random().instantiate()
 	add_child(obj)
 	obj.global_position = global_position

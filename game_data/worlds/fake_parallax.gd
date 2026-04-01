@@ -37,13 +37,16 @@ func spawn_tree(dis : String):
 
 
 func _on_close_timer_timeout() -> void:
+	if Global.player_dead: return
 	spawn_tree("close")
 	close_timer.start(randf_range(0.5,1.2))
 
 func _on_mid_timer_timeout() -> void:
+	if Global.player_dead: return
 	spawn_tree("mid")
 	mid_timer.start(randf_range(1.2,3))
 
 func _on_far_timer_timeout() -> void:
+	if Global.player_dead: return
 	spawn_tree("far")
 	far_timer.start(randf_range(2,4))
