@@ -82,11 +82,11 @@
 				},
 				{
 					"details": "Death",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Attack1",
-					"done": false
+					"done": true
 				},
 				{
 					"details": "Attack2",
