@@ -69,6 +69,27 @@ func _on_state_change(s_name : String):
 func check_action_input():
 	jump_requested = Input.is_action_just_pressed("jump")
 	slash_requested = Input.is_action_just_pressed("slash")
+## Mobile controls
+var touch_start_pos = Vector2.ZERO
+var swipe_threshold = 50 # Pixels needed to count as a swipe
+
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed:
+			touch_start_pos = event.position 
+		else:
+			# Check where they let go
+			_check_for_swipe(event.position) 
+
+func _check_for_swipe(end_pos: Vector2):
+	var swipe_vector = end_pos - touch_start_pos
+	if swipe_vector.length() > swipe_threshold:
+		if swipe_vector.y < -abs(swipe_vector.x):
+			jump_requested = true
+			print("Swipe Jump!")
+		if swipe_vector.x > abs(swipe_vector.y):
+			slash_requested = true
+			print("Swipe Slash!")
 
 ## Move the ground to simulate movement.
 func scroll_ground(delta : float):
@@ -82,7 +103,8 @@ func jump():
 ## Initiate slash attack, enabling slash collision briefly
 ## then switching it back off. Also show hit marker.
 func slash():
-	fsm.set_state("Attacking")
+	if not attack.slash_on_cooldown:
+		fsm.set_state("Attacking")
 
 ## When hitbox receives a hit, get the offender and call
 ## take_damage using its damage value.
@@ -185,7 +207,8 @@ func inair_pupdate(delta : float):
 	scroll_ground(delta)
 	##allow slashing mid air
 	if slash_requested:
-		slash()
+		if not attack.slash_on_cooldown:
+			slash()
 	if checking_floor:
 		if is_on_floor():
 			## Leave InAir once on floor
