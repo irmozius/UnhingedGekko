@@ -23,6 +23,10 @@ func _on_hitbox_received_hit(_hurtbox : Hurtbox):
 
 ## We should do something more interesting when they die, at some point
 func die():
+	if has_node("Hurtbox"):
+		$Hurtbox.queue_free()
+	hitbox.queue_free() #safety
+	await play_death_animation()
 	update_stats()
 	queue_free()
 	
@@ -36,7 +40,12 @@ func take_damage(amount):
 	if hp<=0:
 		die()
 
-# This is so that we can display in diedscreen later
+func play_death_animation():
+	var anim_node= get_node_or_null("AnimationPlayer")
+	if anim_node:
+		anim_node.play("death")
+		await anim_node.animation_finished
+	# This is so that we can display in diedscreen later
 func update_stats():
 	Global.stats[entity_name] = Global.stats.get(entity_name, 0) + 1
 	#print(Global.stats)
