@@ -9,7 +9,7 @@ func get_weapon_from_dbname(wep_name : String) -> WeaponResource:
 	return null
 
 func get_random_weapon_from_tier(tier : int) -> WeaponResource: 
-	return weapon_db[tier].tier_dictionary.values().pick_random()
+	return weapon_db[tier].get_random_weapon()
 
 func get_random_weapon() -> WeaponResource:
 	var randf : float = randf()
