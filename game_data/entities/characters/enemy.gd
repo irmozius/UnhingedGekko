@@ -11,6 +11,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 @export var entity_name: String
 @export var anim : AnimationPlayer
 @export var hurtbox : Hurtbox
+@export var knockback: int = 200
 
 func _ready() -> void:
 	## Setup connection to react to player dying, simply switching off movement once it occurs.
@@ -88,7 +89,7 @@ func knockback_update(_delta : float):
 	pass
 
 func knockback_pupdate(delta : float):
-	position.x += 75 * delta
+	position.x += knockback * delta
 
 #endregion
 

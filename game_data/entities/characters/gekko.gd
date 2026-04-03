@@ -68,6 +68,8 @@ func _on_state_change(s_name : String):
 	
 ## Poll the state of input buttons.
 func check_action_input():
+
+
 	jump_requested = Input.is_action_just_pressed("jump")
 	slash_requested = Input.is_action_just_pressed("slash")
 
@@ -172,11 +174,14 @@ func running_pupdate(delta : float):
 ## Entering attacking state
 func attack_enter():
 	gekko_anim.play("attack1")
-	attack.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
-
+	# safety check that fixes the bug where it tries to reattach to the same node
+	if not attack.attack_finished.is_connected(_on_attack_finished):
+		attack.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)
 ## Exiting attacking state
 func attack_exit():
-	pass
+	# safety line that cleans out the node. can be removed. 
+	if attack.attack_finished.is_connected(_on_attack_finished):
+		attack.attack_finished.disconnect(_on_attack_finished)
 
 ## Process attacking state:
 func attack_update(_delta : float):
@@ -194,8 +199,9 @@ func attack_pupdate(delta : float):
 
 func inair_enter():
 	## 30 milisecond timer before enabling ground check.
-	get_tree().create_timer(0.15).timeout.connect(func(): checking_floor = true, CONNECT_ONE_SHOT)
-
+	#timer is causing issues becuase attack makes the layer hang in the air
+	#get_tree().create_timer(0.15).timeout.connect(func(): checking_floor = true, CONNECT_ONE_SHOT)
+	pass
 ## Reset vertical velocity on exit.
 func inair_exit():
 	velocity.y = 0
@@ -211,11 +217,13 @@ func inair_pupdate(delta : float):
 	if slash_requested:
 		if not attack.slash_on_cooldown:
 			slash()
-	if checking_floor:
-		if is_on_floor():
-			## Leave InAir once on floor
-			checking_floor = false
-			fsm.set_state("Running")
+	if velocity.y >= 0 and is_on_floor():
+		fsm.set_state("Running")
+	#if checking_floor:
+	#	if is_on_floor():
+	#		## Leave InAir once on floor
+	#		checking_floor = false
+	#		fsm.set_state("Running")
 
 #endregion
 
