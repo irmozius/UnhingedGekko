@@ -8,6 +8,7 @@ signal attack_finished
 @onready var hurtbox: Hurtbox = $"../Hurtbox"
 ## Need reference for the shape of the hurtbox to enable/disable it.
 @onready var hurtbox_shape: CollisionShape2D = $"../Hurtbox/CollisionShape2D"
+@onready var attack_sprite: Sprite2D = $"../AttackSprite"
 
 ## Hitmarker is just a debug visual currently used to show hits activating.
 @onready var hit_marker: Sprite2D = $"../HitMarker"
@@ -17,6 +18,13 @@ signal attack_finished
 @export var slash_duration:float = 0.25
 @export var slash_damage:float = 1.0
 var slash_on_cooldown: bool = false #This disallows slash on cd
+var current_weapon : WeaponResource:
+	set(wep):
+		current_weapon = wep
+		attack_sprite.texture = wep.spritesheet
+		Global.current_attack_damage = wep.damage
+		slash_duration = wep.attack_duration
+		slash_cooldown_timer = wep.cooldown_duration
 
 func slash():
 	

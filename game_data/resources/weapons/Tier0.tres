@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponTier" format=3 uid="uid://ix1631bo086b"]
+
+[ext_resource type="Script" uid="uid://bkidu3wy3002" path="res://game_data/resources/WeaponTier.gd" id="1_11prm"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_uvs1k"]
+[ext_resource type="Resource" uid="uid://dmgkap84s6bjm" path="res://game_data/resources/weapons/verdant_knife.tres" id="3_qbjqk"]
+[ext_resource type="Resource" uid="uid://bmr7l5yye4dql" path="res://game_data/resources/weapons/broadsword.tres" id="4_75b5k"]
+
+[resource]
+script = ExtResource("1_11prm")
+tier_dictionary = Dictionary[String, ExtResource("2_uvs1k")]({
+"broadsword": ExtResource("4_75b5k"),
+"verdant_knife": ExtResource("3_qbjqk")
+})
+metadata/_custom_type_script = "uid://bkidu3wy3002"

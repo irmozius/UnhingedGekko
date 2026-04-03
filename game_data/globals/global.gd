@@ -7,6 +7,10 @@ var current_movement_speed : float = 0.0
 var player_dead : bool = false
 var max_hp : int = 3
 var current_hp : int = 3
+var current_attack_damage : int = 1:
+	set(v):
+		current_attack_damage = v
+		gekko.hurtbox.damage = v
 var stats:Dictionary
 
 signal player_died

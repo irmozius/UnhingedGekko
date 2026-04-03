@@ -46,6 +46,7 @@ func _ready() -> void:
 	fsm.add_state("Attacking", attack_enter, attack_exit, attack_update, attack_pupdate)
 	## Set initial state
 	fsm.set_state("InAir")
+	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("broadsword")
 	
 func _process(delta: float) -> void:
 	## Let the state machine process the current state.
@@ -69,6 +70,7 @@ func _on_state_change(s_name : String):
 func check_action_input():
 	jump_requested = Input.is_action_just_pressed("jump")
 	slash_requested = Input.is_action_just_pressed("slash")
+
 ## Mobile controls
 var touch_start_pos = Vector2.ZERO
 var swipe_threshold = 50 # Pixels needed to count as a swipe

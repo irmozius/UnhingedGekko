@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponTier" format=3 uid="uid://s0eew2wcecak"]
+
+[ext_resource type="Script" uid="uid://bkidu3wy3002" path="res://game_data/resources/WeaponTier.gd" id="1_5fh6m"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_xxldl"]
+[ext_resource type="Resource" uid="uid://ccgl73jaex0le" path="res://game_data/resources/weapons/firebane.tres" id="3_4dtb7"]
+[ext_resource type="Resource" uid="uid://7xe3dady0ck6" path="res://game_data/resources/weapons/morningstar.tres" id="4_l8f4w"]
+
+[resource]
+script = ExtResource("1_5fh6m")
+tier_dictionary = Dictionary[String, ExtResource("2_xxldl")]({
+"firebane": ExtResource("3_4dtb7"),
+"morningstar": ExtResource("4_l8f4w")
+})
+metadata/_custom_type_script = "uid://bkidu3wy3002"

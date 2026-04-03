@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://c2kdtxie1l368"]
 
 [ext_resource type="Script" uid="uid://wtxxh5unk785" path="res://game_data/globals/weapon_database.gd" id="1_6j5og"]
+[ext_resource type="Script" uid="uid://bkidu3wy3002" path="res://game_data/resources/WeaponTier.gd" id="2_1is8t"]
+[ext_resource type="Resource" uid="uid://ix1631bo086b" path="res://game_data/resources/weapons/Tier0.tres" id="3_3rtdx"]
+[ext_resource type="Resource" uid="uid://s0eew2wcecak" path="res://game_data/resources/weapons/Tier1.tres" id="4_ry7jx"]
+[ext_resource type="Resource" uid="uid://2wb6rxgxs00r" path="res://game_data/resources/weapons/Tier2.tres" id="5_xufgu"]
 
 [node name="WeaponDatabase" type="Node" unique_id=84591047]
 script = ExtResource("1_6j5og")
+weapon_db = Array[ExtResource("2_1is8t")]([ExtResource("3_3rtdx"), ExtResource("4_ry7jx"), ExtResource("5_xufgu")])

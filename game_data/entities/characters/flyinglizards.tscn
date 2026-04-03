@@ -88,11 +88,14 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hospd"]
 size = Vector2(16.25, 10.25)
 
-[node name="flyinglizards" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox")]
+[node name="flyinglizards" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox", "anim", "hurtbox")]
 script = ExtResource("1_pg13b")
 speed = 100.0
 hitbox = NodePath("Hitbox")
+hp = 1
 entity_name = "Flying Lizard"
+anim = NodePath("AnimationPlayer")
+hurtbox = NodePath("Hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
 texture_filter = 3

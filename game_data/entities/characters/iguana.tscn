@@ -1,25 +1,111 @@
 [gd_scene format=3 uid="uid://cd4btu53pbvs1"]
 
 [ext_resource type="Script" uid="uid://dbqf6oy56osa8" path="res://game_data/entities/characters/enemy.gd" id="1_k4rcp"]
-[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_vgt1e"]
 [ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="2_k4rcp"]
+[ext_resource type="Texture2D" uid="uid://cv2l0qqa6p3pv" path="res://assets/graphics/sprites/enemies/walking/enem_type1_walker.png" id="2_w5a78"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="3_w5a78"]
+
+[sub_resource type="Animation" id="Animation_0xky0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_pg13b"]
+resource_name = "death"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_iohlw"]
+resource_name = "walk"
+length = 0.16666667
+loop_mode = 1
+step = 0.055
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4rcp"]
+_data = {
+&"RESET": SubResource("Animation_0xky0"),
+&"death": SubResource("Animation_pg13b"),
+&"walk": SubResource("Animation_iohlw")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hospd"]
 size = Vector2(16, 55)
 
-[node name="iguana" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox")]
+[node name="iguana" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox", "anim", "hurtbox")]
 script = ExtResource("1_k4rcp")
 speed = 200.0
 hitbox = NodePath("Hitbox")
-hp = 1
+hp = 2
 entity_name = "Iguana"
+anim = NodePath("AnimationPlayer")
+hurtbox = NodePath("Hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
-modulate = Color(1, 0.29411766, 0.105882354, 1)
-position = Vector2(8, -27)
-scale = Vector2(0.13, 0.43)
-texture = ExtResource("1_vgt1e")
+position = Vector2(4.865, -32.948)
+texture = ExtResource("2_w5a78")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1544660496]
+libraries/ = SubResource("AnimationLibrary_k4rcp")
+autoplay = &"walk"
+speed_scale = 0.39
 
 [node name="Hitbox" parent="." unique_id=2037733599 instance=ExtResource("2_k4rcp")]
 collision_mask = 8

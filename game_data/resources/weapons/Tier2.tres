@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="WeaponTier" format=3 uid="uid://2wb6rxgxs00r"]
+
+[ext_resource type="Script" uid="uid://bkidu3wy3002" path="res://game_data/resources/WeaponTier.gd" id="1_0kymx"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_6csri"]
+[ext_resource type="Resource" uid="uid://cnfuo6icbxu6q" path="res://game_data/resources/weapons/unhinged_smasher.tres" id="3_6csri"]
+
+[resource]
+script = ExtResource("1_0kymx")
+tier_dictionary = Dictionary[String, ExtResource("2_6csri")]({
+"unhinged_smasher": ExtResource("3_6csri")
+})
+metadata/_custom_type_script = "uid://bkidu3wy3002"

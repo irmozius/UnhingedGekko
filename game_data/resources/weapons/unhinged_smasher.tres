@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cnfuo6icbxu6q"]
+
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_f7i4u"]
+
+[resource]
+script = ExtResource("1_f7i4u")
+name = "Unhinged Smasher"
+db_key = "unhinged_smasher"
+rank = "Unhinged"
+damage = 3
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

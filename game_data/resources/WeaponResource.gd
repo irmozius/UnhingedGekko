@@ -3,6 +3,7 @@ extends Resource
 
 @export_category("Details")
 @export var name : String = "Cool Weapon"
+@export var db_key : String = "cool_weapon"
 @export_multiline() var description : String = "This weapon comes from the depths of time.\nNone remain who know its true origin."
 @export_enum("Normal", "Rare", "Unhinged") var rank : String = "Normal"
 

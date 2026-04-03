@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://ccgl73jaex0le"]
+
+[ext_resource type="Texture2D" uid="uid://4t4dkdlsr1d" path="res://assets/graphics/icons/weapons/Fire_Bane.jpg" id="1_43wsh"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_6117l"]
+[ext_resource type="Texture2D" uid="uid://crehcp1g7iykd" path="res://assets/graphics/sprites/gekko/weapons/rank_1_firebane.png" id="3_qa13q"]
+
+[resource]
+script = ExtResource("2_6117l")
+name = "Fire Bane"
+db_key = "firebane"
+rank = "Rare"
+damage = 2
+spritesheet = ExtResource("3_qa13q")
+icon = ExtResource("1_43wsh")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

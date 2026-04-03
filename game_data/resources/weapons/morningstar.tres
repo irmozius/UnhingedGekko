@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://7xe3dady0ck6"]
+
+[ext_resource type="Texture2D" uid="uid://b4b0c4h8o4rtb" path="res://assets/graphics/icons/weapons/Morning_Star.jpg" id="1_oduii"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_5tjhb"]
+[ext_resource type="Texture2D" uid="uid://q4wy6ay2276j" path="res://assets/graphics/sprites/gekko/weapons/rank_1_morningstar.png" id="3_7bjy8"]
+
+[resource]
+script = ExtResource("2_5tjhb")
+name = "Morningstar"
+db_key = "morningstar"
+rank = "Rare"
+damage = 2
+spritesheet = ExtResource("3_7bjy8")
+icon = ExtResource("1_oduii")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

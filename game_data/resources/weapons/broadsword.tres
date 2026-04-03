@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bmr7l5yye4dql"]
+
+[ext_resource type="Texture2D" uid="uid://2s4mrrr4r12w" path="res://assets/graphics/icons/weapons/Broad_Sword.jpg" id="1_wj0yw"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_74u1f"]
+[ext_resource type="Texture2D" uid="uid://blo15538kq7fb" path="res://assets/graphics/sprites/gekko/weapons/rank_0_broadsword.png" id="3_uasny"]
+
+[resource]
+script = ExtResource("2_74u1f")
+name = "Broadsword"
+db_key = "broadsword"
+spritesheet = ExtResource("3_uasny")
+icon = ExtResource("1_wj0yw")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"
