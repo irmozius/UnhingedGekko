@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sq2vgy4ayis3"
-path="res://.godot/imported/Full_run2.png-94faf4a04321d51eaf5ec9b410d6dcfd.ctex"
+uid="uid://mb15w2p1wond"
+path="res://.godot/imported/enem_type2_walker.png-b30bccacc1894b8b03ef2fdb2ef796e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/sprites/gekko/Full_run2.png"
-dest_files=["res://.godot/imported/Full_run2.png-94faf4a04321d51eaf5ec9b410d6dcfd.ctex"]
+source_file="res://assets/graphics/sprites/enemies/walking/enem_type2_walker.png"
+dest_files=["res://.godot/imported/enem_type2_walker.png-b30bccacc1894b8b03ef2fdb2ef796e3.ctex"]
 
 [params]
 

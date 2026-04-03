@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd3dk01c147dm"
-path="res://.godot/imported/Knife_Sheet_0.png-a55b144b06076c8aad216abf896a1db4.ctex"
+uid="uid://b42m2mbgfy0aw"
+path="res://.godot/imported/dragon_type1.png-2f9456103e513bd589601d20ee47f18b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/sprites/gekko/attacks/Knife_Sheet_0.png"
-dest_files=["res://.godot/imported/Knife_Sheet_0.png-a55b144b06076c8aad216abf896a1db4.ctex"]
+source_file="res://assets/graphics/sprites/enemies/flying/dragon_type1.png"
+dest_files=["res://.godot/imported/dragon_type1.png-2f9456103e513bd589601d20ee47f18b.ctex"]
 
 [params]
 

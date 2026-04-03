@@ -17,10 +17,9 @@ func _ready() -> void:
 		hitbox.received_hit.connect(_on_hitbox_received_hit)
    
 ## One hit and dead!
-func _on_hitbox_received_hit(_hurtbox : Hurtbox):
-	take_damage(_hurtbox.damage)
+func _on_hitbox_received_hit(hurtbox : Hurtbox):
+	take_damage(hurtbox.damage)
 	
-
 ## We should do something more interesting when they die, at some point
 func die():
 	if has_node("Hurtbox"):

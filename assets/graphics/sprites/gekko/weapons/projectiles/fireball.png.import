@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e7oob1beiy0h"
-path="res://.godot/imported/Full_run3.png-1d0b45e8b3823f47f6779fb00a43350b.ctex"
+uid="uid://bsox2e0dmhruo"
+path="res://.godot/imported/fireball.png-957344e774bb7c30fd290d762442eaa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/sprites/gekko/Full_run3.png"
-dest_files=["res://.godot/imported/Full_run3.png-1d0b45e8b3823f47f6779fb00a43350b.ctex"]
+source_file="res://assets/graphics/sprites/gekko/weapons/projectiles/fireball.png"
+dest_files=["res://.godot/imported/fireball.png-957344e774bb7c30fd290d762442eaa5.ctex"]
 
 [params]
 

@@ -32,7 +32,8 @@
 				"c4273c2d-793e-42dc-a0b8-63fcd2b81023",
 				"944e2f58-ef19-43e0-95e3-9f4f0e2a6ab6",
 				"3415d49d-2e4f-4814-ac68-6e85a01066c2",
-				"1d839aa8-3551-47a2-b51f-8984f39847a8"
+				"1d839aa8-3551-47a2-b51f-8984f39847a8",
+				"ea78ce72-1fce-4f4b-9374-2f9fe73a9f23"
 			]
 		},
 		{
@@ -299,6 +300,13 @@
 			"title": "Mobile Contols",
 			"description": "",
 			"category": "1dd9252a-918a-4d67-b8c1-ef5439fa00fa",
+			"steps": []
+		},
+		{
+			"uuid": "ea78ce72-1fce-4f4b-9374-2f9fe73a9f23",
+			"title": "Attacks launch shockwave on full HP",
+			"description": "",
+			"category": "a398163a-f468-4e06-9a5f-bb4e85eb3436",
 			"steps": []
 		}
 	],
