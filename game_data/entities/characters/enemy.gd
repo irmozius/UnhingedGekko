@@ -60,7 +60,8 @@ func update_stats():
 #region NormalState
 
 func normal_enter():
-	pass
+	if anim:
+		anim.play("walk")
 
 func normal_exit():
 	pass
@@ -76,6 +77,7 @@ func normal_pupdate(delta: float):
 #region KnockbackState
 
 func knockback_enter():
+	anim.play("hurt")
 	await get_tree().create_timer(0.3).timeout
 	fsm.set_state("Normal")
 
@@ -86,7 +88,7 @@ func knockback_update(_delta : float):
 	pass
 
 func knockback_pupdate(delta : float):
-	position.x += (speed / 5) * delta
+	position.x += 75 * delta
 
 #endregion
 
@@ -107,7 +109,7 @@ func dead_update(_delta : float):
 	pass
 
 func dead_pupdate(delta : float):
-	position.x += (speed / 8) * delta
+	position.x += 30 * delta
 
 #endregion
 

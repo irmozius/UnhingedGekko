@@ -11,7 +11,7 @@ extends Resource
 @export var damage : int = 1
 @export var attack_duration : float = 0.1
 @export var cooldown_duration : float = 0.3
-@export var hitbox_radius : float = 15
+@export var hurtbox_radius : float = 15
 
 @export_category("Art")
 @export var spritesheet : Texture2D

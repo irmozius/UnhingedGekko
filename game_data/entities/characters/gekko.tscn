@@ -189,7 +189,7 @@ radius = 5.0
 height = 32.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f3bsu"]
-radius = 19.0
+radius = 12.5
 
 [node name="Gekko" type="CharacterBody2D" unique_id=1490024415]
 collision_layer = 2
@@ -237,7 +237,7 @@ position = Vector2(-1, 1)
 shape = SubResource("CapsuleShape2D_ranni")
 
 [node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("4_ely7x")]
-position = Vector2(32, 0)
+position = Vector2(32, 5)
 collision_layer = 8
 damage = 1
 

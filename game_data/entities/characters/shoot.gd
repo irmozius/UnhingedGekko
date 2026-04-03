@@ -25,6 +25,7 @@ var current_weapon : WeaponResource:
 		Global.current_attack_damage = wep.damage
 		slash_duration = wep.attack_duration
 		slash_cooldown_timer = wep.cooldown_duration
+		hurtbox_shape.shape.radius = wep.hurtbox_radius
 
 func slash():
 	
