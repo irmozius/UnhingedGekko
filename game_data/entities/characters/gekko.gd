@@ -9,7 +9,7 @@ extends CharacterBody2D
 var fsm = FunctionalStateMachineGDScript.new()
 
 ## The ground manager is used to simulate ground movement by moving the ground.
-@export var ground_manager : GroundManager
+#@export var ground_manager : GroundManager
 @export var speed : float = 3.5
 @export var jump_force : float = 6
 
@@ -98,7 +98,8 @@ func _check_for_swipe(end_pos: Vector2):
 
 ## Move the ground to simulate movement.
 func scroll_ground(delta : float):
-	ground_manager.move(speed * delta)
+	#ground_manager.move(speed * delta)
+	pass
 
 ## Initiate jump, adding vertical movement and changing state to InAir
 func jump():

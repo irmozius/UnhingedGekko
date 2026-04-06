@@ -2,14 +2,19 @@
 
 [ext_resource type="Script" uid="uid://dtdxctr4vfls3" path="res://game_data/worlds/parallax.gd" id="1_t862i"]
 [ext_resource type="Texture2D" uid="uid://bfoxmnh7r4spr" path="res://assets/graphics/world/ground1.png" id="2_udbdp"]
+[ext_resource type="Texture2D" uid="uid://dsy0lxu3dt46e" path="res://assets/graphics/world/broken wood desert.png" id="3_si4de"]
+[ext_resource type="Texture2D" uid="uid://dunti0fblb1ft" path="res://assets/graphics/world/old door.png" id="4_rlodj"]
+[ext_resource type="Texture2D" uid="uid://ehvbootfnyb7" path="res://assets/graphics/world/Oasis.png" id="5_ijqiq"]
 
 [node name="Parallax" type="Node2D" unique_id=159466930]
 script = ExtResource("1_t862i")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=882645557]
+scroll_offset = Vector2(260, 0)
+repeat_size = Vector2(255, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=684270733]
-position = Vector2(33, 128)
+position = Vector2(32, 127)
 texture = ExtResource("2_udbdp")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1663428876]
@@ -24,6 +29,22 @@ texture = ExtResource("2_udbdp")
 position = Vector2(224, 127)
 texture = ExtResource("2_udbdp")
 
-[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1144161409]
-
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1660457342]
+scroll_offset = Vector2(260, 0)
+repeat_size = Vector2(260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=339995679]
+position = Vector2(103, 71)
+texture = ExtResource("5_ijqiq")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1144161409]
+scroll_offset = Vector2(260, 0)
+repeat_size = Vector2(260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1805554401]
+position = Vector2(22, 99)
+texture = ExtResource("3_si4de")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2" unique_id=574665660]
+position = Vector2(175, 105)
+texture = ExtResource("4_rlodj")
