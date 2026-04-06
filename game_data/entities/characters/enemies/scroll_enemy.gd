@@ -1,5 +1,4 @@
-## Base Enemy class. Simply holds a speed value to move with,
-## and a reference to a hitbox (optional).
+## Scrolling enemy class. Basic, non-boss enemies
 class_name ScrollingEnemy
 extends Enemy
 

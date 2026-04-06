@@ -4,3 +4,8 @@
 
 [node name="GroundDragon" unique_id=284441439 instance=ExtResource("1_7l51f")]
 speed = 130.0
+hp = 1
+knockback = 90
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+damage = 1

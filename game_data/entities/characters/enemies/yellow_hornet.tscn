@@ -1,19 +1,20 @@
 [gd_scene format=3 uid="uid://deokkyxtfeobx"]
 
-[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_1exbv"]
-[ext_resource type="Texture2D" uid="uid://ccdkvrluyp8q7" path="res://assets/graphics/sprites/enemies/flying/enem_type1_flyer.png" id="2_vxoai"]
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_qbmqp"]
+[ext_resource type="Texture2D" uid="uid://ccdkvrluyp8q7" path="res://assets/graphics/sprites/enemies/flying/enem_type1_flyer.png" id="2_hy1dk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxoai"]
 size = Vector2(36, 23)
 
-[node name="DragonFlier" unique_id=284441439 instance=ExtResource("1_1exbv")]
+[node name="YellowHornet" unique_id=284441439 instance=ExtResource("1_qbmqp")]
 speed = 160.0
 hp = 1
-entity_name = "Dragon Flier"
+entity_name = "Yellow Hornet"
+knockback = 90
 
 [node name="Sprite2D" parent="." index="0" unique_id=228488152]
 position = Vector2(5, -88)
-texture = ExtResource("2_vxoai")
+texture = ExtResource("2_hy1dk")
 
 [node name="Hitbox" parent="." index="2" unique_id=2037733599]
 position = Vector2(0.13500023, -87)
@@ -24,6 +25,7 @@ shape = SubResource("RectangleShape2D_vxoai")
 
 [node name="Hurtbox" parent="." index="3" unique_id=888921601]
 position = Vector2(-3.8649998, -59)
+damage = 1
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
 shape = SubResource("RectangleShape2D_vxoai")

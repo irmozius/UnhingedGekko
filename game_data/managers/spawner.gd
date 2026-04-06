@@ -13,13 +13,16 @@ extends Node2D
 @onready var boss_timer: Timer = $BossTimer
 
 func _ready() -> void:
-	enem_timer.start(randf_range(min_time, max_time))
+	#enem_timer.start(randf_range(min_time, max_time))
+	boss_timer.start(randf_range(min_time, max_time))
 
 ## Make a new enemy, and position it.
 func spawn(boss : bool = false):
 	if Global.player_dead: return
 	var enem : Enemy = enemies.pick_random().instantiate() if !boss else bosses.pick_random().instantiate()
 	add_child(enem)
+	if boss:
+		enem.died.connect(_on_boss_died, CONNECT_ONE_SHOT)
 	enem.global_position = global_position
 
 func _on_etimer_timeout() -> void:
@@ -28,3 +31,6 @@ func _on_etimer_timeout() -> void:
 
 func _on_btimer_timeout() -> void:
 	spawn(true)
+
+func _on_boss_died():
+	boss_timer.start(randf_range(min_time * 5, max_time * 5))

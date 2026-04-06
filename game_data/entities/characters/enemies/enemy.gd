@@ -3,6 +3,8 @@
 @abstract class_name Enemy
 extends Node2D
 
+signal died
+
 var fsm = FunctionalStateMachineGDScript.new()
 
 @export var speed : float = 1.0
@@ -39,6 +41,7 @@ func take_damage(amount):
 
 ## We should do something more interesting when they die, at some point
 func die():
+	died.emit()
 	fsm.set_state("Dead")
 
 func disable():
@@ -82,7 +85,7 @@ func dead_pupdate(delta : float):
 
 #endregion
 
-#region DeadState
+#region DisabledState
 
 func disabled_enter():
 	pass

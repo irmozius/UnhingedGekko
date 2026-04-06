@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://ulqusdt23aew"]
+
+[ext_resource type="Script" uid="uid://bva683fhp1i4y" path="res://game_data/entities/characters/enemies/boss_enemy.gd" id="1_50e7v"]
+[ext_resource type="Texture2D" uid="uid://bcwcd3eokvj7j" path="res://assets/graphics/sprites/enemies/boss/green_serpent_dragon.png" id="2_50e7v"]
+[ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_odmt6"]
+[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_eh7e6"]
+
+[sub_resource type="Animation" id="Animation_50e7v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_odmt6"]
+resource_name = "attack"
+length = 0.6666667
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [6, 11]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.33333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"activate_attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dwhv0"]
+resource_name = "walk"
+length = 1.4444444
+loop_mode = 1
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4444444),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_odmt6"]
+_data = {
+&"RESET": SubResource("Animation_50e7v"),
+&"attack": SubResource("Animation_odmt6"),
+&"walk": SubResource("Animation_dwhv0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwhv0"]
+size = Vector2(36, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50e7v"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50e7v"]
+size = Vector2(36, 77.5)
+
+[node name="BaseBoss" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("player_detect_area", "hurtbox_col", "hitbox", "anim", "hurtbox")]
+script = ExtResource("1_50e7v")
+player_detect_area = NodePath("PlayerDetect")
+hurtbox_col = NodePath("Hurtbox/CollisionShape2D")
+speed = 60.0
+hitbox = NodePath("Hitbox")
+hp = 15
+entity_name = "Green Serpent"
+anim = NodePath("AnimationPlayer")
+hurtbox = NodePath("Hurtbox")
+knockback = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
+texture_filter = 3
+position = Vector2(9, -62)
+texture = ExtResource("2_50e7v")
+hframes = 17
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=505825188]
+libraries/ = SubResource("AnimationLibrary_odmt6")
+
+[node name="Hitbox" parent="." unique_id=2037733599 instance=ExtResource("3_odmt6")]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1494530905]
+position = Vector2(8, -38)
+shape = SubResource("RectangleShape2D_dwhv0")
+
+[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("4_eh7e6")]
+position = Vector2(-31, -25)
+collision_layer = 16
+damage = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=672550695]
+shape = SubResource("CircleShape2D_50e7v")
+disabled = true
+
+[node name="PlayerDetect" type="Area2D" parent="." unique_id=1905919234]
+position = Vector2(-50, -18)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDetect" unique_id=77621033]
+position = Vector2(18, -19.25)
+shape = SubResource("RectangleShape2D_50e7v")

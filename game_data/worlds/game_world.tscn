@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
 [ext_resource type="PackedScene" uid="uid://c4qjm5fsshu0o" path="res://game_data/worlds/Parallax.tscn" id="1_hqrgs"]
-[ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/dragon_flier.tscn" id="4_2iqjp"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 
@@ -29,8 +28,6 @@ position = Vector2(120, 80)
 position = Vector2(384, 127)
 min_time = 2.49
 max_time = 4.36
-
-[node name="DragonFlier" parent="Spawner" unique_id=284441439 instance=ExtResource("4_2iqjp")]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1028207548]
 position = Vector2(0, 127)

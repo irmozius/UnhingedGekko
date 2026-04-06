@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dyrjkqgj5vl4o"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_suxq6"]
+[ext_resource type="Texture2D" uid="uid://bnu8p6s6pygsk" path="res://assets/graphics/sprites/enemies/walking/enem_type1_snake.png" id="2_n4uda"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4uda"]
+size = Vector2(32, 51)
+
+[node name="BlueSnake" unique_id=284441439 instance=ExtResource("1_suxq6")]
+speed = 120.0
+hp = 2
+knockback = 80
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+texture = ExtResource("2_n4uda")
+
+[node name="Hitbox" parent="." index="2" unique_id=2037733599]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1494530905]
+shape = SubResource("RectangleShape2D_n4uda")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
+shape = SubResource("RectangleShape2D_n4uda")

@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://d26o1ymlvc8h4"]
 
 [ext_resource type="Script" uid="uid://b1i8f3jtp1k0p" path="res://game_data/managers/spawner.gd" id="1_0sg3f"]
-[ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/dragon_flier.tscn" id="2_wpg8k"]
+[ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/yellow_hornet.tscn" id="2_wpg8k"]
 [ext_resource type="PackedScene" uid="uid://b7ga6qhh1uyjr" path="res://game_data/entities/characters/enemies/ground_dragon.tscn" id="3_d8psh"]
+[ext_resource type="PackedScene" uid="uid://dyrjkqgj5vl4o" path="res://game_data/entities/characters/enemies/blue_snake.tscn" id="4_d8psh"]
+[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="5_u4ld8"]
 
 [node name="Spawner" type="Node2D" unique_id=927126007]
 script = ExtResource("1_0sg3f")
-enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh")])
+enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh"), ExtResource("4_d8psh")])
+bosses = Array[PackedScene]([ExtResource("5_u4ld8")])
 
 [node name="ScrollerTimer" type="Timer" parent="." unique_id=202520885]
 wait_time = 4.0
