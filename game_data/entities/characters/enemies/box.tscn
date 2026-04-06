@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://bxbeif1i1lrj1"]
 
+[ext_resource type="Script" uid="uid://nggw1ua6828j" path="res://game_data/entities/characters/enemies/scroll_enemy.gd" id="1_7jra0"]
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_7xr4x"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="1_e812k"]
-[ext_resource type="Script" uid="uid://dbqf6oy56osa8" path="res://game_data/entities/characters/enemy.gd" id="2_0jt3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xr4x"]
 size = Vector2(26, 26)
 
-[node name="box" type="Node2D" unique_id=378146509]
-script = ExtResource("2_0jt3g")
+[node name="box" type="Node2D" unique_id=378146509 node_paths=PackedStringArray("hurtbox")]
+script = ExtResource("1_7jra0")
 speed = 160.0
-entity_name = "Box"
+hurtbox = NodePath("Hurtbox")
 
 [node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("1_e812k")]
 position = Vector2(12.8, -13.2)

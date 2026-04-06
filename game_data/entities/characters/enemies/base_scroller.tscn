@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://cd4btu53pbvs1"]
+[gd_scene format=3 uid="uid://joj86ekahm6s"]
 
-[ext_resource type="Script" uid="uid://dbqf6oy56osa8" path="res://game_data/entities/characters/enemy.gd" id="1_k4rcp"]
-[ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="2_k4rcp"]
-[ext_resource type="Texture2D" uid="uid://cv2l0qqa6p3pv" path="res://assets/graphics/sprites/enemies/walking/enem_type1_walker.png" id="2_w5a78"]
-[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="3_w5a78"]
+[ext_resource type="Script" uid="uid://nggw1ua6828j" path="res://game_data/entities/characters/enemies/scroll_enemy.gd" id="1_6m5ts"]
+[ext_resource type="Texture2D" uid="uid://cv2l0qqa6p3pv" path="res://assets/graphics/sprites/enemies/walking/enem_type1_walker.png" id="2_rr1u8"]
+[ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_2rfq1"]
+[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_nfomm"]
 
 [sub_resource type="Animation" id="Animation_0xky0"]
 length = 0.001
@@ -105,21 +105,21 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hospd"]
-size = Vector2(16, 55)
+size = Vector2(17, 51)
 
-[node name="iguana" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox", "anim", "hurtbox")]
-script = ExtResource("1_k4rcp")
+[node name="ScrollingEnemy" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hitbox", "anim", "hurtbox")]
+script = ExtResource("1_6m5ts")
 speed = 200.0
 hitbox = NodePath("Hitbox")
-hp = 2
-entity_name = "Iguana"
+hp = 3
+entity_name = "Ground Dragon"
 anim = NodePath("AnimationPlayer")
 hurtbox = NodePath("Hurtbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
 texture_filter = 3
 position = Vector2(4.865, -32.948)
-texture = ExtResource("2_w5a78")
+texture = ExtResource("2_rr1u8")
 hframes = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1544660496]
@@ -127,14 +127,14 @@ libraries/ = SubResource("AnimationLibrary_k4rcp")
 autoplay = &"walk"
 speed_scale = 0.39
 
-[node name="Hitbox" parent="." unique_id=2037733599 instance=ExtResource("2_k4rcp")]
+[node name="Hitbox" parent="." unique_id=2037733599 instance=ExtResource("3_2rfq1")]
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=1494530905]
 position = Vector2(8, -27.5)
 shape = SubResource("RectangleShape2D_hospd")
 
-[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("3_w5a78")]
+[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("4_nfomm")]
 collision_layer = 16
 damage = 2
 

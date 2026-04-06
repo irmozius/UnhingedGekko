@@ -15,6 +15,10 @@ run/main_scene="uid://5tyrvfxd4rin"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://oh0dtyaubcwa"
+
 [autoload]
 
 Global="*uid://bdlvpe6nhkjs8"
@@ -45,6 +49,7 @@ folder_colors={
 "res://assets/graphics/": "orange",
 "res://game_data/": "purple",
 "res://game_data/entities/": "blue",
+"res://game_data/entities/characters/enemies/": "red",
 "res://game_data/globals/": "gray",
 "res://game_data/helpers/": "pink",
 "res://game_data/managers/": "teal",

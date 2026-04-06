@@ -6,6 +6,10 @@ extends Node2D
 @onready var gek_anim: AnimationPlayer = $GekAnim
 @onready var cam_anim: AnimationPlayer = $CamAnim
 
+#audio buses
+@onready var mus_bus : int = AudioServer.get_bus_index("Music")
+@onready var room_bus : int = AudioServer.get_bus_index("Room")
+@onready var ui_bus : int = AudioServer.get_bus_index("UI")
 
 func _on_play_but_pressed() -> void:
 	play_but.hide()
@@ -17,5 +21,4 @@ func _on_play_but_pressed() -> void:
 
 func _on_music_toggle_toggled(toggled_on: bool) -> void:
 	print("clicked")
-	var master_bus = AudioServer.get_bus_index("Master")
-	AudioServer.set_bus_mute(master_bus, not toggled_on)
+	AudioServer.set_bus_mute(mus_bus, not toggled_on)

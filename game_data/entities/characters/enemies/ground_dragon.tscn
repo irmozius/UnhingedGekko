@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b7ga6qhh1uyjr"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_7l51f"]
+
+[node name="GroundDragon" unique_id=284441439 instance=ExtResource("1_7l51f")]
+speed = 130.0

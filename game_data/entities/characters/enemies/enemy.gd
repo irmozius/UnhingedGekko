@@ -1,6 +1,6 @@
 ## Base Enemy class. Simply holds a speed value to move with,
 ## and a reference to a hitbox (optional).
-class_name Enemy
+@abstract class_name Enemy
 extends Node2D
 
 var fsm = FunctionalStateMachineGDScript.new()
@@ -16,14 +16,14 @@ var fsm = FunctionalStateMachineGDScript.new()
 func _ready() -> void:
 	## Setup connection to react to player dying, simply switching off movement once it occurs.
 	Global.player_died.connect(func(): disable())
-	fsm.add_state("Normal", normal_enter, normal_exit, normal_update, normal_pupdate)
-	fsm.add_state("Knockback", knockback_enter, knockback_exit, knockback_update, knockback_pupdate)
 	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, dead_pupdate)
 	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, disabled_pupdate)
-	fsm.set_state("Normal")
+	on_ready()
 	if hitbox:
 		hitbox.received_hit.connect(_on_hitbox_received_hit)
-   
+ 
+@abstract func on_ready()
+
 ## One hit and dead!
 func _on_hitbox_received_hit(attacking_hurtbox : Hurtbox):
 	take_damage(attacking_hurtbox.damage)
@@ -33,7 +33,9 @@ func take_damage(amount):
 	if hp<=0:
 		die()
 	else:
-		fsm.set_state("Knockback")
+		on_nonlethal_hit()
+
+@abstract func on_nonlethal_hit()
 
 ## We should do something more interesting when they die, at some point
 func die():
@@ -58,40 +60,6 @@ func update_stats():
 	Global.stats[entity_name] = Global.stats.get(entity_name, 0) + 1
 	#print(Global.stats)
 
-#region NormalState
-
-func normal_enter():
-	if anim:
-		anim.play("walk")
-
-func normal_exit():
-	pass
-
-func normal_update(_delta : float):
-	pass
-
-func normal_pupdate(delta: float):
-	position.x -= speed * delta
-
-#endregion
-
-#region KnockbackState
-
-func knockback_enter():
-	anim.play("hurt")
-	await get_tree().create_timer(0.3).timeout
-	fsm.set_state("Normal")
-
-func knockback_exit():
-	pass
-
-func knockback_update(_delta : float):
-	pass
-
-func knockback_pupdate(delta : float):
-	position.x += knockback * delta
-
-#endregion
 
 #region DeadState
 

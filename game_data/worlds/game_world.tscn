@@ -2,11 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
 [ext_resource type="PackedScene" uid="uid://c4qjm5fsshu0o" path="res://game_data/worlds/Parallax.tscn" id="1_hqrgs"]
+[ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/dragon_flier.tscn" id="4_2iqjp"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
-[ext_resource type="PackedScene" uid="uid://bxbeif1i1lrj1" path="res://game_data/entities/characters/box.tscn" id="6_jwryg"]
-[ext_resource type="PackedScene" uid="uid://cd4btu53pbvs1" path="res://game_data/entities/characters/iguana.tscn" id="7_nl862"]
-[ext_resource type="PackedScene" uid="uid://b0wf6rl4esfdf" path="res://game_data/entities/characters/flyinglizards.tscn" id="8_jjd8l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
 size = Vector2(717, 63)
@@ -29,9 +27,10 @@ position = Vector2(120, 80)
 
 [node name="Spawner" parent="." unique_id=927126007 instance=ExtResource("4_v856d")]
 position = Vector2(384, 127)
-obstacles = Array[PackedScene]([ExtResource("6_jwryg"), ExtResource("7_nl862"), ExtResource("8_jjd8l")])
-min_time = 2.75
+min_time = 2.49
 max_time = 4.36
+
+[node name="DragonFlier" parent="Spawner" unique_id=284441439 instance=ExtResource("4_2iqjp")]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=1028207548]
 position = Vector2(0, 127)

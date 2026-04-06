@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://d26o1ymlvc8h4"]
 
 [ext_resource type="Script" uid="uid://b1i8f3jtp1k0p" path="res://game_data/managers/spawner.gd" id="1_0sg3f"]
-[ext_resource type="PackedScene" uid="uid://bxbeif1i1lrj1" path="res://game_data/entities/characters/box.tscn" id="2_dccjt"]
-[ext_resource type="PackedScene" uid="uid://cd4btu53pbvs1" path="res://game_data/entities/characters/iguana.tscn" id="3_wpg8k"]
+[ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/dragon_flier.tscn" id="2_wpg8k"]
+[ext_resource type="PackedScene" uid="uid://b7ga6qhh1uyjr" path="res://game_data/entities/characters/enemies/ground_dragon.tscn" id="3_d8psh"]
 
 [node name="Spawner" type="Node2D" unique_id=927126007]
 script = ExtResource("1_0sg3f")
-obstacles = Array[PackedScene]([ExtResource("2_dccjt"), ExtResource("3_wpg8k")])
+enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh")])
 
-[node name="Timer" type="Timer" parent="." unique_id=202520885]
+[node name="ScrollerTimer" type="Timer" parent="." unique_id=202520885]
 wait_time = 4.0
 one_shot = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="BossTimer" type="Timer" parent="." unique_id=1220073361]
+
+[connection signal="timeout" from="ScrollerTimer" to="." method="_on_etimer_timeout"]
+[connection signal="timeout" from="BossTimer" to="." method="_on_btimer_timeout"]

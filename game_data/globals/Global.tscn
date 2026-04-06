@@ -13,6 +13,7 @@ stream_0/volume = 0.0
 script = ExtResource("1_o6oyx")
 
 [node name="menu-loop" type="AudioStreamPlayer" parent="." unique_id=513378710]
+bus = &"Music"
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_qegiw")])
 auto_play = true
