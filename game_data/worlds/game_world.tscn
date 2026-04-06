@@ -16,7 +16,7 @@ font_size = 10
 [node name="Parallax" parent="." unique_id=159466930 instance=ExtResource("1_hqrgs")]
 
 [node name="Gekko" parent="." unique_id=1490024415 instance=ExtResource("1_7i7qt")]
-position = Vector2(33, 105)
+position = Vector2(39, 105)
 platform_on_leave = 2
 speed = 200.0
 jump_force = 350.0
@@ -94,5 +94,8 @@ offset_bottom = 40.0
 unique_name_in_owner = true
 layout_mode = 2
 text = "HP: 3"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1691352108]
+position = Vector2(59, 110)
 
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]

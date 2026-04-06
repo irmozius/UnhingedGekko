@@ -19,6 +19,18 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_odmt6"]
 resource_name = "attack"
@@ -51,6 +63,53 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_7mq7k"]
+resource_name = "death"
+length = 0.5555556
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [12, 16]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.5555556),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_eh7e6"]
+resource_name = "hurt"
+length = 0.22222222
+loop_mode = 1
+step = 0.055555556
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11111111),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 0]
+}
+
 [sub_resource type="Animation" id="Animation_dwhv0"]
 resource_name = "walk"
 length = 1.4444444
@@ -73,6 +132,8 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_50e7v"),
 &"attack": SubResource("Animation_odmt6"),
+&"death": SubResource("Animation_7mq7k"),
+&"hurt": SubResource("Animation_eh7e6"),
 &"walk": SubResource("Animation_dwhv0")
 }
 
@@ -82,16 +143,13 @@ size = Vector2(36, 72)
 [sub_resource type="CircleShape2D" id="CircleShape2D_50e7v"]
 radius = 16.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_50e7v"]
-size = Vector2(36, 77.5)
-
-[node name="BaseBoss" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("player_detect_area", "hurtbox_col", "hitbox", "anim", "hurtbox")]
+[node name="BaseBoss" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hurtbox_col", "hitbox", "anim", "hurtbox")]
 script = ExtResource("1_50e7v")
-player_detect_area = NodePath("PlayerDetect")
+player_x = 80
 hurtbox_col = NodePath("Hurtbox/CollisionShape2D")
 speed = 60.0
 hitbox = NodePath("Hitbox")
-hp = 15
+hp = 8
 entity_name = "Green Serpent"
 anim = NodePath("AnimationPlayer")
 hurtbox = NodePath("Hurtbox")
@@ -121,12 +179,3 @@ damage = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=672550695]
 shape = SubResource("CircleShape2D_50e7v")
 disabled = true
-
-[node name="PlayerDetect" type="Area2D" parent="." unique_id=1905919234]
-position = Vector2(-50, -18)
-collision_layer = 0
-collision_mask = 2
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerDetect" unique_id=77621033]
-position = Vector2(18, -19.25)
-shape = SubResource("RectangleShape2D_50e7v")

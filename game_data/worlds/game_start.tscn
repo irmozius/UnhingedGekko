@@ -181,7 +181,7 @@ zoom = Vector2(0.64, 0.64)
 
 [node name="GekkoOpSprite" type="Sprite2D" parent="." unique_id=1249821161]
 texture_filter = 3
-position = Vector2(34, 66)
+position = Vector2(40, 66)
 texture = ExtResource("7_n6byg")
 hframes = 13
 frame = 4

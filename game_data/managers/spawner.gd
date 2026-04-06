@@ -13,8 +13,8 @@ extends Node2D
 @onready var boss_timer: Timer = $BossTimer
 
 func _ready() -> void:
-	#enem_timer.start(randf_range(min_time, max_time))
-	boss_timer.start(randf_range(min_time, max_time))
+	enem_timer.start(randf_range(min_time, max_time))
+	boss_timer.start(randf_range(min_time * 6, max_time * 6))
 
 ## Make a new enemy, and position it.
 func spawn(boss : bool = false):

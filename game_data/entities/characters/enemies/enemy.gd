@@ -22,6 +22,7 @@ func _ready() -> void:
 	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, disabled_pupdate)
 	on_ready()
 	if hitbox:
+		print(hitbox)
 		hitbox.received_hit.connect(_on_hitbox_received_hit)
  
 @abstract func on_ready()
@@ -32,6 +33,7 @@ func _on_hitbox_received_hit(attacking_hurtbox : Hurtbox):
 	
 func take_damage(amount):
 	hp -= amount
+	print(amount)
 	if hp<=0:
 		die()
 	else:
@@ -58,6 +60,7 @@ func play_death_animation():
 	if anim:
 		anim.play("death")
 		await anim.animation_finished
+
 	# This is so that we can display in diedscreen later
 func update_stats():
 	Global.stats[entity_name] = Global.stats.get(entity_name, 0) + 1
