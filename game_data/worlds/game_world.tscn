@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://d3il87cf7s1l0"]
 
-[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="1_2cwph"]
 [ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
 [ext_resource type="Script" uid="uid://etbf22i4k604" path="res://game_data/managers/ground_manager.gd" id="2_3qxxw"]
 [ext_resource type="PackedScene" uid="uid://c3cj0nltb3mkt" path="res://game_data/worlds/fake_parallax.tscn" id="2_ob8w1"]
+[ext_resource type="Texture2D" uid="uid://bfoxmnh7r4spr" path="res://assets/graphics/world/ground1.png" id="3_nl862"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 [ext_resource type="PackedScene" uid="uid://bxbeif1i1lrj1" path="res://game_data/entities/characters/box.tscn" id="6_jwryg"]
@@ -25,20 +25,20 @@ position = Vector2(282, 127)
 script = ExtResource("2_3qxxw")
 
 [node name="GrndSprite" type="Sprite2D" parent="GroundManager" unique_id=2025121232]
-position = Vector2(64, 191)
-texture = ExtResource("1_2cwph")
+position = Vector2(33, 128)
+texture = ExtResource("3_nl862")
 
 [node name="GrndSprite2" type="Sprite2D" parent="GroundManager" unique_id=1331344665]
-position = Vector2(192, 191)
-texture = ExtResource("1_2cwph")
+position = Vector2(97, 128)
+texture = ExtResource("3_nl862")
 
 [node name="GrndSprite3" type="Sprite2D" parent="GroundManager" unique_id=1489080867]
-position = Vector2(320, 191)
-texture = ExtResource("1_2cwph")
+position = Vector2(160, 127)
+texture = ExtResource("3_nl862")
 
 [node name="GrndSprite4" type="Sprite2D" parent="GroundManager" unique_id=1387543975]
-position = Vector2(448, 191)
-texture = ExtResource("1_2cwph")
+position = Vector2(224, 127)
+texture = ExtResource("3_nl862")
 
 [node name="Gekko" parent="." unique_id=1490024415 node_paths=PackedStringArray("ground_manager") instance=ExtResource("1_7i7qt")]
 position = Vector2(33, 105)

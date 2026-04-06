@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cmrv84kwus5vw"]
+
+[ext_resource type="Script" uid="uid://etbf22i4k604" path="res://game_data/managers/ground_manager.gd" id="1_xg6na"]
+[ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="2_cyn2q"]
+
+[node name="GroundManager" type="Node2D" unique_id=368348490]
+script = ExtResource("1_xg6na")
+
+[node name="GrndSprite" type="Sprite2D" parent="." unique_id=1148970697]
+position = Vector2(64, 191)
+texture = ExtResource("2_cyn2q")
+
+[node name="GrndSprite2" type="Sprite2D" parent="." unique_id=836225509]
+position = Vector2(192, 191)
+texture = ExtResource("2_cyn2q")
+
+[node name="GrndSprite3" type="Sprite2D" parent="." unique_id=1789616930]
+position = Vector2(320, 191)
+texture = ExtResource("2_cyn2q")
+
+[node name="GrndSprite4" type="Sprite2D" parent="." unique_id=2104746396]
+position = Vector2(448, 191)
+texture = ExtResource("2_cyn2q")

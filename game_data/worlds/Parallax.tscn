@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c4qjm5fsshu0o"]
+
+[ext_resource type="Script" uid="uid://dtdxctr4vfls3" path="res://game_data/worlds/parallax.gd" id="1_t862i"]
+[ext_resource type="Texture2D" uid="uid://bfoxmnh7r4spr" path="res://assets/graphics/world/ground1.png" id="2_udbdp"]
+
+[node name="Parallax" type="Node2D" unique_id=159466930]
+script = ExtResource("1_t862i")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=882645557]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=684270733]
+position = Vector2(33, 128)
+texture = ExtResource("2_udbdp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1663428876]
+position = Vector2(96, 127)
+texture = ExtResource("2_udbdp")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D" unique_id=1177082424]
+position = Vector2(160, 127)
+texture = ExtResource("2_udbdp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D" unique_id=2035793162]
+position = Vector2(224, 127)
+texture = ExtResource("2_udbdp")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1144161409]
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1660457342]
