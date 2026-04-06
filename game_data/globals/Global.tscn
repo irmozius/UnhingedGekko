@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://bdlvpe6nhkjs8"]
 
 [ext_resource type="Script" uid="uid://c16vwn1wmt643" path="res://game_data/globals/global.gd" id="1_o6oyx"]
+[ext_resource type="Script" uid="uid://bhl4lphfxnj4r" path="res://addons/meta_player/meta_player.gd" id="2_hvf12"]
+[ext_resource type="AudioStream" uid="uid://c2t1jq6ayaldx" path="res://assets/audio/music/menu-loop.ogg" id="3_tor55"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_qegiw"]
+stream_count = 1
+stream_0/stream = ExtResource("3_tor55")
+stream_0/volume = 0.0
 
 [node name="Global" type="Node" unique_id=1673766812]
 script = ExtResource("1_o6oyx")
+
+[node name="menu-loop" type="AudioStreamPlayer" parent="." unique_id=513378710]
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_qegiw")])
+auto_play = true
+bars = 32
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"

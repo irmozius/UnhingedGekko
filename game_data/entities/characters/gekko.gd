@@ -42,8 +42,9 @@ func _ready() -> void:
 	fsm.state_changed.connect(_on_state_change)
 	fsm.add_state("Running", running_enter, running_exit, running_update, running_pupdate)
 	fsm.add_state("InAir", inair_enter, inair_exit, inair_update, inair_pupdate)
-	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, Callable())
 	fsm.add_state("Attacking", attack_enter, attack_exit, attack_update, attack_pupdate)
+	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, Callable())
+	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, Callable())
 	## Set initial state
 	fsm.set_state("InAir")
 	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("broadsword")
@@ -238,6 +239,20 @@ func dead_exit():
 	pass
 
 func dead_update(_delta : float):
+	pass
+	
+#endregion
+
+## Disabled state. Does nothing.
+#region Disabled
+
+func disabled_enter():
+	pass
+
+func disabled_exit():
+	pass
+
+func disabled_update(_delta : float):
 	pass
 	
 #endregion

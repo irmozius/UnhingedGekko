@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UnhingedGekko"
-run/main_scene="uid://d3il87cf7s1l0"
+run/main_scene="uid://5tyrvfxd4rin"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

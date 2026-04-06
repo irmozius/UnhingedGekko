@@ -14,6 +14,7 @@ var current_attack_damage : int = 1:
 var stats:Dictionary
 
 signal player_died
+signal game_started
 
 func change_hp(amnt : int):
 	current_hp = clamp(current_hp + amnt, 0, max_hp)
