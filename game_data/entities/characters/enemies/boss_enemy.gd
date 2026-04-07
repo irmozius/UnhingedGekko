@@ -11,7 +11,7 @@ func on_ready():
 	fsm.add_state("Hurt", hurt_enter, hurt_exit, hurt_update, hurt_pupdate)
 	fsm.add_state("Retreat", retreat_enter, retreat_exit, retreat_update, retreat_pupdate)
 	fsm.set_state("Approach")
-	Global.parallax.slow_background()
+	Global.parallax.slow_background(-3)
 	
 func on_nonlethal_hit():
 	print('hit')
