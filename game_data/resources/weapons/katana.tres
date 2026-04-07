@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bu0x3d83vr4fw"]
+
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_cpqj4"]
+[ext_resource type="Texture2D" uid="uid://dwoejjl5xt62f" path="res://assets/graphics/icons/weapons/Katana.webp" id="1_x5yoq"]
+[ext_resource type="Texture2D" uid="uid://ckx6xiq3nnwge" path="res://assets/graphics/sprites/gekko/weapons/rank_1_katana_sheet.webp" id="3_w1v7y"]
+
+[resource]
+script = ExtResource("1_cpqj4")
+name = "Katana"
+db_key = "katana"
+description = "A light and powerful sword forged in the eastern lands. "
+rank = 1
+attack_duration = 0.4
+cooldown_duration = 0.5
+hurtbox_radius = 20.0
+spritesheet = ExtResource("3_w1v7y")
+icon = ExtResource("1_x5yoq")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

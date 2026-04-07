@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://88k0qw7hkujx"]
+
+[ext_resource type="Texture2D" uid="uid://brmokhejt4edm" path="res://assets/graphics/icons/weapons/silver_axe.webp" id="1_bbcos"]
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_xbmoe"]
+[ext_resource type="Texture2D" uid="uid://02ls0rsqh6rt" path="res://assets/graphics/sprites/gekko/weapons/rank_1_silver_axe.webp" id="3_l5pqm"]
+
+[resource]
+script = ExtResource("1_xbmoe")
+name = "Silver Axe"
+db_key = "silver_axe"
+description = "A larger hunter’s axe capable of heavy damage."
+rank = 1
+attack_duration = 0.8
+cooldown_duration = 1.0
+hurtbox_radius = 20.0
+spritesheet = ExtResource("3_l5pqm")
+icon = ExtResource("1_bbcos")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://vokpfch2wov7"]
+
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_6lika"]
+[ext_resource type="Texture2D" uid="uid://cgn1ok3g3b1ws" path="res://assets/graphics/icons/weapons/Surgeons_Claw_Rank_2.webp" id="1_tc3hl"]
+[ext_resource type="Texture2D" uid="uid://cawil1hyv2oos" path="res://assets/graphics/sprites/gekko/weapons/rank_2_surgeon_claw.webp" id="3_w7eq2"]
+
+[resource]
+script = ExtResource("1_6lika")
+name = "Surgeon Claw"
+db_key = "surgeon_claw"
+description = "Once a prized tool of the Surgeon's Guild, used to extract growths and parasites from patients. Such times of prosperity are long past, however. These days, a knife and bare hands are all any can muster."
+rank = 2
+attack_duration = 0.3
+cooldown_duration = 0.7
+hurtbox_radius = 20.0
+spritesheet = ExtResource("3_w7eq2")
+icon = ExtResource("1_tc3hl")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

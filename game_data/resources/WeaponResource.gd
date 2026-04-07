@@ -15,6 +15,7 @@ extends Resource
 
 @export_category("Art")
 @export var spritesheet : Texture2D
+@export var projectile_spritesheet : Texture2D
 @export var icon : Texture2D
 @export var sound : AudioStream
 

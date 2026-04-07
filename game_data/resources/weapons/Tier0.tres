@@ -4,11 +4,17 @@
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_uvs1k"]
 [ext_resource type="Resource" uid="uid://dmgkap84s6bjm" path="res://game_data/resources/weapons/knife.tres" id="3_qbjqk"]
 [ext_resource type="Resource" uid="uid://bmr7l5yye4dql" path="res://game_data/resources/weapons/broadsword.tres" id="4_75b5k"]
+[ext_resource type="Resource" uid="uid://du1qf0kte2t3l" path="res://game_data/resources/weapons/bamboo_pole.tres" id="5_75b5k"]
+[ext_resource type="Resource" uid="uid://6wyj8clumkeg" path="res://game_data/resources/weapons/rusted_machette.tres" id="6_11prm"]
+[ext_resource type="Resource" uid="uid://bguq04i3ax3e2" path="res://game_data/resources/weapons/hand_axe.tres" id="7_uvs1k"]
 
 [resource]
 script = ExtResource("1_11prm")
 tier_dictionary = Dictionary[String, ExtResource("2_uvs1k")]({
+"bamboo_pole": ExtResource("5_75b5k"),
 "broadsword": ExtResource("4_75b5k"),
+"hand_axe": ExtResource("7_uvs1k"),
+"rusted_machette": ExtResource("6_11prm"),
 "verdant_knife": ExtResource("3_qbjqk")
 })
 metadata/_custom_type_script = "uid://bkidu3wy3002"

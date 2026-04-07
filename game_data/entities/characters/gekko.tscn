@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dh1811l83oi2i" path="res://game_data/entities/characters/gekko.gd" id="1_p6orh"]
 [ext_resource type="Texture2D" uid="uid://485sgqmm1c1i" path="res://assets/graphics/sprites/gekko/Gekko_Sheet.png" id="2_w5ypw"]
-[ext_resource type="Texture2D" uid="uid://q4wy6ay2276j" path="res://assets/graphics/sprites/gekko/weapons/rank_1_morningstar.png" id="3_ranni"]
+[ext_resource type="Texture2D" uid="uid://cawil1hyv2oos" path="res://assets/graphics/sprites/gekko/weapons/rank_2_surgeon_claw.webp" id="3_ranni"]
 [ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_wtvjg"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_ely7x"]
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="5_f3bsu"]

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://c3ogr75jy60c3"]
+
+[ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_5ftnk"]
+[ext_resource type="Texture2D" uid="uid://dow1q41ayyh4h" path="res://assets/graphics/icons/weapons/Dragon_Slayer.webp" id="1_fiq0r"]
+[ext_resource type="Texture2D" uid="uid://dc24q2uei7uy4" path="res://assets/graphics/sprites/gekko/weapons/projectiles/Dragon_Slayer_beam.webp" id="2_kpajc"]
+[ext_resource type="Texture2D" uid="uid://dkfy0xogoosqc" path="res://assets/graphics/sprites/gekko/weapons/rank_2_dragon_slayer.webp" id="3_kpajc"]
+
+[resource]
+script = ExtResource("1_5ftnk")
+name = "Dragon Slayer"
+db_key = "dragon_slayer"
+description = "A sword once used by a hero and her dragon to thwart ambitions of a dark king."
+rank = 2
+spritesheet = ExtResource("3_kpajc")
+projectile_spritesheet = ExtResource("2_kpajc")
+icon = ExtResource("1_fiq0r")
+metadata/_custom_type_script = "uid://bowx6pwrpt8xj"
