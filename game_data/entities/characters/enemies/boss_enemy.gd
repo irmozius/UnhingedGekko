@@ -11,10 +11,17 @@ func on_ready():
 	fsm.add_state("Hurt", hurt_enter, hurt_exit, hurt_update, hurt_pupdate)
 	fsm.add_state("Retreat", retreat_enter, retreat_exit, retreat_update, retreat_pupdate)
 	fsm.set_state("Approach")
+	Global.parallax.slow_background()
 	
 func on_nonlethal_hit():
 	print('hit')
 	fsm.set_state("Hurt")
+
+func on_death():
+	Global.parallax.slow_background(1)
+
+func _on_resume():
+	fsm.set_state("Approach")
 
 func activate_attack():
 	hurtbox_col.disabled = false

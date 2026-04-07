@@ -3,12 +3,19 @@ class_name ScrollingEnemy
 extends Enemy
 
 func on_ready() -> void:
+	Global.resumed.connect(_on_resume)
 	fsm.add_state("Normal", normal_enter, normal_exit, normal_update, normal_pupdate)
 	fsm.add_state("Knockback", knockback_enter, knockback_exit, knockback_update, knockback_pupdate)
 	fsm.set_state("Normal")
 
 func on_nonlethal_hit():
 	fsm.set_state("Knockback")
+
+func on_death():
+	pass
+
+func _on_resume():
+	fsm.set_state("Normal")
 
 ## We should do something more interesting when they die, at some point
 

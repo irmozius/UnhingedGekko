@@ -18,6 +18,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 func _ready() -> void:
 	## Setup connection to react to player dying, simply switching off movement once it occurs.
 	Global.player_died.connect(func(): disable())
+	Global.halted.connect(_on_game_halted)
 	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, dead_pupdate)
 	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, disabled_pupdate)
 	on_ready()
@@ -30,6 +31,9 @@ func _ready() -> void:
 ## One hit and dead!
 func _on_hitbox_received_hit(attacking_hurtbox : Hurtbox):
 	take_damage(attacking_hurtbox.damage)
+
+func _on_game_halted():
+	fsm.set_state("Disabled")
 	
 func take_damage(amount):
 	hp -= amount
@@ -45,6 +49,9 @@ func take_damage(amount):
 func die():
 	died.emit()
 	fsm.set_state("Dead")
+	on_death()
+	
+@abstract func on_death()
 
 func disable():
 	fsm.set_state("Disabled")

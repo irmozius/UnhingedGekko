@@ -5,11 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://b7ga6qhh1uyjr" path="res://game_data/entities/characters/enemies/ground_dragon.tscn" id="3_d8psh"]
 [ext_resource type="PackedScene" uid="uid://dyrjkqgj5vl4o" path="res://game_data/entities/characters/enemies/blue_snake.tscn" id="4_d8psh"]
 [ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="5_u4ld8"]
+[ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="6_qc0dh"]
 
 [node name="Spawner" type="Node2D" unique_id=927126007]
 script = ExtResource("1_0sg3f")
 enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh"), ExtResource("4_d8psh")])
 bosses = Array[PackedScene]([ExtResource("5_u4ld8")])
+chest = ExtResource("6_qc0dh")
 
 [node name="ScrollerTimer" type="Timer" parent="." unique_id=202520885]
 wait_time = 4.0
@@ -18,5 +20,9 @@ one_shot = true
 [node name="BossTimer" type="Timer" parent="." unique_id=1220073361]
 one_shot = true
 
+[node name="ChestTimer" type="Timer" parent="." unique_id=1081716440]
+one_shot = true
+
 [connection signal="timeout" from="ScrollerTimer" to="." method="_on_etimer_timeout"]
 [connection signal="timeout" from="BossTimer" to="." method="_on_btimer_timeout"]
+[connection signal="timeout" from="ChestTimer" to="." method="_on_chest_timer_timeout"]

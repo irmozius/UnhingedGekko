@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wkkponwamxyu" path="res://game_data/entities/characters/gekko.tscn" id="1_7i7qt"]
 [ext_resource type="PackedScene" uid="uid://c4qjm5fsshu0o" path="res://game_data/worlds/Parallax.tscn" id="1_hqrgs"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
+[ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="5_2iqjp"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
@@ -97,5 +98,8 @@ text = "HP: 3"
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1691352108]
 position = Vector2(59, 110)
+
+[node name="Chest" parent="." unique_id=299074393 instance=ExtResource("5_2iqjp")]
+position = Vector2(277, 128)
 
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]

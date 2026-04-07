@@ -65,7 +65,8 @@ func _physics_process(delta: float) -> void:
 
 ## Callback for state change.
 func _on_state_change(s_name : String):
-	print("Player state changed to " + s_name)
+	pass
+	#print("Player state changed to " + s_name)
 	
 ## Poll the state of input buttons.
 func check_action_input():
@@ -133,6 +134,12 @@ func die():
 	Global.player_dead = true
 	Global.player_died.emit()
 	fsm.set_state("Dead")
+
+func disable():
+	fsm.set_state("Disabled")
+
+func enable():
+	fsm.set_state("Running")
 
 ## Callback used to handle the end of attacks. Signal comes from `attack`.
 func _on_attack_finished():
@@ -248,7 +255,7 @@ func dead_update(_delta : float):
 #region Disabled
 
 func disabled_enter():
-	pass
+	gekko_anim.play("stationary")
 
 func disabled_exit():
 	pass

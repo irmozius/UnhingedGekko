@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://2r0kvgnsh01y"]
+
+[ext_resource type="Script" uid="uid://dvp7os4kvpxb8" path="res://game_data/entities/props/chest.gd" id="1_dya13"]
+[ext_resource type="Texture2D" uid="uid://bummwd4ej7dfi" path="res://assets/graphics/sprites/props/chest.png" id="1_gdmqi"]
+[ext_resource type="Texture2D" uid="uid://b58foxu8amu2" path="res://assets/graphics/sprites/props/chest_highlights.png" id="2_qmpmw"]
+[ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="4_iugc4"]
+[ext_resource type="Texture2D" uid="uid://irvp7b7w7oh5" path="res://assets/graphics/icons/weapons/Knife_Icon.jpg" id="5_q50ci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmpmw"]
+size = Vector2(44, 22)
+
+[sub_resource type="Animation" id="Animation_iugc4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Highlights:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChestSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Highlights:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_q50ci"]
+resource_name = "destroy"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ChestSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Highlights:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.53333336),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ChestSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Highlights:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.53333336, 0.5666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nge62"]
+_data = {
+&"RESET": SubResource("Animation_iugc4"),
+&"destroy": SubResource("Animation_q50ci")
+}
+
+[node name="Chest" type="Node2D" unique_id=941856958 node_paths=PackedStringArray("icons")]
+script = ExtResource("1_dya13")
+highlight_colours = Array[Color]([Color(0.25882354, 0.60784316, 0.28627452, 1), Color(0.20784314, 0.3529412, 0.7019608, 1), Color(0.41568628, 0.18039216, 0.42352942, 1)])
+icons = [NodePath("UI/PanelContainer/HBoxContainer/Icon1"), NodePath("UI/PanelContainer/HBoxContainer/Icon2"), NodePath("UI/PanelContainer/HBoxContainer/Icon3")]
+
+[node name="ChestSprite" type="Sprite2D" parent="." unique_id=1862080119]
+texture_filter = 3
+position = Vector2(0, -28)
+texture = ExtResource("1_gdmqi")
+hframes = 5
+
+[node name="Highlights" type="Sprite2D" parent="." unique_id=950313362]
+texture_filter = 3
+position = Vector2(0, -28)
+texture = ExtResource("2_qmpmw")
+hframes = 5
+
+[node name="Hitbox" parent="." unique_id=2037733599 instance=ExtResource("4_iugc4")]
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=385777619]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_qmpmw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=960559714]
+libraries/ = SubResource("AnimationLibrary_nge62")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=463782202]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=124590761]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.0
+offset_top = -20.0
+offset_right = 62.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/PanelContainer" unique_id=117607544]
+layout_mode = 2
+alignment = 1
+
+[node name="Icon1" type="TextureRect" parent="UI/PanelContainer/HBoxContainer" unique_id=344886011]
+layout_mode = 2
+texture = ExtResource("5_q50ci")
+stretch_mode = 3
+
+[node name="Icon2" type="TextureRect" parent="UI/PanelContainer/HBoxContainer" unique_id=1072078729]
+layout_mode = 2
+texture = ExtResource("5_q50ci")
+stretch_mode = 3
+
+[node name="Icon3" type="TextureRect" parent="UI/PanelContainer/HBoxContainer" unique_id=1651755252]
+layout_mode = 2
+texture = ExtResource("5_q50ci")
+stretch_mode = 3
+
+[connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]
