@@ -8,7 +8,7 @@
 script = ExtResource("2_6117l")
 name = "Fire Bane"
 db_key = "firebane"
-rank = "Rare"
+rank = 1
 damage = 2
 spritesheet = ExtResource("3_qa13q")
 icon = ExtResource("1_43wsh")
