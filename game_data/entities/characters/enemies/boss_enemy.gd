@@ -18,7 +18,7 @@ func on_nonlethal_hit():
 	fsm.set_state("Hurt")
 
 func on_death():
-	Global.parallax.slow_background(1)
+	Global.parallax.reset_background()
 
 func _on_resume():
 	fsm.set_state("Approach")

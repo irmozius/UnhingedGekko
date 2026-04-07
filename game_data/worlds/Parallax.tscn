@@ -1,50 +1,93 @@
-[gd_scene format=3 uid="uid://c4qjm5fsshu0o"]
+[gd_scene format=4 uid="uid://c4qjm5fsshu0o"]
 
 [ext_resource type="Script" uid="uid://dtdxctr4vfls3" path="res://game_data/worlds/parallax.gd" id="1_t862i"]
-[ext_resource type="Texture2D" uid="uid://bfoxmnh7r4spr" path="res://assets/graphics/world/ground1.png" id="2_udbdp"]
+[ext_resource type="Texture2D" uid="uid://dai8jeroovk2b" path="res://assets/graphics/world/Level one Desert test map.png" id="2_rlodj"]
+[ext_resource type="PackedScene" uid="uid://clkqmreca77fx" path="res://game_data/worlds/world_object.tscn" id="3_rlodj"]
 [ext_resource type="Texture2D" uid="uid://dsy0lxu3dt46e" path="res://assets/graphics/world/broken wood desert.png" id="3_si4de"]
 [ext_resource type="Texture2D" uid="uid://dunti0fblb1ft" path="res://assets/graphics/world/old door.png" id="4_rlodj"]
 [ext_resource type="Texture2D" uid="uid://ehvbootfnyb7" path="res://assets/graphics/world/Oasis.png" id="5_ijqiq"]
+[ext_resource type="Texture2D" uid="uid://c5h0ju6st5qop" path="res://assets/graphics/world/old wagon Desert.png" id="5_pmpoe"]
+[ext_resource type="Texture2D" uid="uid://cith6fyh22sb6" path="res://assets/graphics/world/Withered Tree Desert.png" id="6_tos4k"]
+[ext_resource type="Texture2D" uid="uid://ckcyevwj7rsk1" path="res://assets/graphics/world/ruined building desert.png" id="8_2wscr"]
+[ext_resource type="Texture2D" uid="uid://cg46y7s2b7del" path="res://assets/graphics/world/Cactus Desert Level.png" id="9_ib8sq"]
+[ext_resource type="Texture2D" uid="uid://bd2i1bowlkyxj" path="res://assets/graphics/world/Withered grass 1.png" id="10_s013n"]
+[ext_resource type="Texture2D" uid="uid://w7nbid30fmly" path="res://assets/graphics/world/withered grass 2.png" id="11_v4ckn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijqiq"]
+texture = ExtResource("2_rlodj")
+0:2/0 = 0
+1:2/next_alternative_id = 3
+1:2/0 = 0
+1:2/1 = 1
+1:2/2 = 2
+2:2/next_alternative_id = 2
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_pmpoe"]
+sources/0 = SubResource("TileSetAtlasSource_ijqiq")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlodj"]
+texture = ExtResource("2_rlodj")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ijqiq"]
+sources/1 = SubResource("TileSetAtlasSource_rlodj")
 
 [node name="Parallax" type="Node2D" unique_id=159466930]
 script = ExtResource("1_t862i")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=882645557]
-scroll_offset = Vector2(260, 0)
-repeat_size = Vector2(255, 0)
+repeat_size = Vector2(260, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=684270733]
-position = Vector2(32, 127)
-texture = ExtResource("2_udbdp")
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D" unique_id=627743031]
+tile_map_data = PackedByteArray("AAAPAAkAAAAAAAMAAAAOAAkAAAACAAMAAAANAAkAAAACAAMAAAAMAAkAAAAAAAMAAAALAAkAAAAAAAMAAAAKAAkAAAACAAMAAAAJAAkAAAACAAMAAAAIAAkAAAABAAMAAAAHAAkAAAAAAAMAAAAGAAkAAAACAAMAAAAFAAkAAAAAAAMAAAAEAAkAAAAAAAMAAAADAAkAAAABAAMAAAACAAkAAAACAAMAAAABAAkAAAAAAAMAAAAAAAkAAAABAAMAAAD//wkAAAABAAMAAAD//wgAAAACAAMAAAAAAAgAAAABAAMAAAABAAgAAAAAAAIAAAACAAgAAAAAAAIAAAADAAgAAAAAAAIAAAAEAAgAAAABAAMAAAAFAAgAAAAAAAIAAAAGAAgAAAABAAMAAAAHAAgAAAAAAAIAAAAIAAgAAAAAAAIAAAAJAAgAAAACAAMAAAAKAAgAAAAAAAIAAAALAAgAAAAAAAIAAAAMAAgAAAAAAAMAAAANAAgAAAAAAAIAAAAOAAgAAAABAAMAAAAfAAgAAAAAAAIAAAAPAAgAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_pmpoe")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D" unique_id=1663428876]
-position = Vector2(96, 127)
-texture = ExtResource("2_udbdp")
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1357209137]
+repeat_size = Vector2(520, 0)
 
-[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D" unique_id=1177082424]
-position = Vector2(160, 127)
-texture = ExtResource("2_udbdp")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Parallax2D" unique_id=2035793162]
-position = Vector2(224, 127)
-texture = ExtResource("2_udbdp")
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D4" unique_id=1594815018]
+tile_map_data = PackedByteArray("AAABAAcAAQAAAAIAAAACAAcAAQABAAIAAAADAAcAAQACAAIAAAAEAAcAAQADAAIAAAAPAAcAAQAAAAIAAAAQAAcAAQABAAIAAAARAAcAAQACAAIAAAAJAAcAAQABAAMAAAAAAAcAAQACAAMAAAANAAcAAQAAAAMAAAAOAAcAAQAAAAIAAAAHAAcAAQACAAMAAAAFAAcAAQAAAAIAAAAGAAcAAQAAAAIAAAAIAAcAAQAAAAIAAAAMAAcAAQAAAAIAAAALAAcAAQAAAAIAAAAKAAcAAQAAAAIAAAD//wcAAQABAAMAAAASAAcAAQAAAAIAAAATAAcAAQAAAAIAAAAUAAcAAQAAAAIAAAAVAAcAAQAAAAIAAAAWAAcAAQABAAIAAAAXAAcAAQAAAAIAAAAYAAcAAQACAAMAAAAZAAcAAQAAAAIAAAAaAAcAAQABAAMAAAAbAAcAAQACAAMAAAAcAAcAAQAAAAIAAAAdAAcAAQAAAAIAAAAeAAcAAQACAAIAAAAfAAcAAQAAAAIAAAABAAAAAQAAAAAAAAACAAIAAQAAAAAAAAAEAAAAAQACAAAAAAAFAAAAAQADAAAAAAAJAAEAAQACAAAAAAAKAAEAAQADAAAAAAANAAEAAQACAAAAAAAOAAEAAQADAAAAAAAPAAMAAQACAAAAAAAQAAMAAQADAAAAAAAZAAEAAQACAAAAAAAaAAEAAQADAAAAAAAIAAAAAQAAAAAAAAAJAAAAAQABAAAAAAASAAEAAQAAAAAAAAATAAEAAQABAAAAAAAVAAAAAQAAAAAAAAAWAAAAAQABAAAAAAAVAAEAAQACAAAAAAAVAAIAAQACAAAAAAALAAIAAQACAAAAAAAeAAIAAQADAAAAAAAdAAMAAQADAAAAAAATAAMAAQADAAAAAAA=")
+tile_set = SubResource("TileSet_ijqiq")
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=1660457342]
-scroll_offset = Vector2(260, 0)
-repeat_size = Vector2(260, 0)
+repeat_size = Vector2(520, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=339995679]
-position = Vector2(103, 71)
-texture = ExtResource("5_ijqiq")
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D3" unique_id=262580404]
+tile_map_data = PackedByteArray("AAABAAcAAQAAAAIAAAACAAcAAQABAAIAAAADAAcAAQACAAIAAAAEAAcAAQADAAIAAAAPAAcAAQAAAAIAAAAQAAcAAQABAAIAAAARAAcAAQACAAIAAAAJAAcAAQABAAMAAAAAAAcAAQACAAMAAAANAAcAAQAAAAMAAAAOAAcAAQAAAAIAAAAHAAcAAQACAAMAAAAFAAcAAQAAAAIAAAAGAAcAAQAAAAIAAAAIAAcAAQAAAAIAAAAMAAcAAQAAAAIAAAALAAcAAQAAAAIAAAAKAAcAAQAAAAIAAAD//wcAAQABAAMAAAASAAcAAQAAAAIAAAATAAcAAQAAAAIAAAAUAAcAAQAAAAIAAAAVAAcAAQAAAAIAAAAWAAcAAQABAAIAAAAXAAcAAQAAAAIAAAAYAAcAAQACAAMAAAAZAAcAAQAAAAIAAAAaAAcAAQABAAMAAAAbAAcAAQACAAMAAAAcAAcAAQAAAAIAAAAdAAcAAQAAAAIAAAAeAAcAAQACAAIAAAAfAAcAAQAAAAIAAAAEAAUAAQAAAAEAAAAEAAYAAQAAAAIAAAAFAAUAAQABAAEAAAAFAAYAAQABAAIAAAAGAAUAAQACAAEAAAAGAAYAAQACAAIAAAAHAAUAAQADAAEAAAAHAAYAAQADAAIAAAATAAYAAQAAAAIAAAAUAAYAAQABAAIAAAAVAAYAAQACAAIAAAAWAAUAAQADAAEAAAAWAAYAAQADAAIAAAAbAAYAAQAAAAIAAAAcAAYAAQABAAIAAAAdAAYAAQACAAIAAAAeAAUAAQADAAEAAAAeAAYAAQADAAIAAAAIAAYAAQAAAAIAAAADAAYAAQACAAMAAAD//wYAAQACAAMAAAAAAAYAAQAAAAIAAAABAAYAAQAAAAIAAAACAAYAAQAAAAIAAAAJAAYAAQACAAMAAAAKAAYAAQAAAAIAAAALAAYAAQAAAAIAAAAMAAYAAQAAAAIAAAANAAYAAQABAAIAAAAOAAYAAQAAAAIAAAAPAAYAAQADAAIAAAAQAAYAAQABAAMAAAARAAYAAQAAAAIAAAASAAYAAQAAAAIAAAAaAAYAAQABAAIAAAAZAAYAAQAAAAIAAAAYAAYAAQAAAAIAAAAXAAYAAQAAAAIAAAAfAAYAAQABAAIAAAARAAUAAQACAAEAAAASAAUAAQABAAEAAAATAAUAAQACAAEAAAAQAAUAAQABAAEAAAAYAAUAAQABAAEAAAAZAAUAAQACAAEAAAD//wUAAQABAAEAAAAAAAUAAQACAAEAAAAJAAUAAQABAAEAAAAKAAUAAQACAAEAAAA=")
+tile_set = SubResource("TileSet_ijqiq")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1144161409]
-scroll_offset = Vector2(260, 0)
-repeat_size = Vector2(260, 0)
+repeat_size = Vector2(520, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1805554401]
-position = Vector2(22, 99)
-texture = ExtResource("3_si4de")
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D2" unique_id=1852127510]
+tile_map_data = PackedByteArray("AAABAAcAAQAAAAIAAAACAAcAAQABAAIAAAADAAcAAQACAAIAAAAEAAcAAQADAAIAAAAPAAcAAQAAAAIAAAAQAAcAAQABAAIAAAARAAcAAQACAAIAAAAJAAcAAQABAAMAAAAAAAcAAQACAAMAAAANAAcAAQAAAAMAAAAOAAcAAQAAAAIAAAAHAAcAAQACAAMAAAAFAAcAAQAAAAIAAAAGAAcAAQAAAAIAAAAIAAcAAQAAAAIAAAAMAAcAAQAAAAIAAAALAAcAAQAAAAIAAAAKAAcAAQAAAAIAAAD//wcAAQABAAMAAAASAAcAAQAAAAIAAAATAAcAAQAAAAIAAAAUAAcAAQAAAAIAAAAVAAcAAQAAAAIAAAAWAAcAAQABAAIAAAAXAAcAAQAAAAIAAAAYAAcAAQACAAMAAAAZAAcAAQAAAAIAAAAaAAcAAQABAAMAAAAbAAcAAQACAAMAAAAcAAcAAQAAAAIAAAAdAAcAAQAAAAIAAAAeAAcAAQACAAIAAAAfAAcAAQAAAAIAAAA=")
+tile_set = SubResource("TileSet_ijqiq")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D2" unique_id=574665660]
-position = Vector2(175, 105)
+[node name="Sprite2D3" parent="." unique_id=2080584291 instance=ExtResource("3_rlodj")]
+position = Vector2(97, 109)
 texture = ExtResource("4_rlodj")
+textures = Array[Texture2D]([ExtResource("4_rlodj"), ExtResource("5_pmpoe"), ExtResource("6_tos4k"), ExtResource("5_ijqiq"), ExtResource("8_2wscr")])
+
+[node name="smallerobjects" parent="." unique_id=768899916 instance=ExtResource("3_rlodj")]
+position = Vector2(30, 117)
+texture = ExtResource("9_ib8sq")
+textures = Array[Texture2D]([ExtResource("10_s013n"), ExtResource("11_v4ckn"), ExtResource("6_tos4k"), ExtResource("3_si4de")])

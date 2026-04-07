@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clkqmreca77fx"]
+
+[ext_resource type="Texture2D" uid="uid://bd2i1bowlkyxj" path="res://assets/graphics/world/Withered grass 1.png" id="1_3uc4x"]
+[ext_resource type="Script" uid="uid://cq05105fyswnb" path="res://game_data/worlds/world_object.gd" id="2_3uc4x"]
+
+[node name="randomizedsprite" type="Sprite2D" unique_id=2080584291]
+texture = ExtResource("1_3uc4x")
+script = ExtResource("2_3uc4x")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1683504435]
+position = Vector2(-10, -24)
+rect = Rect2(-73, -25, 159, 90)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
