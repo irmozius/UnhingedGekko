@@ -5,13 +5,17 @@ extends Node2D
 @export var speed_layer_2: Vector2 = Vector2(-75  , 0) # Medium speed
 @export var speed_layer_3: Vector2 = Vector2(-50, 0)  # Slow (Further layer)
 @export var speed_layer_4: Vector2 = Vector2(-25, 0)  # Slowest (SKY - Furthest layer)
-
+@export var paused: bool = false
 @onready var sprite_further:Node = $Sprite2D3
+@onready var sprite_further2:Node = $Sprite2D4
 @onready var sprite_middle:Node = $smallerobjects
 
 func _ready() -> void:
 	Global.parallax = self
-	paint_star_speed()
+	if paused: 
+		slow_background(0)
+	else:
+		paint_star_speed()
 	Global.player_died.connect(_on_player_died)
 
 func _on_player_died() -> void:
@@ -22,6 +26,7 @@ func paint_star_speed():
 	$Parallax2D.autoscroll = speed_layer_1
 	$Parallax2D2.autoscroll = speed_layer_2
 	sprite_further.scroll_speed = -speed_layer_3.x
+	sprite_further2.scroll_speed = -speed_layer_3.x
 	$Parallax2D3.autoscroll = speed_layer_3
 	sprite_middle.scroll_speed = -speed_layer_2.x
 	

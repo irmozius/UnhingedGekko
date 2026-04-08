@@ -6,7 +6,7 @@ extends Sprite2D
 @export var scroll_speed: float = 100.0 
 
 func _ready() -> void:
-	randomize_texture()
+	pick_first()
 
 func _process(delta: float) -> void:
 	# Manually move the sprite to the left
@@ -22,6 +22,15 @@ func randomize_texture() -> void:
 		return
 		
 	texture = textures.pick_random()
+	
+	# Keep the bottom edge aligned
+	offset.y = -(texture.get_size().y / 2.0)
+
+func pick_first() -> void:
+	if textures.is_empty():
+		return
+		
+	texture = textures[0]
 	
 	# Keep the bottom edge aligned
 	offset.y = -(texture.get_size().y / 2.0)

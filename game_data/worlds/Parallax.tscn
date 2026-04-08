@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://ckcyevwj7rsk1" path="res://assets/graphics/world/ruined building desert.png" id="8_2wscr"]
 [ext_resource type="Texture2D" uid="uid://cg46y7s2b7del" path="res://assets/graphics/world/Cactus Desert Level.png" id="9_ib8sq"]
 [ext_resource type="Texture2D" uid="uid://bd2i1bowlkyxj" path="res://assets/graphics/world/Withered grass 1.png" id="10_s013n"]
+[ext_resource type="Texture2D" uid="uid://b8jn47t6jhtx6" path="res://assets/graphics/world/lizard skull desert.png" id="10_v4ckn"]
 [ext_resource type="Texture2D" uid="uid://w7nbid30fmly" path="res://assets/graphics/world/withered grass 2.png" id="11_v4ckn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ijqiq"]
@@ -83,9 +84,16 @@ tile_map_data = PackedByteArray("AAABAAcAAQAAAAIAAAACAAcAAQABAAIAAAADAAcAAQACAAI
 tile_set = SubResource("TileSet_ijqiq")
 
 [node name="Sprite2D3" parent="." unique_id=2080584291 instance=ExtResource("3_rlodj")]
-position = Vector2(97, 109)
+texture_filter = 3
+position = Vector2(211, 114)
 texture = ExtResource("4_rlodj")
-textures = Array[Texture2D]([ExtResource("4_rlodj"), ExtResource("5_pmpoe"), ExtResource("6_tos4k"), ExtResource("5_ijqiq"), ExtResource("8_2wscr")])
+textures = Array[Texture2D]([ExtResource("8_2wscr"), ExtResource("4_rlodj"), ExtResource("5_pmpoe"), ExtResource("6_tos4k"), ExtResource("5_ijqiq")])
+
+[node name="Sprite2D4" parent="." unique_id=2024924310 instance=ExtResource("3_rlodj")]
+texture_filter = 3
+position = Vector2(98, 118)
+texture = ExtResource("4_rlodj")
+textures = Array[Texture2D]([ExtResource("5_pmpoe"), ExtResource("10_s013n"), ExtResource("10_v4ckn"), ExtResource("9_ib8sq"), ExtResource("3_si4de")])
 
 [node name="smallerobjects" parent="." unique_id=768899916 instance=ExtResource("3_rlodj")]
 position = Vector2(30, 117)
