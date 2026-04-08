@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_ely7x"]
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="5_f3bsu"]
 [ext_resource type="Script" uid="uid://dfvjnhi4hxd6w" path="res://game_data/entities/characters/shoot.gd" id="8_4yyxq"]
+[ext_resource type="PackedScene" uid="uid://mqfjv73tf3vw" path="res://game_data/entities/components/projectile.tscn" id="8_uv4va"]
 
 [sub_resource type="Animation" id="Animation_w5ypw"]
 length = 0.001
@@ -284,5 +285,6 @@ texture = ExtResource("5_f3bsu")
 
 [node name="attack" type="Node" parent="." unique_id=394590036]
 script = ExtResource("8_4yyxq")
+projectile = ExtResource("8_uv4va")
 
 [connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]

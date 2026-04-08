@@ -12,5 +12,6 @@ db_key = "hand_axe"
 description = "A light throwing axe both slow and inacurate."
 spritesheet = ExtResource("3_e1kqq")
 projectile_spritesheet = ExtResource("2_e1kqq")
+projectile_hframes = 4
 icon = ExtResource("1_n8bao")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

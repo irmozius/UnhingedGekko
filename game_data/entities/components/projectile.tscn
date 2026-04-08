@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://mqfjv73tf3vw"]
+
+[ext_resource type="Script" uid="uid://bfleh08o7xx6h" path="res://game_data/entities/components/projectile.gd" id="1_photo"]
+[ext_resource type="Texture2D" uid="uid://bsox2e0dmhruo" path="res://assets/graphics/sprites/gekko/weapons/projectiles/fireball.png" id="1_vh4kt"]
+[ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="2_118ei"]
+
+[sub_resource type="Animation" id="Animation_thimi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Projectile:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ntray"]
+resource_name = "projectile_anim"
+length = 0.6333333
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Projectile:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_54ul6"]
+_data = {
+&"RESET": SubResource("Animation_thimi"),
+&"projectile_anim": SubResource("Animation_ntray")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_photo"]
+size = Vector2(15.5, 15)
+
+[node name="projectile" type="Node2D" unique_id=965039545]
+script = ExtResource("1_photo")
+speed = 150.0
+lifetime = 1.5
+
+[node name="Projectile" type="Sprite2D" parent="." unique_id=1206117393]
+texture_filter = 3
+texture = ExtResource("1_vh4kt")
+hframes = 3
+
+[node name="ProjectileAnim" type="AnimationPlayer" parent="." unique_id=1473998189]
+libraries/ = SubResource("AnimationLibrary_54ul6")
+autoplay = &"projectile_anim"
+
+[node name="Hurtbox" parent="." unique_id=888921601 instance=ExtResource("2_118ei")]
+collision_layer = 8
+damage = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=205223073]
+shape = SubResource("RectangleShape2D_photo")

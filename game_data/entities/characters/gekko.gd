@@ -46,8 +46,8 @@ func _ready() -> void:
 	fsm.add_state("Dead", dead_enter, dead_exit, dead_update, Callable())
 	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, Callable())
 	## Set initial state
-	fsm.set_state("InAir")
-	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("surgeon_claw")
+	fsm.set_state("InAir") 
+	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("firebane")
 	
 func _process(delta: float) -> void:
 	## Let the state machine process the current state.
