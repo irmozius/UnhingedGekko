@@ -15,6 +15,7 @@ func _on_play_but_pressed() -> void:
 	play_but.hide()
 	cam_anim.play("move_cam")
 	gek_anim.play("wake")
+	Global.game_started.emit()
 	await cam_anim.animation_finished
 	get_tree().change_scene_to_packed(level_1)
 

@@ -11,6 +11,7 @@ var current_attack_damage : int = 1:
 	set(v):
 		current_attack_damage = v
 		gekko.hurtbox.damage = v
+var current_rank : int = 0
 var stats:Dictionary
 var parallax : ParallaxBG
 var spawner : Spawner

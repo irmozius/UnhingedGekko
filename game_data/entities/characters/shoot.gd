@@ -24,6 +24,7 @@ var current_weapon : WeaponResource:
 		current_weapon = wep
 		attack_sprite.texture = wep.spritesheet
 		Global.current_attack_damage = wep.damage
+		Global.current_rank = wep.rank
 		slash_duration = wep.attack_duration
 		slash_cooldown_timer = wep.cooldown_duration
 		hurtbox_shape.shape.radius = wep.hurtbox_radius

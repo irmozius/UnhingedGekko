@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://4hgcw3ldnbja"]
+
+[ext_resource type="Script" uid="uid://duxcf0w68kttv" path="res://music_manager.gd" id="1_mjaj0"]
+[ext_resource type="Script" uid="uid://bhl4lphfxnj4r" path="res://addons/meta_player/meta_player.gd" id="2_55thm"]
+[ext_resource type="AudioStream" uid="uid://c2t1jq6ayaldx" path="res://assets/audio/music/menu-loop.ogg" id="3_bwvoe"]
+[ext_resource type="Script" uid="uid://blvdxw54wpbkx" path="res://addons/meta_player/trans_rule.gd" id="4_73ats"]
+[ext_resource type="AudioStream" uid="uid://de3ck3lw7k6t4" path="res://assets/audio/music/game_intro.wav" id="5_oqyd7"]
+[ext_resource type="AudioStream" uid="uid://bopr3gwc4vvfw" path="res://assets/audio/music/game_backing.ogg" id="6_ik78e"]
+[ext_resource type="AudioStream" uid="uid://b2uhqbpokqndn" path="res://assets/audio/music/game_gtr_trm.ogg" id="7_6im75"]
+[ext_resource type="Script" uid="uid://d286meqtaw1ho" path="res://addons/meta_player/curve_fade.gd" id="8_gk6k8"]
+[ext_resource type="AudioStream" uid="uid://c2x5iwy4md6v" path="res://assets/audio/music/game_Strings.ogg" id="9_ihf4o"]
+[ext_resource type="AudioStream" uid="uid://duqpc00v76tly" path="res://assets/audio/music/game_Choir.ogg" id="10_vtitr"]
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_qegiw"]
+stream_count = 1
+stream_0/stream = ExtResource("3_bwvoe")
+stream_0/volume = 0.0
+
+[sub_resource type="Resource" id="Resource_qegiw"]
+script = ExtResource("4_73ats")
+target_player = NodePath("../game-intro")
+transition_type = "On Bar"
+signal_node = NodePath("..")
+signal_name = "game_started"
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_hvf12"]
+stream_count = 1
+stream_0/stream = ExtResource("5_oqyd7")
+stream_0/volume = 0.0
+
+[sub_resource type="Resource" id="Resource_myljn"]
+script = ExtResource("4_73ats")
+target_player = NodePath("../game-loop")
+transition_type = "At End"
+signal_name = ""
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_myljn"]
+stream_count = 1
+stream_0/stream = ExtResource("6_ik78e")
+stream_0/volume = 0.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_4baw6"]
+stream_count = 1
+stream_0/stream = ExtResource("7_6im75")
+stream_0/volume = 0.0
+
+[sub_resource type="Curve" id="Curve_mdi6l"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Resource" id="Resource_77yts"]
+script = ExtResource("8_gk6k8")
+curve = SubResource("Curve_mdi6l")
+metadata/_custom_type_script = "uid://d286meqtaw1ho"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_sl8mf"]
+stream_count = 1
+stream_0/stream = ExtResource("9_ihf4o")
+stream_0/volume = 0.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_ainx7"]
+stream_count = 1
+stream_0/stream = ExtResource("10_vtitr")
+stream_0/volume = 0.0
+
+[sub_resource type="Curve" id="Curve_sl8mf"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1.875, 0), 0.0, 0.0, 0, 0, Vector2(1.9662163, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_yj6uf"]
+script = ExtResource("8_gk6k8")
+curve = SubResource("Curve_sl8mf")
+metadata/_custom_type_script = "uid://d286meqtaw1ho"
+
+[node name="music_manager" type="Node" unique_id=1163955105]
+script = ExtResource("1_mjaj0")
+
+[node name="menu-loop" type="AudioStreamPlayer" parent="." unique_id=245055208]
+bus = &"Music"
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_qegiw")])
+auto_play = true
+bars = 32
+transition_rules = Array[ExtResource("4_73ats")]([SubResource("Resource_qegiw")])
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="game-intro" type="AudioStreamPlayer" parent="." unique_id=908731790]
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_hvf12")])
+loop = false
+tempo = 189
+bars = 8
+transition_rules = Array[ExtResource("4_73ats")]([SubResource("Resource_myljn")])
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="game-loop" type="AudioStreamPlayer" parent="." unique_id=1002980800]
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_myljn")])
+tempo = 189
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="gtr_trem" type="AudioStreamPlayer" parent="game-loop" unique_id=1753130085 node_paths=PackedStringArray("target")]
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_4baw6")])
+loop = false
+tempo = 189
+beats_per_bar = 8
+automate_volume = true
+target = NodePath("")
+target_param = "current_rank"
+automation_rule = SubResource("Resource_77yts")
+chance = 77.068
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="strings" type="AudioStreamPlayer" parent="game-loop" unique_id=338247100 node_paths=PackedStringArray("target")]
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_sl8mf")])
+loop = false
+tempo = 189
+beats_per_bar = 8
+automate_volume = true
+target = NodePath("")
+target_param = "current_rank"
+automation_rule = SubResource("Resource_77yts")
+chance = 77.068
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="choir" type="AudioStreamPlayer" parent="game-loop" unique_id=665010620 node_paths=PackedStringArray("target")]
+script = ExtResource("2_55thm")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_ainx7")])
+loop = false
+tempo = 189
+beats_per_bar = 8
+automate_volume = true
+target = NodePath("")
+target_param = "current_rank"
+automation_rule = SubResource("Resource_yj6uf")
+chance = 77.068
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"

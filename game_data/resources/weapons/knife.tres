@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("2_cveq3")
 name = "Knife"
-db_key = "knife"
+db_key = "verdant_knife"
 spritesheet = ExtResource("3_nhqv5")
 icon = ExtResource("1_pxkvg")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"
