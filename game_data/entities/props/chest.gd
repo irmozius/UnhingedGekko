@@ -7,6 +7,9 @@ extends Node2D
 @onready var hitbox: Hitbox = $Hitbox
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var ui: CanvasLayer = $UI
+@onready var textbox: PanelContainer = $UI/textbox
+@onready var title: Label = %Title
+@onready var description: Label = %Desc
 
 var moving : bool = true
 var weapons : Array[WeaponResource]
@@ -32,11 +35,21 @@ func open_chest():
 	ui.show()
 
 func icon_hovered(wep : WeaponResource, but : TextureRect):
+	
 	hovered_weapon = wep
+	title.text = wep.name
+	
+	description.text = wep.description
+	textbox.show()
+	but.pivot_offset = but.size / 2
+	but.scale = but.scale *1.2
 	but.modulate = Color.WHITE * 1.6
 	
 func icon_exited(but : TextureRect):
 	hovered_weapon = null
+	#textbox.hide()
+	but.pivot_offset = but.size / 2
+	but.scale = Vector2(1.0,1.0)
 	but.modulate = Color.WHITE
 
 func icon_input(event : InputEvent):

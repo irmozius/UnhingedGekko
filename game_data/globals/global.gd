@@ -32,8 +32,18 @@ func halt():
 	parallax.slow_background(0)
 	gekko.disable()
 	spawner.toggle_pause(true)
+	enemies_pause()
 
 func resume():
 	parallax.reset_background()
 	gekko.enable()
 	spawner.toggle_pause(false)
+	enemies_pause(false)
+
+func enemies_pause(paused:bool = true):
+	if paused:
+		for enemy in get_tree().get_nodes_in_group("enemy"):
+			enemy.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		for enemy in get_tree().get_nodes_in_group("enemy"):
+			enemy.process_mode = Node.PROCESS_MODE_INHERIT

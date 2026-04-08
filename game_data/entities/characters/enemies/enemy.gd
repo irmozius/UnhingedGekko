@@ -27,6 +27,9 @@ func _ready() -> void:
 		hitbox.received_hit.connect(_on_hitbox_received_hit)
  
 @abstract func on_ready()
+#This is so we can pause their processes
+func _enter_tree() -> void:
+	add_to_group("enemy")
 
 ## One hit and dead!
 func _on_hitbox_received_hit(attacking_hurtbox : Hurtbox):
