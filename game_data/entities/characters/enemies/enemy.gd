@@ -14,6 +14,7 @@ var fsm = FunctionalStateMachineGDScript.new()
 @export var anim : AnimationPlayer
 @export var hurtbox : Hurtbox
 @export var knockback: int = 200
+@export var level: int =1
 
 func _ready() -> void:
 	## Setup connection to react to player dying, simply switching off movement once it occurs.
@@ -73,8 +74,15 @@ func play_death_animation():
 
 	# This is so that we can display in diedscreen later
 func update_stats():
+	Global.score = Global.score + (level * 100)
+	#update score UI
+	var score_node = get_tree().current_scene.get_node_or_null("%Score")
+	if score_node:
+		score_node.text = str(Global.score)
+		score_node.pop_score()
 	Global.stats[entity_name] = Global.stats.get(entity_name, 0) + 1
 	#print(Global.stats)
+
 
 
 #region DeadState
@@ -83,8 +91,8 @@ func dead_enter():
 	if hurtbox:
 		hurtbox.queue_free()
 	hitbox.queue_free() #safety
-	await play_death_animation()
 	update_stats()
+	await play_death_animation()
 	queue_free()
 
 func dead_exit():

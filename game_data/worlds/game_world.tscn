@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c4qjm5fsshu0o" path="res://game_data/worlds/Parallax.tscn" id="1_hqrgs"]
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 [ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="5_2iqjp"]
+[ext_resource type="Script" uid="uid://burw2ghnnrugw" path="res://game_data/worlds/score.gd" id="5_fj8y2"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
@@ -96,6 +97,25 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "HP: 3"
 
+[node name="Score" type="Label" parent="UI" unique_id=2015410166]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.3137255, 0.21960784, 0.21568628, 1)
+theme_override_font_sizes/font_size = 18
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_fj8y2")
+
+[node name="Timer" type="Timer" parent="UI/Score" unique_id=1966731056]
+autostart = true
+
 [node name="Node2D" type="Node2D" parent="." unique_id=1691352108]
 position = Vector2(59, 110)
 
@@ -103,3 +123,4 @@ position = Vector2(59, 110)
 position = Vector2(277, 128)
 
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]
+[connection signal="timeout" from="UI/Score/Timer" to="UI/Score" method="_on_timer_timeout"]

@@ -154,6 +154,7 @@ entity_name = "Green Serpent"
 anim = NodePath("AnimationPlayer")
 hurtbox = NodePath("Hurtbox")
 knockback = 20
+level = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=228488152]
 texture_filter = 3

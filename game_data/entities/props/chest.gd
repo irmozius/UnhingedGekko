@@ -11,6 +11,7 @@ extends Node2D
 @onready var title: Label = %Title
 @onready var description: Label = %Desc
 
+
 var moving : bool = true
 var weapons : Array[WeaponResource]
 var hovered_weapon : WeaponResource
@@ -32,6 +33,8 @@ func _physics_process(delta: float) -> void:
 		position.x -= 150 * delta
 
 func open_chest():
+	var score = get_tree().current_scene.get_node("%Score")
+	score.toggle_score_pause(true)
 	ui.show()
 
 func icon_hovered(wep : WeaponResource, but : TextureRect):
@@ -60,6 +63,8 @@ func icon_input(event : InputEvent):
 func get_weapon():
 	Global.gekko.attack.current_weapon = hovered_weapon
 	Global.resume()
+	var score = get_tree().current_scene.get_node("%Score")
+	score.toggle_score_pause(false)
 	queue_free()
 
 func _on_hitbox_received_hit(_hurtbox : Hurtbox) -> void:

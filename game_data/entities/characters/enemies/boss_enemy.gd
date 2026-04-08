@@ -2,7 +2,7 @@ class_name BossEnemy
 extends Enemy
 
 @export var player_x : int = 50
-@export var hurtbox_col : CollisionShape2D
+@export var hurtbox_col :  CollisionShape2D
 
 func on_ready():
 	fsm.add_state("Approach", approach_enter, approach_exit, approach_update, approach_pupdate)

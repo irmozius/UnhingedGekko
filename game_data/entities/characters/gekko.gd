@@ -21,6 +21,9 @@ var fsm = FunctionalStateMachineGDScript.new()
 ## Animation player
 @onready var gekko_anim: AnimationPlayer = $GekkoAnim
 
+#Score
+@onready var scorenode: Label = %Score
+
 ## Bools for polling input.
 var jump_requested : bool = false
 var slash_requested : bool = false
@@ -133,6 +136,7 @@ func heal(amnt : int):
 func die():
 	Global.player_dead = true
 	Global.player_died.emit()
+	scorenode.toggle_score_pause(true)
 	fsm.set_state("Dead")
 
 func disable():

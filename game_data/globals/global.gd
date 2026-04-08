@@ -14,6 +14,7 @@ var current_attack_damage : int = 1:
 var stats:Dictionary
 var parallax : ParallaxBG
 var spawner : Spawner
+var score: int =0
 
 signal player_died
 signal game_started
