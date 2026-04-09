@@ -10,6 +10,8 @@ extends Node2D
 ## Min/max time between spawns.
 @export var min_time : float = 4.0
 @export var max_time : float = 8.0
+@export var chest_min_time : float = 2.0
+@export var chest_max_time : float = 4.0
 @onready var enem_timer: Timer = $ScrollerTimer
 @onready var boss_timer: Timer = $BossTimer
 @onready var chest_timer: Timer = $ChestTimer
@@ -26,7 +28,7 @@ func toggle_pause(pause : bool):
 func begin() -> void:
 	enem_timer.start(randf_range(min_time, max_time))
 	boss_timer.start(randf_range(min_time * 6, max_time * 6))
-	chest_timer.start(randf_range(5, 10))
+	chest_timer.start(randf_range(chest_min_time, chest_max_time))
 	
 ## Make a new enemy, and position it.
 func spawn(boss : bool = false):

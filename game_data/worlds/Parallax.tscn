@@ -93,9 +93,9 @@ textures = Array[Texture2D]([ExtResource("8_2wscr"), ExtResource("4_rlodj"), Ext
 texture_filter = 3
 position = Vector2(100, 113)
 texture = ExtResource("4_rlodj")
-textures = Array[Texture2D]([ExtResource("5_pmpoe"), ExtResource("10_s013n"), ExtResource("10_v4ckn"), ExtResource("9_ib8sq"), ExtResource("3_si4de")])
+textures = Array[Texture2D]([ExtResource("5_pmpoe"), ExtResource("10_s013n"), ExtResource("9_ib8sq"), ExtResource("3_si4de"), ExtResource("10_v4ckn")])
 
 [node name="smallerobjects" parent="." unique_id=768899916 instance=ExtResource("3_rlodj")]
-position = Vector2(32, 111)
+position = Vector2(32, 114)
 texture = ExtResource("9_ib8sq")
 textures = Array[Texture2D]([ExtResource("10_s013n"), ExtResource("11_v4ckn"), ExtResource("6_tos4k"), ExtResource("3_si4de")])

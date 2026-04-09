@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wkkponwamxyu"]
 
 [ext_resource type="Script" uid="uid://dh1811l83oi2i" path="res://game_data/entities/characters/gekko.gd" id="1_p6orh"]
-[ext_resource type="Texture2D" uid="uid://485sgqmm1c1i" path="res://assets/graphics/sprites/gekko/Gekko_Sheet.png" id="2_w5ypw"]
+[ext_resource type="Texture2D" uid="uid://b7l51sgm4tqx1" path="res://assets/graphics/sprites/gekko/Gekko_new.webp" id="2_4yyxq"]
 [ext_resource type="Texture2D" uid="uid://cawil1hyv2oos" path="res://assets/graphics/sprites/gekko/weapons/rank_2_surgeon_claw.webp" id="3_ranni"]
 [ext_resource type="PackedScene" uid="uid://dv7qoieljaare" path="res://game_data/entities/components/hitbox.tscn" id="3_wtvjg"]
 [ext_resource type="PackedScene" uid="uid://rbljprm78s6j" path="res://game_data/entities/components/hurtbox.tscn" id="4_ely7x"]
@@ -235,7 +235,7 @@ editor_description = "0-2 run
 15 hurt
 15 -19 death"
 texture_filter = 3
-texture = ExtResource("2_w5ypw")
+texture = ExtResource("2_4yyxq")
 hframes = 5
 vframes = 4
 
