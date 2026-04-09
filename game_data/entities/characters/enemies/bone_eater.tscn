@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dgi2362t5q6ce"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_imb5u"]
+[ext_resource type="Texture2D" uid="uid://1c1iit8a771r" path="res://assets/graphics/sprites/enemies/walking/Enemy_Giant_Dragon_Blue_rank.webp" id="2_imb5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4uda"]
+size = Vector2(71.25, 71.5)
+
+[node name="Bone Eater" unique_id=284441439 instance=ExtResource("1_imb5u")]
+speed = 85.0
+hp = 8
+entity_name = "Bone Eater"
+knockback = 70
+level = 8
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+position = Vector2(4, -64)
+texture = ExtResource("2_imb5u")
+hframes = 11
+
+[node name="Hitbox" parent="." index="2" unique_id=2037733599]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1494530905]
+position = Vector2(19, -38)
+shape = SubResource("RectangleShape2D_n4uda")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
+position = Vector2(33, -38)
+shape = SubResource("RectangleShape2D_n4uda")

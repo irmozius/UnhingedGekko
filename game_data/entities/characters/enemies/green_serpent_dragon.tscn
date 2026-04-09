@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cnmmb5wnm74n6"]
+
+[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="1_bylaf"]
+
+[node name="Green_Serpent_Dragon" unique_id=284441439 instance=ExtResource("1_bylaf")]
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(2037733599) index="0" unique_id=1494530905]
+position = Vector2(6.5, -41)

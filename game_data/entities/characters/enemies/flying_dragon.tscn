@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bnnjfxnsx5hdr"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_3ehdd"]
+[ext_resource type="Texture2D" uid="uid://dvhjw6tc1h4cp" path="res://assets/graphics/sprites/enemies/flying/Dragon_air_type_1_(v_7).webp" id="2_3ehdd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxoai"]
+size = Vector2(47.716248, 34)
+
+[node name="Dragon Flier" unique_id=284441439 instance=ExtResource("1_3ehdd")]
+entity_name = "Dragon Flier"
+knockback = 150
+level = 3
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+position = Vector2(5, -88)
+texture = ExtResource("2_3ehdd")
+
+[node name="Hitbox" parent="." index="2" unique_id=2037733599]
+position = Vector2(0.13500023, -87)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1494530905]
+position = Vector2(2.8649998, -2)
+shape = SubResource("RectangleShape2D_vxoai")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+position = Vector2(-3.8649998, -59)
+damage = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
+position = Vector2(13.865, -30)
+shape = SubResource("RectangleShape2D_vxoai")

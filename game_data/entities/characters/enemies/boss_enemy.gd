@@ -26,9 +26,13 @@ func _on_resume():
 	fsm.set_state("Approach")
 
 func activate_attack():
+	# boss attacks while dying. if he does this, ignore
+	if not is_instance_valid(hurtbox_col): 
+		return
 	hurtbox_col.disabled = false
 	await get_tree().create_timer(0.1).timeout
-	hurtbox_col.disabled = true
+	if is_instance_valid(hurtbox_col):
+		hurtbox_col.disabled = true
 
 #region ApproachState
 

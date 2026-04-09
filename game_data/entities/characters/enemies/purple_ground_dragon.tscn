@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c1yxmbkm353lw"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_t6i6b"]
+[ext_resource type="Texture2D" uid="uid://dgc8q54iupqyn" path="res://assets/graphics/sprites/enemies/walking/Walk_type__2_(v_7).webp" id="2_ggcq6"]
+
+[node name="PurpleGroundDragon" unique_id=284441439 instance=ExtResource("1_t6i6b")]
+speed = 100.0
+entity_name = "Purple Ground Dragon"
+knockback = 90
+level = 3
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+texture = ExtResource("2_ggcq6")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+damage = 1

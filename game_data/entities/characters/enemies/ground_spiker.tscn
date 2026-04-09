@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://pdximg7mb3m3"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_03ys8"]
+[ext_resource type="Texture2D" uid="uid://t3motp7egmp" path="res://assets/graphics/sprites/enemies/walking/spikey_enemy.webp" id="2_03ys8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4uda"]
+size = Vector2(70.5, 51)
+
+[node name="GroundSpiker" unique_id=284441439 instance=ExtResource("1_03ys8")]
+speed = 160.0
+entity_name = "Ground Spiker"
+knockback = 100
+level = 3
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+texture = ExtResource("2_03ys8")
+hframes = 8
+
+[node name="Hitbox" parent="." index="2" unique_id=2037733599]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1494530905]
+position = Vector2(-6, -28)
+shape = SubResource("RectangleShape2D_n4uda")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
+position = Vector2(17, -28)
+shape = SubResource("RectangleShape2D_n4uda")

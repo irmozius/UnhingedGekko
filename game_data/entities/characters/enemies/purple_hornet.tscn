@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://chpcwukccp5d0"]
+
+[ext_resource type="PackedScene" uid="uid://joj86ekahm6s" path="res://game_data/entities/characters/enemies/base_scroller.tscn" id="1_a4hf5"]
+[ext_resource type="Texture2D" uid="uid://dfv42j2du766n" path="res://assets/graphics/sprites/enemies/flying/enem_type2_flyer.png" id="2_a4hf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxoai"]
+size = Vector2(36, 23)
+
+[node name="PurpleHornet" unique_id=284441439 instance=ExtResource("1_a4hf5")]
+speed = 140.0
+hp = 2
+entity_name = "Purple Hornet"
+knockback = 110
+level = 2
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+position = Vector2(5, -88)
+texture = ExtResource("2_a4hf5")
+
+[node name="Hitbox" parent="." index="2" unique_id=2037733599]
+position = Vector2(0.13500023, -87)
+
+[node name="CollisionShape2D" parent="Hitbox" index="0" unique_id=1494530905]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_vxoai")
+
+[node name="Hurtbox" parent="." index="3" unique_id=888921601]
+position = Vector2(-3.8649998, -59)
+damage = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0" unique_id=672550695]
+shape = SubResource("RectangleShape2D_vxoai")

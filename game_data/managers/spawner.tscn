@@ -4,12 +4,20 @@
 [ext_resource type="PackedScene" uid="uid://deokkyxtfeobx" path="res://game_data/entities/characters/enemies/yellow_hornet.tscn" id="2_wpg8k"]
 [ext_resource type="PackedScene" uid="uid://b7ga6qhh1uyjr" path="res://game_data/entities/characters/enemies/ground_dragon.tscn" id="3_d8psh"]
 [ext_resource type="PackedScene" uid="uid://dyrjkqgj5vl4o" path="res://game_data/entities/characters/enemies/blue_snake.tscn" id="4_d8psh"]
+[ext_resource type="PackedScene" uid="uid://chpcwukccp5d0" path="res://game_data/entities/characters/enemies/purple_hornet.tscn" id="5_s6tfh"]
 [ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="5_u4ld8"]
+[ext_resource type="PackedScene" uid="uid://bnnjfxnsx5hdr" path="res://game_data/entities/characters/enemies/flying_dragon.tscn" id="6_e5yr7"]
 [ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="6_qc0dh"]
+[ext_resource type="PackedScene" uid="uid://pdximg7mb3m3" path="res://game_data/entities/characters/enemies/ground_spiker.tscn" id="7_hu3f6"]
+[ext_resource type="PackedScene" uid="uid://c1yxmbkm353lw" path="res://game_data/entities/characters/enemies/purple_ground_dragon.tscn" id="8_i25ql"]
+[ext_resource type="PackedScene" uid="uid://8hfcwh10pjdu" path="res://game_data/entities/characters/enemies/smasher.tscn" id="9_e5yr7"]
+[ext_resource type="PackedScene" uid="uid://bfy54o2q15x60" path="res://game_data/entities/characters/enemies/hungry_dragon.tscn" id="10_p5e2b"]
+[ext_resource type="PackedScene" uid="uid://dgi2362t5q6ce" path="res://game_data/entities/characters/enemies/bone_eater.tscn" id="11_50ku4"]
+[ext_resource type="PackedScene" uid="uid://s0ultulie8ot" path="res://game_data/entities/characters/enemies/bone_crusher.tscn" id="12_3mvg7"]
 
 [node name="Spawner" type="Node2D" unique_id=927126007]
 script = ExtResource("1_0sg3f")
-enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh"), ExtResource("4_d8psh")])
+enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh"), ExtResource("4_d8psh"), ExtResource("5_s6tfh"), ExtResource("6_e5yr7"), ExtResource("7_hu3f6"), ExtResource("8_i25ql"), ExtResource("9_e5yr7"), ExtResource("10_p5e2b"), ExtResource("11_50ku4"), ExtResource("12_3mvg7")])
 bosses = Array[PackedScene]([ExtResource("5_u4ld8")])
 chest = ExtResource("6_qc0dh")
 
