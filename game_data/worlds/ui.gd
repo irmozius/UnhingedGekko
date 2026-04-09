@@ -17,6 +17,7 @@ func show_died_screen():
 	died_screen.show()
 	
 func _on_retry_but_pressed() -> void:
+	Global.reset_global()
 	get_tree().reload_current_scene()
 
 func set_hp_lab():

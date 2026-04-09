@@ -28,6 +28,10 @@ func change_hp(amnt : int):
 	current_hp = clamp(current_hp + amnt, 0, max_hp)
 	ui.set_hp_lab()
 
+func reset_global():
+	current_hp=max_hp
+	score = 0
+
 func reset_stats():
 	for key in stats:
 		stats[key] = 0
