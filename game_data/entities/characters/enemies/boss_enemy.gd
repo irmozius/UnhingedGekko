@@ -12,6 +12,7 @@ func on_ready():
 	fsm.add_state("Retreat", retreat_enter, retreat_exit, retreat_update, retreat_pupdate)
 	fsm.set_state("Approach")
 	Global.parallax.slow_background(-3)
+	Global.boss_fight_started.emit()
 	
 func on_nonlethal_hit():
 	print('hit')
@@ -19,6 +20,7 @@ func on_nonlethal_hit():
 
 func on_death():
 	Global.parallax.reset_background()
+	Global.boss_fight_ended.emit()
 
 func _on_resume():
 	fsm.set_state("Approach")

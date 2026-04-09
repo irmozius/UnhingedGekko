@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bdlvpe6nhkjs8"]
 
 [ext_resource type="Script" uid="uid://c16vwn1wmt643" path="res://game_data/globals/global.gd" id="1_o6oyx"]
-[ext_resource type="Script" uid="uid://duxcf0w68kttv" path="res://music_manager.gd" id="2_h500c"]
 [ext_resource type="Script" uid="uid://bhl4lphfxnj4r" path="res://addons/meta_player/meta_player.gd" id="2_hvf12"]
 [ext_resource type="AudioStream" uid="uid://c2t1jq6ayaldx" path="res://assets/audio/music/menu-loop.ogg" id="3_tor55"]
 [ext_resource type="Script" uid="uid://blvdxw54wpbkx" path="res://addons/meta_player/trans_rule.gd" id="4_tor55"]
@@ -10,7 +9,12 @@
 [ext_resource type="AudioStream" uid="uid://b2uhqbpokqndn" path="res://assets/audio/music/game_gtr_trm.ogg" id="7_3wlec"]
 [ext_resource type="AudioStream" uid="uid://c2x5iwy4md6v" path="res://assets/audio/music/game_Strings.ogg" id="8_h500c"]
 [ext_resource type="AudioStream" uid="uid://duqpc00v76tly" path="res://assets/audio/music/game_Choir.ogg" id="9_4baw6"]
+[ext_resource type="AudioStream" uid="uid://ck55bl4jagem4" path="res://assets/audio/music/boss_intro.ogg" id="11_h500c"]
 [ext_resource type="Script" uid="uid://d286meqtaw1ho" path="res://addons/meta_player/curve_fade.gd" id="11_sl8mf"]
+[ext_resource type="AudioStream" uid="uid://bwimeuj6h5e83" path="res://assets/audio/music/boss_loop_base.ogg" id="12_4baw6"]
+[ext_resource type="AudioStream" uid="uid://ka0mqghempvd" path="res://assets/audio/music/boss_loop_tremgtr.ogg" id="13_sl8mf"]
+[ext_resource type="AudioStream" uid="uid://g5fvmltj86b8" path="res://assets/audio/music/boss_loop_Choir.ogg" id="14_ainx7"]
+[ext_resource type="AudioStream" uid="uid://b361kjjn84f4" path="res://assets/audio/music/boss_loop_Strings.ogg" id="14_mdi6l"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_qegiw"]
 stream_count = 1
@@ -21,7 +25,7 @@ stream_0/volume = 0.0
 script = ExtResource("4_tor55")
 target_player = NodePath("../game-intro")
 transition_type = "On Bar"
-signal_node = NodePath("../..")
+signal_node = NodePath("..")
 signal_name = "game_started"
 metadata/_custom_type_script = "uid://blvdxw54wpbkx"
 
@@ -41,6 +45,14 @@ metadata/_custom_type_script = "uid://blvdxw54wpbkx"
 stream_count = 1
 stream_0/stream = ExtResource("6_pit03")
 stream_0/volume = 0.0
+
+[sub_resource type="Resource" id="Resource_ainx7"]
+script = ExtResource("4_tor55")
+target_player = NodePath("../boss-intro")
+transition_type = "On Bar"
+signal_node = NodePath("..")
+signal_name = "boss_fight_started"
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_4baw6"]
 stream_count = 1
@@ -87,13 +99,87 @@ script = ExtResource("11_sl8mf")
 curve = SubResource("Curve_ainx7")
 metadata/_custom_type_script = "uid://d286meqtaw1ho"
 
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_mdi6l"]
+stream_count = 1
+stream_0/stream = ExtResource("11_h500c")
+stream_0/volume = 0.0
+
+[sub_resource type="Resource" id="Resource_sl8mf"]
+script = ExtResource("4_tor55")
+target_player = NodePath("../boss-loop")
+transition_type = "At End"
+signal_node = NodePath("..")
+signal_name = ""
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="Resource" id="Resource_mdi6l"]
+script = ExtResource("4_tor55")
+target_player = NodePath("../game-loop")
+transition_type = "On Bar"
+signal_node = NodePath("..")
+signal_name = "player_died"
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_xrxxp"]
+stream_count = 1
+stream_0/stream = ExtResource("12_4baw6")
+stream_0/volume = 0.0
+
+[sub_resource type="Resource" id="Resource_xisqe"]
+script = ExtResource("4_tor55")
+target_player = NodePath("../game-loop")
+transition_type = "On Bar"
+signal_node = NodePath("..")
+signal_name = "boss_fight_ended"
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="Resource" id="Resource_xrxxp"]
+script = ExtResource("4_tor55")
+target_player = NodePath("../game-loop")
+transition_type = "On Bar"
+signal_node = NodePath("..")
+signal_name = "player_died"
+metadata/_custom_type_script = "uid://blvdxw54wpbkx"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_xisqe"]
+stream_count = 1
+stream_0/stream = ExtResource("13_sl8mf")
+stream_0/volume = 0.0
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_fiad8"]
+stream_count = 1
+stream_0/stream = ExtResource("14_mdi6l")
+stream_0/volume = 0.0
+
+[sub_resource type="Curve" id="Curve_mdi6l"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.7131783, 0), 0.0, 0.0, 0, 0, Vector2(0.91472876, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_a07wm"]
+script = ExtResource("11_sl8mf")
+curve = SubResource("Curve_mdi6l")
+metadata/_custom_type_script = "uid://d286meqtaw1ho"
+
+[sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_a07wm"]
+stream_count = 1
+stream_0/stream = ExtResource("14_ainx7")
+stream_0/volume = 0.0
+
+[sub_resource type="Curve" id="Curve_fiad8"]
+_limits = [0.0, 1.0, 0.0, 2.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1.4883721, 0), 0.0, 0.0, 0, 0, Vector2(1.8682171, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Resource" id="Resource_n1i1g"]
+script = ExtResource("11_sl8mf")
+curve = SubResource("Curve_fiad8")
+metadata/_custom_type_script = "uid://d286meqtaw1ho"
+
 [node name="Global" type="Node" unique_id=1673766812]
 script = ExtResource("1_o6oyx")
 
-[node name="music_manager" type="Node" parent="." unique_id=1163955105]
-script = ExtResource("2_h500c")
-
-[node name="menu-loop" type="AudioStreamPlayer" parent="music_manager" unique_id=245055208]
+[node name="menu-loop" type="AudioStreamPlayer" parent="." unique_id=245055208]
 bus = &"Music"
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_qegiw")])
@@ -102,7 +188,7 @@ bars = 32
 transition_rules = Array[ExtResource("4_tor55")]([SubResource("Resource_4baw6")])
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
 
-[node name="game-intro" type="AudioStreamPlayer" parent="music_manager" unique_id=908731790]
+[node name="game-intro" type="AudioStreamPlayer" parent="." unique_id=908731790]
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_hvf12")])
 loop = false
@@ -111,25 +197,26 @@ bars = 8
 transition_rules = Array[ExtResource("4_tor55")]([SubResource("Resource_myljn")])
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
 
-[node name="game-loop" type="AudioStreamPlayer" parent="music_manager" unique_id=1002980800]
+[node name="game-loop" type="AudioStreamPlayer" parent="." unique_id=1002980800]
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_myljn")])
 tempo = 189
+transition_rules = Array[ExtResource("4_tor55")]([SubResource("Resource_ainx7")])
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
 
-[node name="gtr_trem" type="AudioStreamPlayer" parent="music_manager/game-loop" unique_id=1753130085 node_paths=PackedStringArray("target")]
+[node name="gtr_trem" type="AudioStreamPlayer" parent="game-loop" unique_id=1753130085 node_paths=PackedStringArray("target")]
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_4baw6")])
 loop = false
 tempo = 189
 beats_per_bar = 8
-target = NodePath("../../..")
+target = NodePath("../..")
 target_param = "current_rank"
 automation_rule = SubResource("Resource_h500c")
 chance = 77.068
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
 
-[node name="strings" type="AudioStreamPlayer" parent="music_manager/game-loop" unique_id=338247100 node_paths=PackedStringArray("target")]
+[node name="strings" type="AudioStreamPlayer" parent="game-loop" unique_id=338247100 node_paths=PackedStringArray("target")]
 volume_db = -80.0
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_sl8mf")])
@@ -137,7 +224,7 @@ loop = false
 tempo = 189
 beats_per_bar = 8
 automate_volume = true
-target = NodePath("../../..")
+target = NodePath("../..")
 target_param = "current_rank"
 param_smooth = 1.0
 automation_rule = SubResource("Resource_77yts")
@@ -145,7 +232,7 @@ seek_up_weight = 1.1740000000000002
 chance = 77.068
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
 
-[node name="choir" type="AudioStreamPlayer" parent="music_manager/game-loop" unique_id=665010620 node_paths=PackedStringArray("target")]
+[node name="choir" type="AudioStreamPlayer" parent="game-loop" unique_id=665010620 node_paths=PackedStringArray("target")]
 volume_db = -80.0
 script = ExtResource("2_hvf12")
 sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_ainx7")])
@@ -153,10 +240,60 @@ loop = false
 tempo = 189
 beats_per_bar = 8
 automate_volume = true
-target = NodePath("../../..")
+target = NodePath("../..")
 target_param = "current_rank"
 param_smooth = 1.0
 automation_rule = SubResource("Resource_yj6uf")
 seek_up_weight = 1.165
 chance = 77.068
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="boss-intro" type="AudioStreamPlayer" parent="." unique_id=1845195210]
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_mdi6l")])
+loop = false
+tempo = 160
+bars = 4
+transition_rules = Array[ExtResource("4_tor55")]([SubResource("Resource_sl8mf"), SubResource("Resource_mdi6l")])
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="boss-loop" type="AudioStreamPlayer" parent="." unique_id=466561499]
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_xrxxp")])
+tempo = 160
+transition_rules = Array[ExtResource("4_tor55")]([SubResource("Resource_xisqe"), SubResource("Resource_xrxxp")])
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="gtr_trem" type="AudioStreamPlayer" parent="boss-loop" unique_id=1559357489 node_paths=PackedStringArray("target")]
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_xisqe")])
+loop = false
+target = NodePath("../..")
+target_param = "current_rank"
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="strings" type="AudioStreamPlayer" parent="boss-loop" unique_id=775934013 node_paths=PackedStringArray("target")]
+volume_db = -80.0
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_fiad8")])
+loop = false
+automate_volume = true
+target = NodePath("../..")
+target_param = "current_rank"
+param_smooth = 1.0
+automation_rule = SubResource("Resource_a07wm")
+seek_up_weight = 1.131
+metadata/_custom_type_script = "uid://bhl4lphfxnj4r"
+
+[node name="choir" type="AudioStreamPlayer" parent="boss-loop" unique_id=642303815 node_paths=PackedStringArray("target")]
+volume_db = -80.0
+script = ExtResource("2_hvf12")
+sync_groups = Array[AudioStreamSynchronized]([SubResource("AudioStreamSynchronized_a07wm")])
+loop = false
+automate_volume = true
+target = NodePath("../..")
+target_param = "current_rank"
+param_smooth = 1.0
+automation_rule = SubResource("Resource_n1i1g")
+seek_up_weight = 1.173
 metadata/_custom_type_script = "uid://bhl4lphfxnj4r"

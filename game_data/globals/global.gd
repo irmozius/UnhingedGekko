@@ -21,6 +21,8 @@ signal player_died
 signal game_started
 signal halted
 signal resumed
+signal boss_fight_started
+signal boss_fight_ended
 
 func change_hp(amnt : int):
 	current_hp = clamp(current_hp + amnt, 0, max_hp)
