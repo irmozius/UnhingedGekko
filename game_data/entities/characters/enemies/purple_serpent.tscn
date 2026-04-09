@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bukd04esjfd2i"]
+
+[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="1_u578p"]
+[ext_resource type="Texture2D" uid="uid://cjax0j1le7tmt" path="res://assets/graphics/sprites/enemies/boss/Boss_A_Purple_Rank_.webp" id="2_5l83n"]
+
+[node name="Purple_Serpent_Dragon" unique_id=284441439 instance=ExtResource("1_u578p")]
+speed = 50.0
+hp = 10
+entity_name = "Purple Serpent"
+level = 7
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+texture = ExtResource("2_5l83n")
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(2037733599) index="0" unique_id=1494530905]
+position = Vector2(6.5, -41)

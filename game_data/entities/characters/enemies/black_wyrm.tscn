@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://kurgfubdsnvl"]
+
+[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="1_hvgw7"]
+[ext_resource type="Texture2D" uid="uid://cd2h0a0a2ns6y" path="res://assets/graphics/sprites/enemies/boss/Boss_B_Dark_Grey.webp" id="2_hvgw7"]
+
+[node name="Black Wyrm" unique_id=284441439 instance=ExtResource("1_hvgw7")]
+speed = 80.0
+hp = 16
+entity_name = "Black Wyrm"
+knockback = 30
+level = 10
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+position = Vector2(1, -75)
+texture = ExtResource("2_hvgw7")
+hframes = 15
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(2037733599) index="0" unique_id=1494530905]
+position = Vector2(7, -89)
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(888921601) index="0" unique_id=672550695]
+position = Vector2(-19, -12)

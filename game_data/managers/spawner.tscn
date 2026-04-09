@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b7ga6qhh1uyjr" path="res://game_data/entities/characters/enemies/ground_dragon.tscn" id="3_d8psh"]
 [ext_resource type="PackedScene" uid="uid://dyrjkqgj5vl4o" path="res://game_data/entities/characters/enemies/blue_snake.tscn" id="4_d8psh"]
 [ext_resource type="PackedScene" uid="uid://chpcwukccp5d0" path="res://game_data/entities/characters/enemies/purple_hornet.tscn" id="5_s6tfh"]
-[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="5_u4ld8"]
 [ext_resource type="PackedScene" uid="uid://bnnjfxnsx5hdr" path="res://game_data/entities/characters/enemies/flying_dragon.tscn" id="6_e5yr7"]
 [ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="6_qc0dh"]
 [ext_resource type="PackedScene" uid="uid://pdximg7mb3m3" path="res://game_data/entities/characters/enemies/ground_spiker.tscn" id="7_hu3f6"]
@@ -14,12 +13,19 @@
 [ext_resource type="PackedScene" uid="uid://bfy54o2q15x60" path="res://game_data/entities/characters/enemies/hungry_dragon.tscn" id="10_p5e2b"]
 [ext_resource type="PackedScene" uid="uid://dgi2362t5q6ce" path="res://game_data/entities/characters/enemies/bone_eater.tscn" id="11_50ku4"]
 [ext_resource type="PackedScene" uid="uid://s0ultulie8ot" path="res://game_data/entities/characters/enemies/bone_crusher.tscn" id="12_3mvg7"]
+[ext_resource type="PackedScene" uid="uid://cnmmb5wnm74n6" path="res://game_data/entities/characters/enemies/green_serpent_dragon.tscn" id="13_3mvg7"]
+[ext_resource type="PackedScene" uid="uid://bukd04esjfd2i" path="res://game_data/entities/characters/enemies/purple_serpent.tscn" id="14_g7mfq"]
+[ext_resource type="PackedScene" uid="uid://brcaxmmm6eiwb" path="res://game_data/entities/characters/enemies/green_wyrm.tscn" id="15_b77oh"]
+[ext_resource type="PackedScene" uid="uid://byhq66412867r" path="res://game_data/entities/characters/enemies/blue_wyrm.tscn" id="16_b77oh"]
+[ext_resource type="PackedScene" uid="uid://kurgfubdsnvl" path="res://game_data/entities/characters/enemies/black_wyrm.tscn" id="17_1pj7c"]
 
 [node name="Spawner" type="Node2D" unique_id=927126007]
 script = ExtResource("1_0sg3f")
 enemies = Array[PackedScene]([ExtResource("2_wpg8k"), ExtResource("3_d8psh"), ExtResource("4_d8psh"), ExtResource("5_s6tfh"), ExtResource("6_e5yr7"), ExtResource("7_hu3f6"), ExtResource("8_i25ql"), ExtResource("9_e5yr7"), ExtResource("10_p5e2b"), ExtResource("11_50ku4"), ExtResource("12_3mvg7")])
-bosses = Array[PackedScene]([ExtResource("5_u4ld8")])
+bosses = Array[PackedScene]([ExtResource("13_3mvg7"), ExtResource("14_g7mfq"), ExtResource("15_b77oh"), ExtResource("16_b77oh"), ExtResource("17_1pj7c")])
 chest = ExtResource("6_qc0dh")
+min_time = 1.0
+max_time = 2.0
 
 [node name="ScrollerTimer" type="Timer" parent="." unique_id=202520885]
 wait_time = 4.0

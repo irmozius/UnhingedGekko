@@ -138,10 +138,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwhv0"]
-size = Vector2(37, 78)
+size = Vector2(115, 71)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50e7v"]
-radius = 16.0
+radius = 35.014282
 
 [node name="BaseBoss" type="Node2D" unique_id=284441439 node_paths=PackedStringArray("hurtbox_col", "hitbox", "anim", "hurtbox")]
 script = ExtResource("1_50e7v")

@@ -36,7 +36,13 @@ func paint_stats():
 	num_tpl.hide()
 	
 	# paint from the dict
+	
+	
+	var count = 0
 	for key in stats:
+		#only showing 7 so as to not break ui
+		if count >= 7:
+			break
 		# name
 		var new_name = name_tpl.duplicate()
 		new_name.text = str(key).capitalize()
@@ -48,3 +54,5 @@ func paint_stats():
 		new_num.text = str(stats[key])
 		new_num.show()
 		statsgrid.add_child(new_num)
+		
+		count = count + 1

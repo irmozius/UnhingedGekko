@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://byhq66412867r"]
+
+[ext_resource type="PackedScene" uid="uid://ulqusdt23aew" path="res://game_data/entities/characters/enemies/base_boss.tscn" id="1_4plm2"]
+[ext_resource type="Texture2D" uid="uid://d3qdiwjrk0e80" path="res://assets/graphics/sprites/enemies/boss/Boss_B_(Blue).webp" id="2_4plm2"]
+
+[node name="Blue Wyrm" unique_id=284441439 instance=ExtResource("1_4plm2")]
+speed = 70.0
+hp = 12
+entity_name = "Blue Wyrm"
+knockback = 25
+level = 8
+
+[node name="Sprite2D" parent="." index="0" unique_id=228488152]
+position = Vector2(1, -75)
+texture = ExtResource("2_4plm2")
+hframes = 15
+
+[node name="CollisionShape2D" parent="Hitbox" parent_id_path=PackedInt32Array(2037733599) index="0" unique_id=1494530905]
+position = Vector2(7, -89)
+
+[node name="CollisionShape2D" parent="Hurtbox" parent_id_path=PackedInt32Array(888921601) index="0" unique_id=672550695]
+position = Vector2(-19, -12)
