@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://cnfuo6icbxu6q"]
 
+[ext_resource type="Texture2D" uid="uid://spkcriet80gp" path="res://assets/graphics/icons/weapons/Unhinged_Smasher.jpg" id="1_5gjno"]
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_f7i4u"]
+[ext_resource type="Texture2D" uid="uid://ddh42onqss4k" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Unhinged_Smasher_Take_Two.webp" id="3_qoso6"]
 
 [resource]
 script = ExtResource("1_f7i4u")
 name = "Unhinged Smasher"
 db_key = "unhinged_smasher"
-rank = "Unhinged"
+rank = 2
 damage = 3
+spritesheet = ExtResource("3_qoso6")
+icon = ExtResource("1_5gjno")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

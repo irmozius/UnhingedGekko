@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_gcdal"]
 [ext_resource type="Texture2D" uid="uid://bqntaxtyxul8i" path="res://assets/graphics/icons/weapons/Scale_Ripper.webp" id="1_lx8js"]
-[ext_resource type="Texture2D" uid="uid://co4cpydwv7lbq" path="res://assets/graphics/sprites/gekko/weapons/rank_1_ring_blade.webp" id="3_gma62"]
+[ext_resource type="Texture2D" uid="uid://k12qx2ph2u6t" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Ring_Blade_Two_Two.webp" id="3_lx8js"]
 
 [resource]
 script = ExtResource("1_gcdal")
@@ -12,6 +12,6 @@ description = "A short ranged ringed blade sharp enough to pierce dragon scales"
 rank = 1
 cooldown_duration = 0.2
 hurtbox_radius = 30.0
-spritesheet = ExtResource("3_gma62")
+spritesheet = ExtResource("3_lx8js")
 icon = ExtResource("1_lx8js")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

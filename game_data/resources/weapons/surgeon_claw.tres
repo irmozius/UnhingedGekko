@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_6lika"]
 [ext_resource type="Texture2D" uid="uid://cgn1ok3g3b1ws" path="res://assets/graphics/icons/weapons/Surgeons_Claw_Rank_2.webp" id="1_tc3hl"]
-[ext_resource type="Texture2D" uid="uid://cawil1hyv2oos" path="res://assets/graphics/sprites/gekko/weapons/rank_2_surgeon_claw.webp" id="3_w7eq2"]
+[ext_resource type="Texture2D" uid="uid://cwpuvfu1dreva" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Surgeon_Claw_Take_Two.webp" id="3_tc3hl"]
 
 [resource]
 script = ExtResource("1_6lika")
@@ -13,6 +13,6 @@ rank = 2
 attack_duration = 0.3
 cooldown_duration = 0.7
 hurtbox_radius = 20.0
-spritesheet = ExtResource("3_w7eq2")
+spritesheet = ExtResource("3_tc3hl")
 icon = ExtResource("1_tc3hl")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

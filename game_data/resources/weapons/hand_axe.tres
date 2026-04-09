@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_82qit"]
 [ext_resource type="Texture2D" uid="uid://dij80wl131sua" path="res://assets/graphics/icons/weapons/hand_axe.webp" id="1_n8bao"]
 [ext_resource type="Texture2D" uid="uid://dlol3v3n030qn" path="res://assets/graphics/sprites/gekko/weapons/projectiles/Hand_Axe_Range_sheet.webp" id="2_e1kqq"]
-[ext_resource type="Texture2D" uid="uid://4p4dx5binp23" path="res://assets/graphics/sprites/gekko/weapons/rank_0_hand_axe.webp" id="3_e1kqq"]
+[ext_resource type="Texture2D" uid="uid://dvatnu2oudkfm" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Hand_Axe_Take_Two.webp" id="4_e1kqq"]
 
 [resource]
 script = ExtResource("1_82qit")
 name = "Hand Axe"
 db_key = "hand_axe"
 description = "A light throwing axe both slow and inacurate."
-spritesheet = ExtResource("3_e1kqq")
+spritesheet = ExtResource("4_e1kqq")
 projectile_spritesheet = ExtResource("2_e1kqq")
 projectile_hframes = 4
 icon = ExtResource("1_n8bao")

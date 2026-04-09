@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://4t4dkdlsr1d" path="res://assets/graphics/icons/weapons/Fire_Bane.jpg" id="1_43wsh"]
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_6117l"]
 [ext_resource type="Texture2D" uid="uid://bsox2e0dmhruo" path="res://assets/graphics/sprites/gekko/weapons/projectiles/fireball.png" id="2_qa13q"]
-[ext_resource type="Texture2D" uid="uid://crehcp1g7iykd" path="res://assets/graphics/sprites/gekko/weapons/rank_1_firebane.png" id="3_qa13q"]
+[ext_resource type="Texture2D" uid="uid://dxhpc83tc7n3e" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Fire_Bane_Take_Two.webp" id="4_6117l"]
 
 [resource]
 script = ExtResource("2_6117l")
@@ -11,7 +11,7 @@ name = "Fire Bane"
 db_key = "firebane"
 rank = 1
 damage = 2
-spritesheet = ExtResource("3_qa13q")
+spritesheet = ExtResource("4_6117l")
 projectile_spritesheet = ExtResource("2_qa13q")
 icon = ExtResource("1_43wsh")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

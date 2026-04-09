@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_fd8df"]
 [ext_resource type="Texture2D" uid="uid://b4tfpqtorm0j3" path="res://assets/graphics/icons/weapons/Bambo_Pole.webp" id="1_j3pfv"]
-[ext_resource type="Texture2D" uid="uid://dvgpmuicgvubn" path="res://assets/graphics/sprites/gekko/weapons/rank_0_bamboo_pole.webp" id="3_6kem0"]
+[ext_resource type="Texture2D" uid="uid://dq31lpipccilo" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Bamboo_Pole_Take_Two.webp" id="3_j3pfv"]
 
 [resource]
 script = ExtResource("1_fd8df")
 name = "Bamboo Pole"
 db_key = "bamboo_pole"
 description = "Common grass grown and used as a weapon."
-spritesheet = ExtResource("3_6kem0")
+spritesheet = ExtResource("3_j3pfv")
 icon = ExtResource("1_j3pfv")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

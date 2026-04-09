@@ -2,13 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://2s4mrrr4r12w" path="res://assets/graphics/icons/weapons/Broad_Sword.jpg" id="1_wj0yw"]
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_74u1f"]
-[ext_resource type="Texture2D" uid="uid://blo15538kq7fb" path="res://assets/graphics/sprites/gekko/weapons/rank_0_broadsword.png" id="3_uasny"]
+[ext_resource type="Texture2D" uid="uid://bf8irgb8v4fn7" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Broad_Sword_Sheet_Take_Two.webp" id="3_wj0yw"]
 
 [resource]
 script = ExtResource("2_74u1f")
 name = "Broadsword"
 db_key = "broadsword"
 hurtbox_radius = 13.46
-spritesheet = ExtResource("3_uasny")
+spritesheet = ExtResource("3_wj0yw")
 icon = ExtResource("1_wj0yw")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"
