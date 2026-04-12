@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cujej7aecjsk4"]
+
+[ext_resource type="Script" uid="uid://ctj1yf38rsxke" path="res://addons/sound_graph/graph_editor/GraphEditor.gd" id="1_h47dt"]
+[ext_resource type="PackedScene" uid="uid://c2kbjsdkc7kui" path="res://addons/sound_graph/graph_editor/NodePlaceMenu.tscn" id="2_8qwio"]
+[ext_resource type="Script" uid="uid://b56i2no2eqi27" path="res://addons/sound_graph/graph_editor/OutputNode.gd" id="3_iqmtu"]
+
+[node name="Graph" type="GraphEdit" unique_id=1650061467]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+right_disconnects = true
+type_names = {
+0: "Audio"
+}
+script = ExtResource("1_h47dt")
+node_place_menu_scene = ExtResource("2_8qwio")
+
+[node name="Output" type="GraphNode" parent="." unique_id=1581384518]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 525.0
+offset_top = 243.0
+offset_right = 663.0
+offset_bottom = 393.0
+mouse_filter = 1
+position_offset = Vector2(525, 243)
+title = "Output"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("3_iqmtu")
+
+[node name="Control" type="Control" parent="Output" unique_id=1597884463]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="connection_request" from="." to="." method="_on_connection_request"]
+[connection signal="connection_to_empty" from="." to="." method="_on_connection_to_empty"]
+[connection signal="delete_nodes_request" from="." to="." method="_on_delete_nodes_request"]
+[connection signal="disconnection_request" from="." to="." method="_on_disconnection_request"]
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="popup_request" from="." to="." method="_on_popup_request"]

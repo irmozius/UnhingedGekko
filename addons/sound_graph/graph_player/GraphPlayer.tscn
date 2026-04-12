@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://e2ky3lqsjjai"]
+
+[ext_resource type="Script" uid="uid://ka7377bj6h08" path="res://addons/sound_graph/graph_player/GraphPlayer.gd" id="1_jg87t"]
+
+[node name="GraphPlayer" type="Node" unique_id=26029100]
+script = ExtResource("1_jg87t")

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c2kbjsdkc7kui"]
+
+[ext_resource type="Script" uid="uid://bf32nqwb385pe" path="res://addons/sound_graph/graph_editor/NodePlaceMenu.gd" id="1_cnvf5"]
+[ext_resource type="PackedScene" uid="uid://vkwwrhhth385" path="res://addons/sound_graph/graph_editor/SamplePlayer.tscn" id="2_l8g2y"]
+[ext_resource type="PackedScene" uid="uid://b85hs6lw12tjj" path="res://addons/sound_graph/graph_editor/RandomNode.tscn" id="3_l8g2y"]
+[ext_resource type="PackedScene" uid="uid://e7t050olymjx" path="res://addons/sound_graph/graph_editor/Sequence.tscn" id="4_0s482"]
+[ext_resource type="PackedScene" uid="uid://cqrre8omr7t57" path="res://addons/sound_graph/graph_editor/Delay.tscn" id="4_dhl5a"]
+[ext_resource type="PackedScene" uid="uid://cxawudpw0ha3n" path="res://addons/sound_graph/graph_editor/PolyNode.tscn" id="6_qbsyw"]
+[ext_resource type="PackedScene" uid="uid://cyg8tguf7wwxg" path="res://addons/sound_graph/graph_editor/RepeatNode.tscn" id="7_svfy1"]
+
+[node name="NodePlaceMenu" type="VBoxContainer" unique_id=1710002632]
+anchors_preset = -1
+anchor_top = -0.0015432099
+anchor_right = 0.13975695
+anchor_bottom = 0.15432099
+offset_top = 3.5
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cnvf5")
+node_list = Array[PackedScene]([ExtResource("2_l8g2y"), ExtResource("3_l8g2y"), ExtResource("4_0s482"), ExtResource("4_dhl5a"), ExtResource("6_qbsyw"), ExtResource("7_svfy1")])
+metadata/_edit_use_anchors_ = true
+
+[node name="SampBut" type="Button" parent="." unique_id=199589918]
+layout_mode = 2
+text = "SamplePlayer"
+
+[node name="RanBut" type="Button" parent="." unique_id=808457613]
+layout_mode = 2
+text = "Random"
+
+[node name="SeqBut" type="Button" parent="." unique_id=787099839]
+layout_mode = 2
+text = "Sequence"
+
+[node name="DelBut" type="Button" parent="." unique_id=337970584]
+layout_mode = 2
+text = "Delay"
+
+[node name="PolyBut" type="Button" parent="." unique_id=1690670465]
+layout_mode = 2
+text = "Poly"
+
+[node name="RepBut" type="Button" parent="." unique_id=8887474]
+layout_mode = 2
+text = "Repeat"
