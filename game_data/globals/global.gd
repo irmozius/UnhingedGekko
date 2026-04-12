@@ -26,7 +26,7 @@ signal boss_fight_ended
 
 func change_hp(amnt : int):
 	current_hp = clamp(current_hp + amnt, 0, max_hp)
-	ui.set_hp_lab()
+	ui.set_hp_bar()
 
 func reset_global():
 	current_hp=max_hp

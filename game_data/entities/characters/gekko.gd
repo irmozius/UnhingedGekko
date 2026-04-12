@@ -50,7 +50,7 @@ func _ready() -> void:
 	fsm.add_state("Disabled", disabled_enter, disabled_exit, disabled_update, Callable())
 	## Set initial state
 	fsm.set_state("InAir") 
-	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("firebane")
+	attack.current_weapon = WeaponDatabase.get_weapon_from_dbname("verdant_knife")
 	
 func _process(delta: float) -> void:
 	## Let the state machine process the current state.
@@ -186,7 +186,15 @@ func running_pupdate(delta : float):
 
 ## Entering attacking state
 func attack_enter():
-	gekko_anim.play("attack1")
+	if attack.current_weapon.rank == 0:
+		print("playing attack 1")
+		gekko_anim.play("attack1")
+	elif attack.current_weapon.rank == 1:
+		print("playing attack 2")
+		gekko_anim.play("attack2")
+	elif attack.current_weapon.rank == 2:
+		print("playing attack 3")
+		gekko_anim.play("attack3")
 	# safety check that fixes the bug where it tries to reattach to the same node
 	if not attack.attack_finished.is_connected(_on_attack_finished):
 		attack.attack_finished.connect(_on_attack_finished, CONNECT_ONE_SHOT)

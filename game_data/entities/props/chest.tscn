@@ -9,7 +9,7 @@
 [ext_resource type="FontFile" uid="uid://cqyaf7n7dpkyj" path="res://assets/fonts/Jersey10-Regular.ttf" id="7_7j6uk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qmpmw"]
-size = Vector2(44, 22)
+size = Vector2(44, 18)
 
 [sub_resource type="Animation" id="Animation_iugc4"]
 length = 0.001
@@ -143,7 +143,7 @@ hframes = 5
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=385777619]
-position = Vector2(0, -12)
+position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_qmpmw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=960559714]

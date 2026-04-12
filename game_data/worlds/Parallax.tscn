@@ -91,7 +91,7 @@ textures = Array[Texture2D]([ExtResource("8_2wscr"), ExtResource("4_rlodj"), Ext
 
 [node name="Sprite2D4" parent="." unique_id=2024924310 instance=ExtResource("3_rlodj")]
 texture_filter = 3
-position = Vector2(100, 113)
+position = Vector2(101, 116)
 texture = ExtResource("4_rlodj")
 textures = Array[Texture2D]([ExtResource("5_pmpoe"), ExtResource("10_s013n"), ExtResource("9_ib8sq"), ExtResource("3_si4de"), ExtResource("10_v4ckn")])
 

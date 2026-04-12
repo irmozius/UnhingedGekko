@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d26o1ymlvc8h4" path="res://game_data/managers/spawner.tscn" id="4_v856d"]
 [ext_resource type="PackedScene" uid="uid://2r0kvgnsh01y" path="res://game_data/entities/props/chest.tscn" id="5_2iqjp"]
 [ext_resource type="Script" uid="uid://burw2ghnnrugw" path="res://game_data/worlds/score.gd" id="5_fj8y2"]
+[ext_resource type="Texture2D" uid="uid://cddu8dta3fmtp" path="res://assets/graphics/ui/hearts.png" id="5_hqrgs"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
@@ -12,6 +13,42 @@ size = Vector2(717, 69)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0yaf8"]
 font_size = 10
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bf3r"]
+atlas = ExtResource("5_hqrgs")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwryg"]
+atlas = ExtResource("5_hqrgs")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl862"]
+atlas = ExtResource("5_hqrgs")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjd8l"]
+atlas = ExtResource("5_hqrgs")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jcyl6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4bf3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwryg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl862")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjd8l")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="World" type="Node2D" unique_id=1525869542]
 
@@ -94,8 +131,17 @@ offset_bottom = 40.0
 
 [node name="HPLab" type="Label" parent="UI/Stats" unique_id=778919696]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 text = "HP: 3"
+
+[node name="HPbar" type="HBoxContainer" parent="UI/Stats" unique_id=685120217]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/Stats/HPbar" unique_id=761462372]
+position = Vector2(12, 11)
+sprite_frames = SubResource("SpriteFrames_jcyl6")
 
 [node name="Score" type="Label" parent="UI" unique_id=2015410166]
 unique_name_in_owner = true
@@ -120,7 +166,7 @@ autostart = true
 position = Vector2(59, 110)
 
 [node name="Chest" parent="." unique_id=299074393 instance=ExtResource("5_2iqjp")]
-position = Vector2(277, 128)
+position = Vector2(277, 132)
 
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]
 [connection signal="timeout" from="UI/Score/Timer" to="UI/Score" method="_on_timer_timeout"]
