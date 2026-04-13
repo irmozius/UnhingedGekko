@@ -1,18 +1,20 @@
 @tool
 class_name SamplePlayer extends PlayerResource
 
-@export var sample : AudioStream
+@export var samples : Array[AudioStream] = []
 @export var pitch_min : float = 1.0
 @export var pitch_max : float = 1.0
 @export var vol_min : float = 0.0
 @export var vol_max : float = 0.0
 
 func play_sound() -> void:
-	if !sample: return
+	if samples.size() == 0: return
+	var sample : AudioStream = samples.pick_random()
 	print("Playing '", sample.resource_path.trim_prefix("res://"), "'.")
 	var player : AudioStreamPlayer = AudioStreamPlayer.new()
 	root_node.add_child(player)
 	player.stream = sample
+	player.bus = audio_bus
 	player.finished.connect(func():
 		player.queue_free()
 		finished.emit(), CONNECT_ONE_SHOT)

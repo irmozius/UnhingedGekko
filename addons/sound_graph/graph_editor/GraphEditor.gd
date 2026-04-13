@@ -67,7 +67,7 @@ func add_connection(from_node: StringName, from_port: int, to_node: StringName, 
 		match get_node_title(str(to_node)):
 			"Output":
 				output_connections.append(f_node)
-				graph_resource.add_resource(f_node.resource, self)
+				graph_resource.add_resource(f_node.resource, self, "Master")
 				f_node.deleted.connect(func():
 					output_connections.erase(f_node)
 					graph_resource.graph.erase(f_node.resource), CONNECT_ONE_SHOT)

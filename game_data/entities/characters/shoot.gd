@@ -13,7 +13,8 @@ var projectile_sprite :Texture
 var projectile_hframes: int = 3
 ## Hitmarker is just a debug visual currently used to show hits activating.
 @onready var hit_marker: Sprite2D = $"../HitMarker"
- 
+@onready var attack_snd: GraphPlayer = $"../AttackSnd"
+
 @export var projectile:PackedScene
 @export var slash_cooldown_timer : float = 0.7
 @export var slash_duration:float = 0.25
@@ -28,6 +29,7 @@ var current_weapon : WeaponResource:
 		slash_duration = wep.attack_duration
 		slash_cooldown_timer = wep.cooldown_duration
 		hurtbox_shape.shape.radius = wep.hurtbox_radius
+		attack_snd.graph = wep.sound
 		if wep.projectile_spritesheet != null:
 			projectile_sprite = wep.projectile_spritesheet
 			projectile_hframes = wep.projectile_hframes
@@ -36,6 +38,7 @@ func slash():
 	
 	if not slash_on_cooldown:
 		print("Player is Slasing")
+		attack_snd.play()
 		hurtbox_shape.disabled = false
 		get_tree().create_timer(slash_duration).timeout.connect(attack_end, CONNECT_ONE_SHOT)
 		fire_projectile()

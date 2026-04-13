@@ -14,6 +14,12 @@ var root_node : Node:
 		#print(descendants)
 @export var graph_pos : Vector2
 var node : AudioNode
+var audio_bus : String = "":
+	set(v):
+		audio_bus = v
+		if descendants:
+			for i : PlayerResource in descendants:
+				i.audio_bus = audio_bus
 
 signal finished
 
