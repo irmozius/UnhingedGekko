@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SoundGraph" format=3 uid="uid://bmu2fldbxccr3"]
+
+[ext_resource type="Script" uid="uid://dvys0imfyfgeh" path="res://addons/sound_graph/graph_player/PlayerResource.gd" id="1_q1rbj"]
+[ext_resource type="AudioStream" uid="uid://edetcola245g" path="res://assets/audio/sfx/Sword Whoosh 01.wav" id="2_5087j"]
+[ext_resource type="Script" uid="uid://b8tkjdyab0sv" path="res://addons/sound_graph/graph_editor/SoundGraph.gd" id="2_iios6"]
+[ext_resource type="AudioStream" uid="uid://d3owvgjkvptyo" path="res://assets/audio/sfx/Sword Whoosh 02.wav" id="3_3br5k"]
+[ext_resource type="Script" uid="uid://dmckws1olg7em" path="res://addons/sound_graph/graph_player/SamplePlayer.gd" id="3_yi4sg"]
+[ext_resource type="AudioStream" uid="uid://d2wip2dmbad8l" path="res://assets/audio/sfx/Sword Whoosh 03.wav" id="4_yi4sg"]
+
+[sub_resource type="Resource" id="Resource_d6rvo"]
+script = ExtResource("3_yi4sg")
+samples = Array[AudioStream]([ExtResource("2_5087j"), ExtResource("3_3br5k"), ExtResource("4_yi4sg")])
+pitch_min = 1.05
+pitch_max = 1.05
+vol_min = -14.399999999999999
+vol_max = -5.599999999999994
+graph_pos = Vector2(-60, 160)
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_iios6")
+graph = Array[ExtResource("1_q1rbj")]([SubResource("Resource_d6rvo")])
+output_position = Vector2(525, 243)

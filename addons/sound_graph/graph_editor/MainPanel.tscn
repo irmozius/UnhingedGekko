@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://b4ddylxcesvgx"]
+
+[ext_resource type="Script" uid="uid://bfse2ahe72y15" path="res://addons/sound_graph/graph_editor/MainPanel.gd" id="1_6xgur"]
+[ext_resource type="PackedScene" uid="uid://cujej7aecjsk4" path="res://addons/sound_graph/graph_editor/GraphEditor.tscn" id="1_hv4cq"]
+
+[node name="main_panel" type="PanelContainer" unique_id=1338956025]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_6xgur")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1869467413]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1940611351]
+layout_mode = 2
+alignment = 1
+
+[node name="Save" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1235820815]
+layout_mode = 2
+text = "Save"
+
+[node name="Play" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1056966580]
+layout_mode = 2
+text = "Play"
+
+[node name="Clear" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=985063033]
+layout_mode = 2
+text = "Clear"
+
+[node name="Load" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=863297615]
+layout_mode = 2
+text = "Load"
+
+[node name="Graph" parent="VBoxContainer" unique_id=1650061467 instance=ExtResource("1_hv4cq")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SaveDialog" type="FileDialog" parent="." unique_id=913847451]
+unique_name_in_owner = true
+title = "Save Graph"
+initial_position = 4
+display_mode = 1
+filters = PackedStringArray("*.tres")
+
+[node name="LoadDialog" type="FileDialog" parent="." unique_id=206355364]
+unique_name_in_owner = true
+title = "Open a File"
+initial_position = 4
+file_mode = 0
+display_mode = 1
+filters = PackedStringArray("*.tres")
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Clear" to="." method="_on_clear_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="file_selected" from="SaveDialog" to="." method="_on_save_dialog_file_selected"]
+[connection signal="file_selected" from="LoadDialog" to="." method="_on_load_dialog_file_selected"]

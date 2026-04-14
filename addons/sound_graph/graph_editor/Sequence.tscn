@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://e7t050olymjx"]
+
+[ext_resource type="Script" uid="uid://bibcsr5yxdrec" path="res://addons/sound_graph/graph_editor/SequenceNode.gd" id="1_ixymq"]
+
+[node name="Sequence" type="GraphNode" unique_id=186926108]
+offset_right = 108.0
+offset_bottom = 136.0
+title = "Sequence"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = true
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = true
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = true
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+script = ExtResource("1_ixymq")
+
+[node name="Add" type="Button" parent="." unique_id=1021759487]
+layout_mode = 2
+text = "Add slot"
+
+[node name="1" type="Label" parent="." unique_id=834655088]
+layout_mode = 2
+text = "1"
+
+[node name="2" type="Label" parent="." unique_id=5572885]
+layout_mode = 2
+text = "2"
+
+[connection signal="pressed" from="Add" to="." method="_on_add_pressed"]

@@ -6,7 +6,7 @@ pre_gain_db = 0.71
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
-wet = 0.12
+wet = 0.03
 
 [sub_resource type="AudioEffectLimiter" id="AudioEffectLimiter_g28q7"]
 resource_name = "Limiter"

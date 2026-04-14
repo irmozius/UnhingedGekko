@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="1_0laet"]
 [ext_resource type="Texture2D" uid="uid://c7pt25nr1n0iv" path="res://assets/graphics/icons/weapons/rusted_machette.webp" id="1_r6oo4"]
+[ext_resource type="Resource" uid="uid://bmu2fldbxccr3" path="res://game_data/resources/sound_cues/ran_woosh.tres" id="3_4qyn4"]
 [ext_resource type="Texture2D" uid="uid://ddstswu3e414m" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Rusted_Machette_Take_Two.webp" id="3_r6oo4"]
 
 [resource]
@@ -11,4 +12,5 @@ db_key = "rusted_machette"
 description = "An old bladed grass cutter rusted from the harsh weather."
 spritesheet = ExtResource("3_r6oo4")
 icon = ExtResource("1_r6oo4")
+sound = ExtResource("3_4qyn4")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

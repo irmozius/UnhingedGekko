@@ -38,7 +38,7 @@ movie_writer/movie_file="C:/Users/USER/OneDrive/Documents/GitHub/UnhingedGekko/m
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/meta_player/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+enabled=PackedStringArray("res://addons/kanban_tasks/plugin.cfg", "res://addons/meta_player/plugin.cfg", "res://addons/script-ide/plugin.cfg", "res://addons/sound_graph/plugin.cfg")
 
 [file_customization]
 

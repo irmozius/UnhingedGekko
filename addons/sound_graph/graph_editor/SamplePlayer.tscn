@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://vkwwrhhth385"]
+
+[ext_resource type="Script" uid="uid://ccj52dbwu1olg" path="res://addons/sound_graph/graph_editor/SamplePlayerNode.gd" id="1_ye2mf"]
+
+[node name="SamplePlayer" type="GraphNode" unique_id=1189104632 node_paths=PackedStringArray("add_button", "file_dialog", "play_button", "pitch_min_input", "pitch_max_input", "vol_min_input", "vol_max_input", "sample_label", "pitch_menu", "vol_menu")]
+offset_right = 301.0
+offset_bottom = 193.0
+mouse_filter = 1
+title = "SamplePlayer"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+script = ExtResource("1_ye2mf")
+add_button = NodePath("Menu/Add")
+file_dialog = NodePath("FileDialog")
+play_button = NodePath("Menu/Play")
+pitch_min_input = NodePath("Menu/Pitch/PitchFrom")
+pitch_max_input = NodePath("Menu/Pitch/PitchTo")
+vol_min_input = NodePath("Menu/Vol/VolFrom")
+vol_max_input = NodePath("Menu/Vol/VolTo")
+sample_label = NodePath("Menu/SampleName")
+pitch_menu = NodePath("Menu/Pitch")
+vol_menu = NodePath("Menu/Vol")
+
+[node name="FileDialog" type="FileDialog" parent="." unique_id=162873711]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 4
+ok_button_text = "Load"
+dialog_hide_on_ok = true
+file_mode = 0
+filters = PackedStringArray("*.wav", "*.mp3", "*.ogg")
+
+[node name="Menu" type="VBoxContainer" parent="." unique_id=881233504]
+layout_mode = 2
+
+[node name="Add" type="Button" parent="Menu" unique_id=268930030]
+layout_mode = 2
+text = "Add sample"
+
+[node name="SampleName" type="Label" parent="Menu" unique_id=1340898730]
+layout_mode = 2
+text = "[none]"
+horizontal_alignment = 1
+
+[node name="Remove" type="Button" parent="Menu" unique_id=1947464177]
+layout_mode = 2
+text = "Remove last sample"
+
+[node name="ToggleRanOpt" type="CheckButton" parent="Menu" unique_id=1365464098]
+layout_mode = 2
+text = "Randomise pitch & volume"
+
+[node name="Pitch" type="HBoxContainer" parent="Menu" unique_id=149905955]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/Pitch" unique_id=2139507859]
+layout_mode = 2
+text = "Pitch:"
+
+[node name="PitchFrom" type="SpinBox" parent="Menu/Pitch" unique_id=1325525149]
+layout_mode = 2
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="to" type="Label" parent="Menu/Pitch" unique_id=1857264119]
+layout_mode = 2
+text = "to"
+
+[node name="PitchTo" type="SpinBox" parent="Menu/Pitch" unique_id=77119330]
+layout_mode = 2
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="Vol" type="HBoxContainer" parent="Menu" unique_id=560519624]
+visible = false
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Menu/Vol" unique_id=1092861002]
+layout_mode = 2
+text = "Volume:"
+
+[node name="VolFrom" type="SpinBox" parent="Menu/Vol" unique_id=757077417]
+layout_mode = 2
+min_value = -70.0
+max_value = 30.0
+step = 0.2
+
+[node name="to" type="Label" parent="Menu/Vol" unique_id=1801275669]
+layout_mode = 2
+text = "to"
+
+[node name="VolTo" type="SpinBox" parent="Menu/Vol" unique_id=750911741]
+layout_mode = 2
+min_value = -70.0
+max_value = 30.0
+step = 0.2
+
+[node name="Play" type="Button" parent="Menu" unique_id=988207168]
+layout_mode = 2
+text = "[Play]"
+
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="pressed" from="Menu/Add" to="." method="_on_choose_sample_pressed"]
+[connection signal="pressed" from="Menu/Remove" to="." method="_on_remove_pressed"]
+[connection signal="toggled" from="Menu/ToggleRanOpt" to="." method="_on_toggle_ran_opt_toggled"]
+[connection signal="value_changed" from="Menu/Pitch/PitchFrom" to="." method="_on_pitch_from_value_changed"]
+[connection signal="value_changed" from="Menu/Pitch/PitchTo" to="." method="_on_pitch_to_value_changed"]
+[connection signal="value_changed" from="Menu/Vol/VolFrom" to="." method="_on_vol_from_value_changed"]
+[connection signal="value_changed" from="Menu/Vol/VolTo" to="." method="_on_vol_to_value_changed"]
+[connection signal="pressed" from="Menu/Play" to="." method="_on_play_pressed"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://irvp7b7w7oh5" path="res://assets/graphics/icons/weapons/Knife_Icon.jpg" id="1_pxkvg"]
 [ext_resource type="Script" uid="uid://bowx6pwrpt8xj" path="res://game_data/resources/WeaponResource.gd" id="2_cveq3"]
+[ext_resource type="Resource" uid="uid://bmu2fldbxccr3" path="res://game_data/resources/sound_cues/ran_woosh.tres" id="3_cveq3"]
 [ext_resource type="Texture2D" uid="uid://dttexc7oe6rdq" path="res://assets/graphics/sprites/gekko/weapons/weapons_take_two/Knife_Sheet_Take_Two.webp" id="3_pxkvg"]
 
 [resource]
@@ -10,4 +11,5 @@ name = "Knife"
 db_key = "verdant_knife"
 spritesheet = ExtResource("3_pxkvg")
 icon = ExtResource("1_pxkvg")
+sound = ExtResource("3_cveq3")
 metadata/_custom_type_script = "uid://bowx6pwrpt8xj"

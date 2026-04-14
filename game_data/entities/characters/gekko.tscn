@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://q3dy4tm2c72x" path="res://icon.svg" id="5_f3bsu"]
 [ext_resource type="Script" uid="uid://dfvjnhi4hxd6w" path="res://game_data/entities/characters/shoot.gd" id="8_4yyxq"]
 [ext_resource type="PackedScene" uid="uid://mqfjv73tf3vw" path="res://game_data/entities/components/projectile.tscn" id="8_uv4va"]
+[ext_resource type="Script" uid="uid://ka7377bj6h08" path="res://addons/sound_graph/graph_player/GraphPlayer.gd" id="9_uv4va"]
+[ext_resource type="Resource" uid="uid://bmu2fldbxccr3" path="res://game_data/resources/sound_cues/ran_woosh.tres" id="10_vp8qi"]
 
 [sub_resource type="Animation" id="Animation_w5ypw"]
 length = 0.001
@@ -374,5 +376,12 @@ texture = ExtResource("5_f3bsu")
 [node name="attack" type="Node" parent="." unique_id=394590036]
 script = ExtResource("8_4yyxq")
 projectile = ExtResource("8_uv4va")
+
+[node name="AttackSnd" type="Node" parent="." unique_id=1739522742 node_paths=PackedStringArray("root_node")]
+script = ExtResource("9_uv4va")
+root_node = NodePath("..")
+graph = ExtResource("10_vp8qi")
+bus_name = "FX"
+metadata/_custom_type_script = "uid://ka7377bj6h08"
 
 [connection signal="received_hit" from="Hitbox" to="." method="_on_hitbox_received_hit"]
