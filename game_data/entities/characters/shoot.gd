@@ -13,6 +13,7 @@ var projectile_sprite :Texture
 var projectile_hframes: int = 3
 ## Hitmarker is just a debug visual currently used to show hits activating.
 @onready var hit_marker: Sprite2D = $"../HitMarker"
+@onready var attackbutton: TouchScreenButton = get_tree().current_scene.get_node_or_null("%attackbutton")
  
 @export var projectile:PackedScene
 @export var slash_cooldown_timer : float = 0.7
@@ -31,6 +32,8 @@ var current_weapon : WeaponResource:
 		if wep.projectile_spritesheet != null:
 			projectile_sprite = wep.projectile_spritesheet
 			projectile_hframes = wep.projectile_hframes
+		if attackbutton!=null:
+			attackbutton.texture_normal = wep.icon
 
 func slash():
 	

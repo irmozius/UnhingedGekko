@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://burw2ghnnrugw" path="res://game_data/worlds/score.gd" id="5_fj8y2"]
 [ext_resource type="Texture2D" uid="uid://cddu8dta3fmtp" path="res://assets/graphics/ui/hearts.png" id="5_hqrgs"]
 [ext_resource type="Script" uid="uid://boywkt7bocvja" path="res://game_data/worlds/ui.gd" id="6_0yaf8"]
+[ext_resource type="Texture2D" uid="uid://irvp7b7w7oh5" path="res://assets/graphics/icons/weapons/Knife_Icon.jpg" id="7_jwryg"]
+[ext_resource type="Texture2D" uid="uid://bqntaxtyxul8i" path="res://assets/graphics/icons/weapons/Scale_Ripper.webp" id="8_jwryg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7i7qt"]
 size = Vector2(717, 69)
@@ -49,6 +51,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jwryg"]
 
 [node name="World" type="Node2D" unique_id=1525869542]
 
@@ -162,6 +166,20 @@ script = ExtResource("5_fj8y2")
 [node name="Timer" type="Timer" parent="UI/Score" unique_id=1966731056]
 autostart = true
 
+[node name="attackbutton" type="TouchScreenButton" parent="UI" unique_id=675570369]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.4392157)
+position = Vector2(190, 114.99999)
+scale = Vector2(0.78125, 0.78125)
+texture_normal = ExtResource("7_jwryg")
+shape = SubResource("RectangleShape2D_jwryg")
+
+[node name="jumpbutton" type="TouchScreenButton" parent="UI" unique_id=1386439130]
+modulate = Color(1, 1, 1, 0.32941177)
+position = Vector2(16, 120)
+scale = Vector2(0.65625, 0.6250002)
+texture_normal = ExtResource("8_jwryg")
+
 [node name="Node2D" type="Node2D" parent="." unique_id=1691352108]
 position = Vector2(59, 110)
 
@@ -170,3 +188,5 @@ position = Vector2(277, 132)
 
 [connection signal="pressed" from="UI/DiedScreen/VBoxContainer/RetryBut" to="UI" method="_on_retry_but_pressed"]
 [connection signal="timeout" from="UI/Score/Timer" to="UI/Score" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/attackbutton" to="Gekko" method="_on_attackbutton_pressed"]
+[connection signal="pressed" from="UI/jumpbutton" to="Gekko" method="_on_jumpbutton_pressed"]

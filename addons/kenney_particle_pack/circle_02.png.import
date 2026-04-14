@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://lr7qee84fbth"
 path.s3tc="res://.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.s3tc.ctex"
+path.etc2="res://.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://addons/kenney_particle_pack/circle_02.png"
-dest_files=["res://.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.s3tc.ctex"]
+dest_files=["res://.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.s3tc.ctex", "res://.godot/imported/circle_02.png-c0c083e18b573988b6ceffe74d6ed4bf.etc2.ctex"]
 
 [params]
 

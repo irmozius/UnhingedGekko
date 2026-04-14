@@ -100,6 +100,13 @@ func _check_for_swipe(end_pos: Vector2):
 			slash_requested = true
 			print("Swipe Slash!")
 
+func _on_attackbutton_pressed() -> void:
+	slash_requested = true
+	print("Swipe Slash!")
+func _on_jumpbutton_pressed() -> void:
+	jump_requested = true
+	print("Swipe Jump!")
+
 ## Move the ground to simulate movement.
 func scroll_ground(delta : float):
 	#ground_manager.move(speed * delta)
